@@ -1,18 +1,24 @@
 # SBOM and its usage in Software Delivery Life Cycle
 
 The software supply chain is a model for producing quality products with an integrated lifecycle of upstream and downstream dependencies. An SBOM is a key component of the software supply chain and its adoption has increased exponentially considering legal, compliance, and security considerations. This article briefly introduces SBOM and describes its usage in Software Delivery Life Cycle. 
+
 ## SBOM Definition
+
 > A formal record containing the details and supply chain relationships of various components used in building software. Software developers and vendors often create products by assembling existing open source and commercial software components. The SBOM enumerates these components in a product (as defined by [NIST SP 800-161r1](https://doi.org/10.6028/NIST.SP.800-161r1)).
 
 ## SBOM Format
+
 SBOMs can be generated in a variety of formats (for both human and machine-readable formats). Primarily supported formats are:
+
 - [CycloneDX](https://cyclonedx.org/): a full-stack BOM standard by OWASP community covering SBOM, SaaSBOM, HBOM, OBMOM, VDR, and VEX. [Click here](https://cyclonedx.org/specification/overview/) to learn more about the CycloneDX specification.
 - [SPDX](https://spdx.dev/): an open standard for SBOM (ISO/IEC 5962:2021) supported by The Linux Foundation.
 - [SWID](https://www.iso.org/standard/65666.html): a standard by the ISO/IEC for tagging software to optimize its identification and management.
 - [Syft](https://github.com/anchore/syft): a CLI tool by [Anchore](https://anchore.com/) (written in Go) for generating SBOM from container images.
 
 ## Information in SBOM
-While SBOM generates comprehensive information, these are the minimium viable information required:
+
+While SBOM generates comprehensive information, these are the minimum viable information required:
+
 - Supplier Name
 - Component Name
 - Unique Identifier for the component
@@ -23,20 +29,26 @@ While SBOM generates comprehensive information, these are the minimium viable in
 - License Information
 
 ## SBOM Usage
+
 While there are many different areas of SBOM usage, below are the three most commonly used applicability of SBOM:
+
 ### #1 - Insights for open source licensing and compliance
+
 - With the increasing usage of open source and third-party software in building solutions across industries, an SBOM helps to comply with licensing obligations transparently with your customers and other partners.
 - An SBOM provides broader visibility to understand complex projects for better quality management. An organization can also use it for understanding the need for the required experience and expertise for the respective product.
 
 > Gartner expects the adoption of software bills of material (SBOM) to go from less than 5% now to 60% in 2025. 
 
 ### #2 - Detect, prioritize and mitigate security vulenerabilties
+
 - An SBOM helps to identify potentially vulnerable components and automate the detection process throughout the software supply chain process.
 - An SBOM can help stakeholders determine the relevance of disclosed vulnerabilities and take action accordingly.
 - An automated approach (illustrated below) can help alert about potential security risks based on the version information available in the SBOM.
 
 > Protecting Yourself Will Lead To Protecting The Industry - Forrester.
+>
 ### #3 - Reduce operational risk and mitigate proactively
+
 - With SBOM data bundled with every product version release, it ensures any operational risk is mitigated.
 - At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reducing operational risk by highlighting such components and helping mitigate them.
 - An SBOM demonstrates your organization's mindset towards higher quality and operational visibility.
@@ -47,13 +59,15 @@ An illustration of end-to-end SBOM data analysis flow is shown below:
 ![End-ot-end SBOM Flow](images/supply-chain.png)
 
 ## References
+
 - [CycloneDX Object Model and Specification Overview](https://cyclonedx.org/specification/overview/)
 - [The National Telecommunications and Information Administration (NTIA) Document on SBOM Roles and Benefits](https://www.ntia.gov/files/ntia/publications/ntia_sbom_use_cases_roles_benefits-nov2019.pdf)
 - [The Minimum Elements For a Software Bill of Materials (SBOM)](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)
 - [SBOM Life Cycle by NIST](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity/software-security-supply-chains-software-1)
-- [Forrester - Why SBOMs Are Critical Now](https://www.forrester.com/blogs/log4j-open-source-maintenance-and-why-sboms-are-critical-now/)
+- [Forrester: Why SBOMs Are Critical Now](https://www.forrester.com/blogs/log4j-open-source-maintenance-and-why-sboms-are-critical-now/)
 
 ## Useful Tools
+
 - [Online SBOM Generation for Demo](https://democert.org/sbom/)
 - [Paketo Build Pack for SBOM Generation](https://paketo.io/docs/howto/sbom/)
 - [CycloneDX Tool Center for SBOM Ecosystem](https://cyclonedx.org/tool-center/)
