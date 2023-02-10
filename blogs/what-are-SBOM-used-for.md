@@ -39,7 +39,7 @@ While there are many different areas of SBOM usage, below are the three most com
 
 > Gartner expects the adoption of software bills of material (SBOM) to go from less than 5% now to 60% in 2025. 
 
-### #2 - Detect, prioritize and mitigate security vulenerabilties
+### #2 - Detect, prioritize, and mitigate security vulnerabilities
 
 - An SBOM helps to identify potentially vulnerable components and automate the detection process throughout the software supply chain process.
 - An SBOM can help stakeholders determine the relevance of disclosed vulnerabilities and take action accordingly.
@@ -50,12 +50,12 @@ While there are many different areas of SBOM usage, below are the three most com
 ### #3 - Reduce operational risk and mitigate proactively
 
 - With SBOM data bundled with every product version release, it ensures any operational risk is mitigated.
-- At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reducing operational risk by highlighting such components and helping mitigate them.
+- At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables proactively reducing operational risk by highlighting such components and helping mitigate them.
 - An SBOM demonstrates your organization's mindset towards higher quality and operational visibility.
 
 > At every supply chain level, the shift from herd vulnerability to herd immunity highlights the cumulative, public health-like benefits of the added transparency and resiliency unlocked by SBOMs (NIST).
 
-An illustration of end-to-end SBOM data analysis flow is shown below:
+An illustration of the end-to-end SBOM data analysis flow is shown below:
 ![End-ot-end SBOM Flow](images/supply-chain.png)
 
 ## References
