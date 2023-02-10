@@ -5,14 +5,14 @@ The software supply chain is a model for producing quality products with an inte
 > A formal record containing the details and supply chain relationships of various components used in building software. Software developers and vendors often create products by assembling existing open source and commercial software components. The SBOM enumerates these components in a product (as defined by [NIST SP 800-161r1](https://doi.org/10.6028/NIST.SP.800-161r1)).
 
 ## SBOM Format
-SBOMs can be generated in a variety of formats (for both human and machine-readable format). Primarily supported formats are:
+SBOMs can be generated in a variety of formats (for both human and machine-readable formats). Primarily supported formats are:
 - [CycloneDX](https://cyclonedx.org/): a full-stack BOM standard by OWASP community covering SBOM, SaaSBOM, HBOM, OBMOM, VDR, and VEX. [Click here](https://cyclonedx.org/specification/overview/) to learn more about the CycloneDX specification.
 - [SPDX](https://spdx.dev/): an open standard for SBOM (ISO/IEC 5962:2021) supported by The Linux Foundation.
 - [SWID](https://www.iso.org/standard/65666.html): a standard by the ISO/IEC for tagging software to optimize its identification and management.
 - [Syft](https://github.com/anchore/syft): a CLI tool by [Anchore](https://anchore.com/) (written in Go) for generating SBOM from container images.
 
 ## Information in SBOM
-While SBOM generates comprehensive information, these are the minimal viable information required:
+While SBOM generates comprehensive information, these are the minimium viable information required:
 - Supplier Name
 - Component Name
 - Unique Identifier for the component
