@@ -1,6 +1,6 @@
 # SBOM and its usage in Software Delivery Life Cycle
 
-This article briefly introduces SBOM and describes its usage in Software Delivery Life Cycle. 
+The software supply chain is a model for producing quality product with integrated lifecycle of upstream and downstream dependencies. An SBOM is a key component of the software supply chain and its adoption has increased exponentially considering legal, compliance, and security considerations. This article briefly introduces SBOM and describes its usage in Software Delivery Life Cycle. 
 ## SBOM Definition
 > A formal record containing the details and supply chain relationships of various components used in building software. Software developers and vendors often create products by assembling existing open source and commercial software components. The SBOM enumerates these components in a product (as defined by [NIST SP 800-161r1](https://doi.org/10.6028/NIST.SP.800-161r1)).
 
