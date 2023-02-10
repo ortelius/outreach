@@ -26,18 +26,22 @@ While SBOM generates comprehensive information, these are the minimal viable inf
 While there are many different areas of SBOM usage, below are the three most commonly used applicability of SBOM:
 ### #1 - Insights for open source licensing and compliance
 - With increasing usage of open source and third-party software in building solutions across industries, an SBOM helps to comply with licensing obligations in a transparent way with your customers and other partners.
-- An SBOM provides broader visibility to understand complex projects for better quality management. An organization can also use it for understanding the need for the required experience and expertise for the respective product. 
+- An SBOM provides broader visibility to understand complex projects for better quality management. An organization can also use it for understanding the need for the required experience and expertise for the respective product.
+
+> Gartner expects adoption of software bills of material (SBOM) to go from less than 5% now to 60% in 2025. 
 
 ### #2 - Detect, prioritize and mitigate security vulenerabilties
 - An SBOM helps to identity potentially vulenerable componens and automate the detection process throughout the software supply chain process.
 - An SBOM can help stakeholders determine the relevance of disclosed vulnerabilities and take action accordingly.
 - An automated approach (illustrated below) can help alert about potential security risks based on the version information available in the SBOM.
 
+> Protecting Yourself Will Lead To Protecting The Industry - Forrester.
 ### #3 - Reduce operational risk and mitigate proactively
 - With SBOM data bundled with every product version release, it ensures any operational risk is mitigated.
 - At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reduce operational risk by highlighting such components and help mitigate them.
-- An SBOM demonstrates your organization's mindset towards higher quality and operational visibility. As quoted by NIST below:
-> At every supply chain level, the shift from herd vulnerability to herd immunity highlights the cumulative, public health-like benefits of the added transparency and resiliency unlocked by SBOMs. 
+- An SBOM demonstrates your organization's mindset towards higher quality and operational visibility. 
+
+> At every supply chain level, the shift from herd vulnerability to herd immunity highlights the cumulative, public health-like benefits of the added transparency and resiliency unlocked by SBOMs (NIST).
 
 An illustration of end-to-end SBOM data analysis flow is shown below:
 ![End-ot-end SBOM Flow](images/supply-chain.png)
@@ -47,6 +51,7 @@ An illustration of end-to-end SBOM data analysis flow is shown below:
 - [The National Telecommunications and Information Administration (NTIA) Document on SBOM Roles and Benefits](https://www.ntia.gov/files/ntia/publications/ntia_sbom_use_cases_roles_benefits-nov2019.pdf)
 - [The Minimum Elements For a Software Bill of Materials (SBOM)](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)
 - [SBOM Life Cycle by NIST](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity/software-security-supply-chains-software-1)
+- [Forrester - Why SBOMs Are Critical Now] (https://www.forrester.com/blogs/log4j-open-source-maintenance-and-why-sboms-are-critical-now/)
 
 ## Useful Tools
 - [Online SBOM Generation for Demo](https://democert.org/sbom/)
