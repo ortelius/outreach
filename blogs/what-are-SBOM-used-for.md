@@ -51,7 +51,7 @@ An illustration of end-to-end SBOM data analysis flow is shown below:
 - [The National Telecommunications and Information Administration (NTIA) Document on SBOM Roles and Benefits](https://www.ntia.gov/files/ntia/publications/ntia_sbom_use_cases_roles_benefits-nov2019.pdf)
 - [The Minimum Elements For a Software Bill of Materials (SBOM)](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)
 - [SBOM Life Cycle by NIST](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity/software-security-supply-chains-software-1)
-- [Forrester - Why SBOMs Are Critical Now] (https://www.forrester.com/blogs/log4j-open-source-maintenance-and-why-sboms-are-critical-now/)
+- [Forrester - Why SBOMs Are Critical Now](https://www.forrester.com/blogs/log4j-open-source-maintenance-and-why-sboms-are-critical-now/)
 
 ## Useful Tools
 - [Online SBOM Generation for Demo](https://democert.org/sbom/)
