@@ -1,11 +1,11 @@
 # SBOM and its usage in Software Delivery Life Cycle
 
-The software supply chain is a model for producing quality product with integrated lifecycle of upstream and downstream dependencies. An SBOM is a key component of the software supply chain and its adoption has increased exponentially considering legal, compliance, and security considerations. This article briefly introduces SBOM and describes its usage in Software Delivery Life Cycle. 
+The software supply chain is a model for producing quality products with an integrated lifecycle of upstream and downstream dependencies. An SBOM is a key component of the software supply chain and its adoption has increased exponentially considering legal, compliance, and security considerations. This article briefly introduces SBOM and describes its usage in Software Delivery Life Cycle. 
 ## SBOM Definition
 > A formal record containing the details and supply chain relationships of various components used in building software. Software developers and vendors often create products by assembling existing open source and commercial software components. The SBOM enumerates these components in a product (as defined by [NIST SP 800-161r1](https://doi.org/10.6028/NIST.SP.800-161r1)).
 
 ## SBOM Format
-SBOMs can be generated in variety of formats (for both human and machine-readable format). The primary supported formats are:
+SBOMs can be generated in a variety of formats (for both human and machine-readable format). Primarily supported formats are:
 - [CycloneDX](https://cyclonedx.org/): a full-stack BOM standard by OWASP community covering SBOM, SaaSBOM, HBOM, OBMOM, VDR, and VEX. [Click here](https://cyclonedx.org/specification/overview/) to learn more about the CycloneDX specification.
 - [SPDX](https://spdx.dev/): an open standard for SBOM (ISO/IEC 5962:2021) supported by The Linux Foundation.
 - [SWID](https://www.iso.org/standard/65666.html): a standard by the ISO/IEC for tagging software to optimize its identification and management.
@@ -25,21 +25,21 @@ While SBOM generates comprehensive information, these are the minimal viable inf
 ## SBOM Usage
 While there are many different areas of SBOM usage, below are the three most commonly used applicability of SBOM:
 ### #1 - Insights for open source licensing and compliance
-- With increasing usage of open source and third-party software in building solutions across industries, an SBOM helps to comply with licensing obligations in a transparent way with your customers and other partners.
+- With the increasing usage of open source and third-party software in building solutions across industries, an SBOM helps to comply with licensing obligations transparently with your customers and other partners.
 - An SBOM provides broader visibility to understand complex projects for better quality management. An organization can also use it for understanding the need for the required experience and expertise for the respective product.
 
-> Gartner expects adoption of software bills of material (SBOM) to go from less than 5% now to 60% in 2025. 
+> Gartner expects the adoption of software bills of material (SBOM) to go from less than 5% now to 60% in 2025. 
 
 ### #2 - Detect, prioritize and mitigate security vulenerabilties
-- An SBOM helps to identity potentially vulenerable componens and automate the detection process throughout the software supply chain process.
+- An SBOM helps to identify potentially vulnerable components and automate the detection process throughout the software supply chain process.
 - An SBOM can help stakeholders determine the relevance of disclosed vulnerabilities and take action accordingly.
 - An automated approach (illustrated below) can help alert about potential security risks based on the version information available in the SBOM.
 
 > Protecting Yourself Will Lead To Protecting The Industry - Forrester.
 ### #3 - Reduce operational risk and mitigate proactively
 - With SBOM data bundled with every product version release, it ensures any operational risk is mitigated.
-- At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reduce operational risk by highlighting such components and help mitigate them.
-- An SBOM demonstrates your organization's mindset towards higher quality and operational visibility. 
+- At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reducing operational risk by highlighting such components and helping mitigate them.
+- An SBOM demonstrates your organization's mindset towards higher quality and operational visibility.
 
 > At every supply chain level, the shift from herd vulnerability to herd immunity highlights the cumulative, public health-like benefits of the added transparency and resiliency unlocked by SBOMs (NIST).
 
