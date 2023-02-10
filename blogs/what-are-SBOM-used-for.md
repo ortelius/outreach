@@ -29,16 +29,17 @@ While there are many different areas of SBOM usage, below are the three most com
 - An SBOM provides broader visibility to understand complex projects for better quality management. An organization can also use it for understanding the need for the required experience and expertise for the respective product. 
 
 ### #2 - Detect, prioritize and mitigate security vulenerabilties
-- Identity potentially vulenerable componens and automate the detection process throughout the software supply chain process.
-- Visibility into proprietary and open source components.
-- Alert about potential security risks based on the version information available in the SBOM.
+- An SBOM helps to identity potentially vulenerable componens and automate the detection process throughout the software supply chain process.
+- An SBOM can help stakeholders determine the relevance of disclosed vulnerabilities and take action accordingly.
+- An automated approach (illustrated below) can help alert about potential security risks based on the version information available in the SBOM.
 
 ### #3 - Reduce operational risk and mitigate proactively
 - With SBOM data bundled with every product version release, it ensures any operational risk is mitigated.
 - At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reduce operational risk by highlighting such components and help mitigate them.
-- Provide an SBOM to the customer or other partners for visibility and higher quality standards helps to highlight operational efficiency.
+- An SBOM demonstrates your organization's mindset towards higher quality and operational visibility. As quoted by NIST below:
+> At every supply chain level, the shift from herd vulnerability to herd immunity highlights the cumulative, public health-like benefits of the added transparency and resiliency unlocked by SBOMs. 
 
-> An illustration of end-to-end SBOM data analysis flow is shown below:
+An illustration of end-to-end SBOM data analysis flow is shown below:
 ![End-ot-end SBOM Flow](images/supply-chain.png)
 
 ## References
