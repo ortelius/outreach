@@ -23,22 +23,23 @@ While SBOM generates comprehensive information, these are the minimal viable inf
 - License Information
 
 ## SBOM Usage
-These are primary areas where SBOM usage has increased in recent times:
+While there are many different areas of SBOM usage, below are the three most commonly used applicability of SBOM:
+### #1 - Insights for open source licensing and compliance
+- With increasing usage of open source and third-party software in building solutions across industries, an SBOM helps to comply with licensing obligations in a transparent way with your customers and other partners.
+- An SBOM provides broader visibility to understand complex projects for better quality management. An organization can also use it for understanding the need for the required experience and expertise for the respective product. 
 
-### Insights for open source licensing and compliance
-- With increasing usage of open source and third-party software in building solutions across industries, SBOM is becoming a mandate for full disclousre.
-- Identify End-of-life (EOL) products and mitigate associated risks proactively.
-- Comply with licensing obligations in a transparent way.
-
-Here is a reference lifecycle for end-to-end processing enabled using SBOM:
-
-### Detect, prioritize and mitigate security vulenerabilties
+### #2 - Detect, prioritize and mitigate security vulenerabilties
 - Identity potentially vulenerable componens and automate the detection process throughout the software supply chain process.
 - Visibility into proprietary and open source components.
 - Alert about potential security risks based on the version information available in the SBOM.
 
-### Reduce operational risk and mitigate proactively
-- With SBOM data bundled with every product version release, it ensures any operational risk is mitigated automatically.
+### #3 - Reduce operational risk and mitigate proactively
+- With SBOM data bundled with every product version release, it ensures any operational risk is mitigated.
+- At times, software components reach their end-of-life (EOL) and are not supported by the supplier. An SBOM enables to proactively reduce operational risk by highlighting such components and help mitigate them.
+- Provide an SBOM to the customer or other partners for visibility and higher quality standards helps to highlight operational efficiency.
+
+> An illustration of end-to-end SBOM data analysis flow is shown below:
+![End-ot-end SBOM Flow](images/supply-chain.png)
 
 ## References
 - [CycloneDX Object Model and Specification Overview](https://cyclonedx.org/specification/overview/)
@@ -58,8 +59,10 @@ Here is a reference lifecycle for end-to-end processing enabled using SBOM:
 | Acronym | Description |
 |---------|-------------|
 | CVE     | Common Vulnerabilities and Exposures |
-| HBOM    | Hardware bills of materials: every physical piece or component used to build a product |
+| HBOM    | Hardware bills of materials: every physical piece or component used to build a product. |
+| NIST    | NIST is the National Institute of Standards and Technology at the U.S. Department of Commerce. |
 | OWASP   | The Open Web Application Security Project |
 | SBOM    | Software Bill of Materials |
 | SCA     | Software Composition Analysis |
-| VEX     | Vulnerability-Exploitability eXchange: an attestation, a form of a security advisory that indicates whether a product or products are affected by a known vulnerability or vulnerabilities |
+| VDR     | Vulnerability Disclosure Report (VDR) is an attestation by a software vendor showing that the vendor has checked each component of a software product SBOM for vulnerabilities and reports on the details of any vulnerabilities reported by a NIST NVD search. |
+| VEX     | Vulnerability-Exploitability eXchange: an attestation, a form of a security advisory that indicates whether a product or products are affected by a known vulnerability or vulnerabilities. |
