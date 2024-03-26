@@ -1,6 +1,6 @@
 ## Peeling the SecOps Onion
 
-[peeling-the-onion](images/peeling-the-onion.png)
+![peeling-the-onion](images/peeling-the-onion.png)
 
 How do you peel an onion? Normally, you would peel an onion layer for layer and that's precisely what Ortelius can do for you minus the crying bit. The security landscape is treacherous as we have witnessed all kinds of malware and ransomware maliciously abusing individuals and organisations for selfish gain. Do you know what packages and dependencies your applications are using? Do you even need all those packages or dependencies? How do we know what to report on? Well lets breakdown some areas where Ortelius can help you peel this onion minus the crying. I am going to use Dev Containers as the example here as I am rather passionate about this way of engineering.
 
