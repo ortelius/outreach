@@ -46,7 +46,7 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
 
 - Choose OS
--
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/02-choose-other-general-purpose-os.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/03-choose-ubuntu.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/04-choose-ubuntu-server-22-04-4-lts-x64.png)
