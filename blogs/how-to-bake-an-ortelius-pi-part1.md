@@ -10,7 +10,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 - 3X Raspberry Pi 4 B | Please go to this link for the full hardware specs [Raspberry Pi 4 B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/)
 
 ![raspberry-pi-4b](images/raspberry-pi-4b.png)
-
+-------------------------------------------------------------------------------------------------------------
 - 3X 32GB minimum Micro SD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s) | Speed chart [here](https://www.kingston.com/en/blog/personal-storage/memory-card-speed-classes)
 OR
 - 3X 32GB USB 3 sticks but this comes with some caveats performance wise which I will discuss further on
