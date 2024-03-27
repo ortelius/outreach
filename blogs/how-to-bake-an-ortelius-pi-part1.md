@@ -57,6 +57,8 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - Remember to change the `HOSTNAMES` `pi01` | `pi02` | `pi03` (You can use whatever hostnames make sense to you)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/09-enable-ssh-password-auth.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/10-options.png)
+- Click `YES` to apply the OS customisation settings
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/11-use-os-customisation-yes.png)
 
 
 
