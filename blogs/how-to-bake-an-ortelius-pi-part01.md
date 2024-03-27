@@ -23,6 +23,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 - 1X Keyboard USB
 - 1X [KVM Switch device](https://www.amazon.com/3-port-kvm-switch/s?k=3+port+kvm+switch)
 - 1X 8 Port Switch
+- Networking | Use [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) or [static IP addresses](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) in the [private range](https://www.lifewire.com/what-is-a-private-ip-address-2625970).
 - 1X UPS (Uninterruptable Power Supply) for the Pi's and switch | Something like this [Mecer 650VA](https://mecer.co.za/mecer-line-interactive-ups/). Please note this is a South African brand of UPS but I am showing this for example purposes. The Mecer brand is extremely good and all my lead acid battery UPS's are from Mecer. I have a combination of the 650VA, 2000VA and 3000VA to keep me going (7 in all)
 
 #### Storage
@@ -89,5 +90,9 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/11-use-os-customisation-yes.png)
 
 - Rinse and repeat 3 times
+
+#### Conclusion
+
+By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
