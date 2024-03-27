@@ -88,6 +88,7 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/11-use-os-customisation-yes.png)
 
+- Rinse and repeat 3 times
 
 
 
