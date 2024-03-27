@@ -17,7 +17,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 
 `OR`
 
-- 3X 32GB USB 3 sticks but this comes with some caveats performance wise which I will discuss further on
+- 3X 32GB USB 3 flash drives but this comes with some caveats performance wise which I will discuss further on
 -------------------------------------------------------------------------------------------------------------
 - 1X Screen HDMI
 - 1X Keyboard USB
