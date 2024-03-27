@@ -43,6 +43,9 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - Choose Device
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/00-choose-device-os-storage.png)
+
+- Choose Raspberry Pi4 models B, 400 and Compute Modules 4, 4s
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
 
 - Choose OS
