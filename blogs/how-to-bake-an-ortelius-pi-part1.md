@@ -46,6 +46,7 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
 
 - Choose OS
+-
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/02-choose-other-general-purpose-os.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/03-choose-ubuntu.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/04-choose-ubuntu-server-22-04-4-lts-x64.png)
@@ -55,17 +56,21 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/05-choose-device-media.png)
 
 - Click Next
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/06-click-next.png)
 
 - Use OS Customisation by clicking on `EDIT SETTINGS`
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/07-use-os-customisation.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/08-general-settings.png)
 
 - Remember to change the `HOSTNAMES` `pi01` | `pi02` | `pi03` (You can use whatever hostnames make sense to you)
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/09-enable-ssh-password-auth.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/10-options.png)
 
 - Click `YES` to apply the OS customisation settings
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/11-use-os-customisation-yes.png)
 
 
