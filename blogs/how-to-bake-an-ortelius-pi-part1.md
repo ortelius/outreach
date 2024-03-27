@@ -44,17 +44,25 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/00-choose-device-os-storage.png)
 
-- Choose Raspberry Pi4 models B, 400 and Compute Modules 4, 4s
+- Choose `Raspberry Pi4 models B, 400 and Compute Modules 4, 4s`
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
 
-- Choose OS
+- Choose `OS`
+- Choose `Other general-purpose OS`
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/02-choose-other-general-purpose-os.png)
+
+- Choose `Ubuntu`
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/03-choose-ubuntu.png)
+
+- Choose `Ubuntu Server 22.04.4 LTS (64-bit)`
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/04-choose-ubuntu-server-22-04-4-lts-x64.png)
 
 - Choose Storage
+- This will look different on your machine
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/05-choose-device-media.png)
 
@@ -65,11 +73,15 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - Use OS Customisation by clicking on `EDIT SETTINGS`
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/07-use-os-customisation.png)
-![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/08-general-settings.png)
 
+- Fill in the required info according to your specifications
 - Remember to change the `HOSTNAMES` `pi01` | `pi02` | `pi03` (You can use whatever hostnames make sense to you)
 
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/08-general-settings.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/09-enable-ssh-password-auth.png)
+
+- Check the boxes that make sense to you
+
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/10-options.png)
 
 - Click `YES` to apply the OS customisation settings
