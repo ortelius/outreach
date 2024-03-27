@@ -37,13 +37,28 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - MacOS install with Brew package manager ```brew install raspberry-pi-imager```
 - Windows install [here](https://downloads.raspberrypi.org/imager/imager_latest.exe)
 
-#### Step 1
+#### Step 1 | Preparing the OS for installation
+- Repeat these steps for each SD Card or USB flash stick
+- The opening screen will present you with `CHOOSE DEVICE` | `CHOOSE OS` | `CHOOSE STORAGE`
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/00-chose-device-os-storage.png)
 - Choose Device
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
 - Choose OS
-![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/02-choose-os.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/02-choose-other-general-purpose-os.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/03-choose-ubuntu.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/04-choose-ubuntu-server-22-04-4-lts-x64.png)
 - Choose Storage
-![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/03-choose-storage.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/05-choose-device-media.png)
+- Click Next
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/06-click-next.png)
+- Use OS Customisation by clicking on `EDIT SETTINGS`
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/07-use-os-customisation.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/08-general-settings.png)
+- Remember to change the `HOSTNAMES` `pi01` | `pi02` | `pi03` (You can use whatever hostnames make sense to you)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/09-enable-ssh-password-auth.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/10-options.png)
+
+
 
 
 
