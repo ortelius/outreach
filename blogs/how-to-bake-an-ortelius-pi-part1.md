@@ -30,7 +30,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 - 1X 650VA UPS
 
 #### Operating System
-- Ubuntu Server 22.04 LTS x64
+- [Ubuntu Server 22.04 LTS x64 for Raspberry Pi](https://ubuntu.com/download/raspberry-pi)
 
 #### Raspberry Pi Imaging Utility
 
