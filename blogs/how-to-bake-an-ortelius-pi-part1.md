@@ -37,4 +37,4 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - 1X [Raspberry Pi imaging Utility](https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/)
 
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised. I do this for the love of tech and sharing with others.
+#### Disclaimer: Any brands I mention in this blog post series are not monetised. I do this for the greater good and because I love it!
