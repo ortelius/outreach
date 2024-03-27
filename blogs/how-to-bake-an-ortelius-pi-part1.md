@@ -41,7 +41,7 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - Repeat these steps for each SD Card or USB flash stick
 - The opening screen will present you with `CHOOSE DEVICE` | `CHOOSE OS` | `CHOOSE STORAGE`
 - Choose Device
-![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/00-chose-device-os-storage.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/00-choose-device-os-storage.png)
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
 
