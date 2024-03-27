@@ -10,7 +10,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 - 3X [Raspberry Pi4 Model B 8GB Red/White Official Case Essentials Kit Boxed White Power Supply](https://www.pishop.co.za/store/custom-kits/raspberry-pi4-model-b-8gb-redwhite-official-case-essentials-kit-boxed-white-power-supply)
 - Please go to this link for the full hardware specs [Raspberry Pi 4 B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/)
 
-![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/raspberry-pi-4b.png)
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/raspberry-pi-4b.png)
 
 -------------------------------------------------------------------------------------------------------------
 - 3X 32GB minimum Micro SD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s) | Speed chart [here](https://www.kingston.com/en/blog/personal-storage/memory-card-speed-classes)
@@ -39,6 +39,11 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 
 #### Step 1
 - Choose Device
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/01-choose-device.png)
+- Choose OS
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/02-choose-os.png)
+- Choose Storage
+![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/03-choose-storage.png)
 
 
 
