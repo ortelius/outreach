@@ -90,4 +90,4 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 
 - Rinse and repeat 3 times
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised. I do this for the greater good and because I love it!
+#### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
