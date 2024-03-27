@@ -12,11 +12,9 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 ![raspberry-pi-4b](images/raspberry-pi-4b.png)
 
 - 3X 32GB minimum Micro SD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s) | Speed chart [here](https://www.kingston.com/en/blog/personal-storage/memory-card-speed-classes)
-
 OR
-
 - 3X 32GB USB 3 sticks but this comes with some caveats performance wise which I will discuss further on
-
+-------------------------------------------------------------------------------------------------------------
 - 1X Screen HDMI
 - 1X Keyboard USB
 - 1X [KVM Switch device](https://www.amazon.com/3-port-kvm-switch/s?k=3+port+kvm+switch)
