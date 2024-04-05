@@ -4,7 +4,7 @@
 
 In [part one](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we installed Ubuntu 22.04.4 LTS on our Raspberry Pi's. In part two we will prepare our three Pi's for DNS, NFS (Network File System) storage with a Synology NAS and install [MicroK8s](https://microk8s.io/).
 
-#### DNS and NextDNS
+### DNS and NextDNS
 
 For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices (smart phones, tablets, routers, home internet, NAS devices, laptops and desktops) including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
 
@@ -52,14 +52,14 @@ max-inflight-requests 256
 
 - NextDNS will instantly auto refresh all your NextDNS agents with any configuration changes
 
-#### OS Prep
+### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
 - Install Helm [here](https://helm.sh/) on your local machine
 - Helm docs [here](https://helm.sh/docs/)
 - Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 
-#### NFS Prep
+### NFS Prep
 
 I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology.
 - Install `sudo apt install nfs-common -y` for each Pi
@@ -119,7 +119,7 @@ I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following st
 
 - Congrats you just configured the Synology for NFS!
 
-#### MicroK8s Prep
+### MicroK8s Prep
 - [MicroK8s docs](https://microk8s.io/docs)
 - Configure Pi BIOS `sudo vi /boot/firmware/cmdline.txt` and add the following `cgroup_enable=memory cgroup_memory=1`
 - Below is the config from my Pi
@@ -178,7 +178,7 @@ users:
     client-certificate-data: <your client certificate data goes here>
 ```
 
-#### Conclusion
+### Conclusion
 
 By this stage you should have three Pi's each running with NFS and MicroK8s installed. Stay tuned for part 3 where we will install the NSF `csi-driver-nfs` for Kubernetes
 
