@@ -155,8 +155,25 @@ microk8s join 10.23.209.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 ```
 - Referenced from [here](https://microk8s.io/docs/clustering)
-- Run
+- On the same Pi run `sudo microk8s config`
+- This will return config you will need to access your Microk8s cluster
+- For example I will add this config to `/home/.kube/config`
 
+```
+- cluster:
+    certificate-authority-data: <your certificate authority data goes here>
+    server: https://<your local network IP for your Pi goes here>:16443
+  name: microk8s-cluster
+- context:
+    cluster: microk8s-cluster
+    namespace: default
+    user: <your user goes here>
+  name: microk8s
+users:
+- name: <your user goes here>
+  user:
+    client-certificate-data:
+```
 
 #### Conclusion
 
