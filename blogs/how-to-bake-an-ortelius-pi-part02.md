@@ -32,6 +32,19 @@ I am using an Synology DS413j with DSM 6.2.4-25556 Update 7 so the following ste
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/04-syno-file-sharing-icon.png)
 
+- Click `Create`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/05-syno-file-sharing-create.png)
+
+- Create a name for your folder share, I used `Pi8s`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/06-syno-file-sharing-next.png)
+
+- Skip encryption
+- Apply your config
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/07-syno-file-sharing-next.png)
+
 
 
 
