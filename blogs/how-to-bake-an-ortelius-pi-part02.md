@@ -68,7 +68,8 @@ I am using a Synology DS413j with DSM 6.2.4-25556 Update 7 so the following step
 
 - Congrats you just configured the Synology for NFS!
 
-#### Microk8s Prep
+#### MicroK8s Prep
+- [MicroK8s docs](https://microk8s.io/docs)
 - Configure Pi BIOS `sudo vi /boot/firmware/cmdline.txt` and add the following `cgroup_enable=memory cgroup_memory=1`
 - Below is the config from my Pi
 
@@ -78,6 +79,7 @@ cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0
 
 - Install Kernel Modules `sudo apt install linux-modules-extra-raspi`
 - Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
+- Install Microk8s on each Pi ```sudo snap install microk8s --classic`` - This install the latest version of Microk8s
 
 
 
