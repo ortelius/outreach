@@ -14,6 +14,31 @@ If you are using NextDNS do the following
 ```
 sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 ```
+- Run `sudo nextdns config` to view your config
+- Run `sudo nextdns config edit` to edit for each Pi and NAS and configure like this
+- Run `sudo nextdns restart` to restart the service
+- Run `sudo nextdns status` to check the service status
+```
+debug false
+cache-size 10MB
+max-ttl 5s
+mdns all
+cache-max-age 0s
+use-hosts true
+auto-activate true
+listen localhost:53
+profile <your profile id goes here>
+log-queries false
+report-client-info true
+discovery-dns
+hardened-privacy false
+timeout 5s
+setup-router false
+control /var/run/nextdns.sock
+detect-captive-portals false
+bogus-priv true
+max-inflight-requests 256
+```
 
 
 #### OS Prep
