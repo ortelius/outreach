@@ -41,6 +41,7 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 - Windows install [here](https://downloads.raspberrypi.org/imager/imager_latest.exe)
 
 #### Step 1 | Preparing the OS for installation
+- Install Raspi-Config on each Ubuntu server `sudo apt install raspi-config -y`
 
 #### USB 3 flash drives
 
@@ -48,13 +49,13 @@ If you use USB flash drives you will need to do the following as mentioned in th
 
 - In the article the author says to go here `/boot/cmdline.txt` but on my Pi4 I had to go here `/boot/firmware/cmdline.txt`
 - A Pi has no BIOS so this is how you configure a Pi's BIOS by editing `/boot/firmware/cmdline.txt`
-- Install Raspi-Config on each Ubuntu server `sudo apt install raspi-config -y`
 - Install dmesg `sudo apt install dmesg -y`
 - Raspi-Config allows you to configure your Pi's hardware without having to fiddle with `/boot/firmware/cmdline.txt`
 - Run Raspi-Config like this `sudo raspi-config` and you will get a screen like this
-- Use Raspi-Config to configure boot order, remove or add read-only filesystem and many other tweaks
 
 ![raspi-config](images/how-to-bake-an-ortelius-pi/part01/12-raspi-config.png)
+
+- Use Raspi-Config to configure boot order, remove or add read-only filesystem and many other tweaks
 
 #### Example from my Pi01
 ```
