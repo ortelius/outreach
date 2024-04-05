@@ -71,10 +71,11 @@ I am using a Synology DS413j with DSM 6.2.4-25556 Update 7 so the following step
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/13-syno-file-share-nfs-create.png)
 
-- Configure like this click `OK`
+- Configure like this then click `OK`
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/14-syno-file-share-nfs-config.png)
 
+- Congrats you just configured the Synology for NFS!
 
 
 
