@@ -1,6 +1,6 @@
 ## How to bake an Ortelius Pi Part 2 | The Preparation
 
-#### Introduction
+### Introduction
 
 In [part one](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we installed Ubuntu 22.04.4 LTS on our Raspberry Pi's. In part two we will prepare our three Pi's for DNS, NFS (Network File System) storage with a Synology NAS and install [MicroK8s](https://microk8s.io/).
 
