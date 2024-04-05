@@ -45,6 +45,30 @@ I am using an Synology DS413j with DSM 6.2.4-25556 Update 7 so the following ste
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/07-syno-file-sharing-confirm.png)
 
+- Right click your newly created `Shared Folder` and select `Edit`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/08-syno-file-share-edit.png)
+
+- Select `Permissions` tab
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/09-syno-file-share-permissions.png)
+
+- Select `Local users`drop down and give the  `admin` `Read/Write` permissions by checking the box
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/10-syno-file-share-local-users.png)
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/11-syno-file-share-admin.png)
+
+- Select `NFS Permissions` and then `Create`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/12-syno-file-share-nfs-permissions.png)
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/13-syno-file-share-nfs-create.png)
+
+- Configure like this click `OK`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/14-syno-file-share-nfs-config.png)
+
 
 
 
