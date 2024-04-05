@@ -140,6 +140,7 @@ sudo snap install microk8s --classic
 ```
 sudo microk8s add-node
 ```
+- You will need to run this 3 times on the same node to generate a unique key for each node you wish to join
 - This will return some joining instructions which should be executed on the MicroK8s instance that you wish to join to the cluster `(NOT THE NODE YOU RAN add-node FROM)`
 ```
 From the node you wish to join to this cluster, run the following:
@@ -154,16 +155,11 @@ microk8s join 10.23.209.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 ```
 - Referenced from [here](https://microk8s.io/docs/clustering)
-
-#### CSI Driver NFS installation for Kubernetes
-
-
-
-
+- Run
 
 
 #### Conclusion
 
-By this stage you should have three Pi's each running with NFS and MicroK8s installed. Stay tuned for part 3 where we will install the `csi-driver-nfs` for Kubernetes
+By this stage you should have three Pi's each running with NFS and MicroK8s installed. Stay tuned for part 3 where we will install the NSF `csi-driver-nfs` for Kubernetes
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
