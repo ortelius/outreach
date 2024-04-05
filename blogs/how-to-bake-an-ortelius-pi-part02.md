@@ -180,6 +180,6 @@ users:
 
 ### Conclusion
 
-By this stage you should have three Pi's each running with NFS and MicroK8s installed. Stay tuned for part 3 where we will install the NSF `csi-driver-nfs` for Kubernetes
+By this stage you should have three Pi's each ready with NFS and MicroK8s. Stay tuned for part 3 where we will deploy the NSF [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, deploy [Traefik](https://traefik.io/) and deploy [Ortelius](https://ortelius.io/)
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
