@@ -2,7 +2,7 @@
 
 #### Introduction
 
-In [part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we prepped our Raspberry Pi 4's for the installation of Ubuntu 22.04.4 LTS. In part 2 we will prepare our three Pi's for NFS (Network File System) storage with a Synology NAS and install MicroK8s [MicroK8s](https://microk8s.io/).
+In [part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we prepped our Raspberry Pi 4's for the installation of Ubuntu 22.04.4 LTS. In part 2 we will prepare our three Pi's for DNS, NFS (Network File System) storage with a Synology NAS and install MicroK8s [MicroK8s](https://microk8s.io/).
 
 #### DNS
 
