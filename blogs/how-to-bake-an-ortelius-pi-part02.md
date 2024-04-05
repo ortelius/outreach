@@ -133,7 +133,10 @@ sudo snap install microk8s --classic
 ```
 - This installs the latest version of Microk8s
 
-#### MicroK8s create highly available 3 node cluster
+#### Create highly available 3 node cluster with MicroK8s
+
+MicroK8s uses [Dqlite](https://dqlite.io/) as a highly available SQLite database to store the Kubernetes logic without any configuration. In Canonicals own words `High-availability SQLite Dqlite is a fast, embedded, persistent SQL database with Raft consensus that is perfect for fault-tolerant IoT and Edge devices.`
+
 - Choose a Pi to start the process, I used `pi01`
 - SSH onto `pi01` and run this command on `pi01`
 ```
