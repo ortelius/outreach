@@ -5,6 +5,8 @@
 In [part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we prepped our Raspberry Pi 4's for the installation of Ubuntu 22.04.4 LTS. In part 2 we will prepare our three Pi's for NFS (Network File System) storage with a Synology NAS and install MicroK8s [MicroK8s](https://microk8s.io/).
 
 #### OS Prep
+- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
+- Install Helm [here](https://helm.sh/) on your local machine
 - SSH into each Pi like this `ssh <your username>@<your ip address>` and your password
 - Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 
@@ -81,9 +83,30 @@ cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0
 ```
 sudo snap install microk8s --classic
 ```
-- This install the latest version of Microk8s
+- This installs the latest version of Microk8s
 
+#### MicroK8s create highly available 3 node cluster
+- Choose a Pi to start the process, I used `pi01`
+- SSH onto `pi01` and run this command on `pi01`
+```
+sudo microk8s add-node
+```
+- This will return some joining instructions which should be executed on the MicroK8s instance that you wish to join to the cluster `(NOT THE NODE YOU RAN add-node FROM)`
+```
+From the node you wish to join to this cluster, run the following:
+microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 
+Use the '--worker' flag to join a node as a worker not running the control plane, eg:
+microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05 --worker
+
+If the node you are adding is not reachable through the default interface you can use one of the following:
+microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
+microk8s join 10.23.209.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
+microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
+```
+- Referenced from [here](https://microk8s.io/docs/clustering)
+
+#### CSI Driver NFS installation for Kubernetes
 
 
 
@@ -92,6 +115,6 @@ sudo snap install microk8s --classic
 
 #### Conclusion
 
-By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS and MicroK8s. Stay tuned for part 3 where we will dive into optimising USB flash sticks for the best performance and stability and the installation of MicroK8s.
+By this stage you should have three Pi's each running with NFS and MicroK8s installed. Stay tuned for part 3 where we will install the `csi-driver-nfs` for Kubernetes
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
