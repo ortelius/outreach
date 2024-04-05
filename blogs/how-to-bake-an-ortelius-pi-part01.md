@@ -47,7 +47,13 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 If you use USB flash drives you will need to do the following as mentioned in this [post](https://forums.raspberrypi.com/viewtopic.php?f=28&t=245931). It all comes down to the implementation of the UAS specification.
 
 - In the article the author says to go here `/boot/cmdline.txt` but on my Pi4 I had to go here `/boot/firmware/cmdline.txt`
-- A Pi has no BIOS so this is how you configure a Pi's BIOS by editing `/boot/firmware/cmdline.txt` but don't worry there is an easier way
+- A Pi has no BIOS so this is how you configure a Pi's BIOS by editing `/boot/firmware/cmdline.txt`
+- Install Raspi-Config on each Ubuntu server `sudo apt install raspi-config -y`
+- Raspi-Config allows you to configure your Pi's hardware without having to fiddle with `/boot/firmware/cmdline.txt`
+- Run Raspi-Config like this `sudo raspi-config` and you will get a screen like this
+- Use Raspi-Config to configure boot order, remove or add read-only filesystem and many other tweaks
+
+![raspi-config](12-raspi-config.png)
 
 ---------------------------------------------------------------------------------------------------
 
