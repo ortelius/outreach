@@ -84,7 +84,7 @@ sudo dmesg | grep usb-storage
 [    2.959059] scsi host0: usb-storage 2-2:1.0
 [    2.959390] usbcore: registered new interface driver usb-storage
 ```
-- Pi01 BIOS config at `/boot/firware/cmdline.txt` aka Pi 4 BIOS file
+- Pi01's BIOS config at `/boot/firware/cmdline.txt` aka Pi 4 BIOS file
 ```
 usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
 ```
