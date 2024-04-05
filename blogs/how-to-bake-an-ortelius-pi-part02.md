@@ -4,8 +4,26 @@
 
 In the first [part](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we prepped our Raspberry Pi 4's for the installation of Ubuntu 22.04.4 LTS. In part 2 we will prepare our three Pi's to install MicroK8s [MicroK8s](https://microk8s.io/) and NFS (Network File System) storage with our Synology.
 
-####
+#### OS Prep
+- SSH into your Pi like in this example `ssh admin@192.168.0.1`
+- Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
+- then `sudo vi /boot/firmware/cmdline.txt`
+- Add the following `cgroup_enable=memory cgroup_memory=1`
+- Kernel Modules installation `sudo apt install linux-modules-extra-raspi`
+- Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
 
+#### NFS Prep
+
+I am using an Synology DS413j with DSM 6.2.4-25556 Update 7 so the following steps will be inline with my Synology
+
+#### Enable NFS
+- Login to your Synology and go to `File Services`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/01-syno-file-services.png)
+
+- On the `SMB/AFP/NFS` tab scroll until you see `NFS` and `enable NFS and enable NFSv4 support`
+
+![synology nfs services](images/how-to-bake-an-ortelius-pi/part02/02-syno-nfs-enable.png)
 
 
 #### Conclusion
