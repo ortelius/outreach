@@ -69,7 +69,7 @@ Product: USB Flash Drive
 ```
 usb-storage.quirks=05dc:a838:u
 ```
-- Getting your USB flash drives
+- Getting your USB flash drives details
 ```
 sudo dmesg | grep usb-storage
 ```
