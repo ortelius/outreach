@@ -60,7 +60,7 @@ max-inflight-requests 256
 
 #### NFS Prep
 
-I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology
+I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology.
 - Install `sudo apt install nfs-common -y` for each Pi
 
 #### Enable NFS on the Synology
