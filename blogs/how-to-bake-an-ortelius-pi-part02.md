@@ -54,7 +54,9 @@ max-inflight-requests 256
 
 #### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
+- Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
 - Install Helm [here](https://helm.sh/) on your local machine
+- Helm docs [here](https://helm.sh/docs/)
 - SSH into each Pi like this `ssh <your username>@<your ip address>` and your password
 - Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 
@@ -159,7 +161,7 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - Referenced from [here](https://microk8s.io/docs/clustering)
 - On the same Pi run `sudo microk8s config`
 - This will return config you will need to access your Microk8s cluster
-- On your computer you will need to configure Kubectl
+- On your computer you will need to configure Kubectl by editing your `kube config`
 - My Kubectl configuration is here on my Mac `/home/.kube/config`
 ```
 - cluster:
