@@ -19,11 +19,20 @@ I am using an Synology DS413j with DSM 6.2.4-25556 Update 7 so the following ste
 #### Enable NFS
 - Login to your Synology and go to `File Services`
 
-![synology file services](images/how-to-bake-an-ortelius-pi/part02/01-syno-file-services.png)
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/01-syno-file-services-icon.png)
 
 - On the `SMB/AFP/NFS` tab scroll until you see `NFS` and `enable NFS and enable NFSv4 support`
 
-![synology nfs services](images/how-to-bake-an-ortelius-pi/part02/02-syno-nfs-enable.png)
+![synology nfs services](images/how-to-bake-an-ortelius-pi/part02/02-syno-nfs-enable-tab.png)
+
+![synology nfs services](images/how-to-bake-an-ortelius-pi/part02/03-syno-nfs-enable.png)
+
+#### Configure Shared Folder
+- Go to `File Sharing`
+
+![synology file services](images/how-to-bake-an-ortelius-pi/part02/04-syno-file-sharing-icon.png)
+
+
 
 
 #### Conclusion
