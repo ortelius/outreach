@@ -11,6 +11,7 @@ In the first [part](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-
 - Add the following `cgroup_enable=memory cgroup_memory=1`
 - Kernel Modules installation `sudo apt install linux-modules-extra-raspi`
 - Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
+- then install `sudo apt install nfs-common -y`
 
 #### NFS Prep
 
