@@ -87,6 +87,7 @@ usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=seri
 
 ---------------------------------------------------------------------------------------------------
 
+#### Using the Raspberry Pi Imager
 - Repeat these steps for each SD Card or USB flash stick
 - The opening screen will present you with `CHOOSE DEVICE` | `CHOOSE OS` | `CHOOSE STORAGE`
 - Choose Device
