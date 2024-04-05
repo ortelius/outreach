@@ -145,6 +145,6 @@ usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=seri
 
 #### Conclusion
 
-By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS. Stay tuned for part 2 where we will dive into optimising USB flash sticks for the best performance and stability and the installation of MicroK8s.
+By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS. Stay tuned for part 2 where we will dive into NextDNS, NFS and install MicroK8s.
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
