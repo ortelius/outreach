@@ -53,7 +53,7 @@ If you use USB flash drives you will need to do the following as mentioned in th
 - Run Raspi-Config like this `sudo raspi-config` and you will get a screen like this
 - Use Raspi-Config to configure boot order, remove or add read-only filesystem and many other tweaks
 
-![raspi-config](12-raspi-config.png)
+![raspi-config](images/how-to-bake-an-ortelius-pi/part01/12-raspi-config.png)
 
 ---------------------------------------------------------------------------------------------------
 
