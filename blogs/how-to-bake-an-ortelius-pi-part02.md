@@ -4,6 +4,18 @@
 
 In [part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we prepped our Raspberry Pi 4's for the installation of Ubuntu 22.04.4 LTS. In part 2 we will prepare our three Pi's for NFS (Network File System) storage with a Synology NAS and install MicroK8s [MicroK8s](https://microk8s.io/).
 
+#### DNS
+
+For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices (mobiles, tablets, routers, home internet, NAS devices, laptops and desktops) including your Pi MicroK8s nodes.
+
+If you are using NextDNS do the following
+- Go [here](https://github.com/nextdns/nextdns/wiki) - You will find usage instruction here too
+- Install the cli on each Pi and on your NAS
+```
+sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
+```
+
+
 #### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
 - Install Helm [here](https://helm.sh/) on your local machine
