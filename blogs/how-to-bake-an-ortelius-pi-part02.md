@@ -51,6 +51,8 @@ max-inflight-requests 256
 
 ![nextdns records](images/how-to-bake-an-ortelius-pi/part02/17-dns-records.png)
 
+- NextDNS will instantly auto refresh your all your NextDNS agents with any changes
+
 #### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
 - Install Helm [here](https://helm.sh/) on your local machine
