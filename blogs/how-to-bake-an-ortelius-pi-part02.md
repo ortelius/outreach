@@ -39,6 +39,17 @@ max-inflight-requests 256
 ```
 - Run `sudo nextdns restart` to restart the service
 - Run `sudo nextdns status` to check the service status
+- Then in your NextDNS portal go to `Settings`
+
+![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/15-dns-settings.png)
+
+- Then scroll down to `Rewrites`
+
+![nextdns rewrites](images/how-to-bake-an-ortelius-pi/part02/16-dns-rewrites.png)
+
+- And add your private network DNS records for example
+
+![nextdns records](images/how-to-bake-an-ortelius-pi/part02/17-dns-records.png)
 
 #### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
