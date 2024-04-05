@@ -57,7 +57,6 @@ max-inflight-requests 256
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
 - Install Helm [here](https://helm.sh/) on your local machine
 - Helm docs [here](https://helm.sh/docs/)
-- SSH into each Pi like this `ssh <your username>@<your ip address>` and your password
 - Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 
 #### NFS Prep
