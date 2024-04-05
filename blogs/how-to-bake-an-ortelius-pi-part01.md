@@ -57,7 +57,9 @@ If you use USB flash drives you will need to do the following as mentioned in th
 
 - Use Raspi-Config to configure boot order, remove or add read-only filesystem and many other tweaks
 
-#### Example from my Pi01
+#### Example from configuring my Pi to use USB flash sticks
+- You will need to do this for each Pi
+
 ```
 Lexmark 32GB USB
 Product: USB Flash Drive
