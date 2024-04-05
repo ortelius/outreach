@@ -79,7 +79,7 @@ cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0
 
 - Install Kernel Modules `sudo apt install linux-modules-extra-raspi`
 - Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
-- Install Microk8s on each Pi ```sudo snap install microk8s --classic`` - This install the latest version of Microk8s
+- Install Microk8s on each Pi ```sudo snap install microk8s --classic``` - This install the latest version of Microk8s
 
 
 
