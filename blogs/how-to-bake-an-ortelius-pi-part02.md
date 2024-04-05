@@ -46,11 +46,11 @@ max-inflight-requests 256
 
 ![nextdns rewrites](images/how-to-bake-an-ortelius-pi/part02/16-dns-rewrites.png)
 
-- And add your private network DNS records for example
+- And add your private network DNS records like in this example
 
 ![nextdns records](images/how-to-bake-an-ortelius-pi/part02/17-dns-records.png)
 
-- NextDNS will instantly auto refresh all your NextDNS agents with any changes
+- NextDNS will instantly auto refresh all your NextDNS agents with any configuration changes
 
 #### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
