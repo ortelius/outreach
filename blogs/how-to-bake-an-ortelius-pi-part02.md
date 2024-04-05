@@ -142,7 +142,7 @@ MicroK8s uses [Dqlite](https://dqlite.io/) as a highly available SQLite database
 ```
 sudo microk8s add-node
 ```
-- You will need to run this 3 times on the same node to generate a unique key for each node you wish to join
+- You will need to run this `3 times` on the same node to generate a unique key for each node you wish to join
 - This will return some joining instructions which should be executed on the MicroK8s instance that you wish to join to the cluster `(NOT THE NODE YOU RAN add-node FROM)`
 ```
 From the node you wish to join to this cluster, run the following:
