@@ -4,7 +4,7 @@
 
 In [part one](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we installed Ubuntu 22.04.4 LTS on our Raspberry Pi's. In part two we will prepare our three Pi's for DNS, NFS (Network File System) storage with a Synology NAS and install [MicroK8s](https://microk8s.io/).
 
-### DNS and NextDNS
+### NextDNS
 
 For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices (smart phones, tablets, routers, home internet, NAS devices, laptops and desktops) including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
 
