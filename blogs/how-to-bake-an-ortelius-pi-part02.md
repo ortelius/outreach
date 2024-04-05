@@ -16,8 +16,6 @@ sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 ```
 - Run `sudo nextdns config` to view your config
 - Run `sudo nextdns config edit` to edit for each Pi and NAS and configure like this
-- Run `sudo nextdns restart` to restart the service
-- Run `sudo nextdns status` to check the service status
 ```
 debug false
 cache-size 10MB
@@ -39,7 +37,8 @@ detect-captive-portals false
 bogus-priv true
 max-inflight-requests 256
 ```
-
+- Run `sudo nextdns restart` to restart the service
+- Run `sudo nextdns status` to check the service status
 
 #### OS Prep
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
