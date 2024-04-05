@@ -8,6 +8,7 @@ In [part one](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-par
 
 For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices (smart phones, tablets, routers, home internet, NAS devices, laptops and desktops) including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
 
+- Think of a domain name for your environment - mine is pangarabbit.com
 - Go to the NextDNS Wiki [here](https://github.com/nextdns/nextdns/wiki)
 - Install the cli on each Pi and on your NAS
 ```
