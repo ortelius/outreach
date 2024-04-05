@@ -11,13 +11,13 @@ In the first [part](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-
 - Add the following `cgroup_enable=memory cgroup_memory=1`
 - Kernel Modules installation `sudo apt install linux-modules-extra-raspi`
 - Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
-- then install `sudo apt install nfs-common -y`
 
 #### NFS Prep
 
 I am using a Synology DS413j with DSM 6.2.4-25556 Update 7 so the following steps will be inline with my Synology
+- Install `sudo apt install nfs-common -y` for each Pi
 
-#### Enable NFS
+#### Enable NFS on the Synology
 - Login to the Synology and go to `File Services`
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/01-syno-file-services-icon.png)
