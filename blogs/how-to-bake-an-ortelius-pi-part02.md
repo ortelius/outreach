@@ -1,4 +1,4 @@
-## How to bake an Ortelius Pi Part 1 | The Preparation
+## How to bake an Ortelius Pi Part 2 | The Preparation
 
 #### Introduction
 
@@ -10,6 +10,6 @@ In the first [part](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-
 
 #### Conclusion
 
-By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS. Stay tuned for part 2 where we will dive into optimising USB flash sticks for the best performance and stability and the installation of MicroK8s.
+By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS and MicroK8s. Stay tuned for part 3 where we will dive into optimising USB flash sticks for the best performance and stability and the installation of MicroK8s.
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
