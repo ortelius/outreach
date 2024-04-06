@@ -12,6 +12,7 @@ We need to give the Pi's a home address so that they are contactable and this is
 - Mine is `Network` --> `DHCP Server`
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/18-dhcp-network.png)
+
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/19-dhcp-server.png)
 
 - Here you will see the IP pool range that your router is handing out to your device on your home network
