@@ -80,17 +80,22 @@ max-inflight-requests 256
 - NextDNS will instantly auto refresh all your NextDNS agents with any configuration changes
 
 ### OS Prep
-- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
+
+#### Ubuntu Server
+- Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
+
+#### Kubectl
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
-- Install Helm [here](https://helm.sh/) on your local machine
-- Helm docs [here](https://helm.sh/docs/)
+- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
 - Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
 - Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- This would also be a good time to install Helm on your local machine as we will need it in part 3
+
+#### Helm
+- Helm docs [here](https://helm.sh/docs/)
+- Install Helm [here](https://helm.sh/) on your local machine
 - Install Helm with Homebrew package manager `brew install helm` generally used on Mac
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
-- Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 
 ### NFS Prep
 
