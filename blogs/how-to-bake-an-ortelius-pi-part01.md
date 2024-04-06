@@ -60,6 +60,7 @@ If you use USB flash drives you will need to do the following as mentioned in th
 
 #### Example from configuring my Pi to use USB flash sticks
 - You will need to do this for each Pi
+- As you can see I was using a [32GB Lexmark USB flash stick](https://www.amazon.co.uk/Lexar-Jumpdrive-Flash-Drive-Memory/dp/B008XIYKP2)
 
 ```
 Lexmark 32GB USB
