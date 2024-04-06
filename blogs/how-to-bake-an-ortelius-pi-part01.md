@@ -135,6 +135,16 @@ usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=seri
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/08-general-settings.png)
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/09-enable-ssh-password-auth.png)
 
+- If you decide to use `Allow public-key authentication only` which I would recommend you need to do some extra steps
+```
+ssh-keygen -t ed25519 -C "you-email@domain.com" -f <public key name>`
+ssh-keygen -t ed25519 -C "i-love-aliens@solarsystem.com" -f pi8s
+```
+- Then you will end up with two files - One will be the private key which you never ever share and the other will be the public key with a bunch of scrambled numbers and text. You then copy all the scrambled numbers and text and paste the same public key each time on the line under `Allow public-key authentication only` for each Pi
+- This will allow SSH without a password onto each Pi
+- You can also reference this how to from [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for an alternative explanation
+
+
 - Check the boxes that make sense to you
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/10-options.png)
