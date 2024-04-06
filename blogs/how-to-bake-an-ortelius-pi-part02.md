@@ -208,7 +208,7 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - On the same Pi run `sudo microk8s config`
 - This will return config you will need to access your Microk8s cluster
 - On your computer you will need to configure Kubectl by editing your `kube config`
-- My Kubectl configuration is here on my Mac `/home/.kube/config`
+- My Kubectl configuration is here on my Mac `/Users/<username>/.kube/config`
 
 ```
 - cluster:
