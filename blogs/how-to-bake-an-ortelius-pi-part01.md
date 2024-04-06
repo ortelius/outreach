@@ -136,6 +136,7 @@ usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=seri
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/09-enable-ssh-password-auth.png)
 
 - If you decide to use `Allow public-key authentication only` which I would recommend you need to do some extra steps
+- Generate the keys in home folder so on Mac its `/Users/<your username>/.ssh`
 ```
 ssh-keygen -t ed25519 -C "you-email@domain.com" -f <public key name>`
 ssh-keygen -t ed25519 -C "i-love-aliens@solarsystem.com" -f pi8s
