@@ -13,7 +13,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/raspberry-pi-4b.png)
 
 -------------------------------------------------------------------------------------------------------------
-- 3X 32GB Samsung Evo+ Micro SD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s) | Speed chart [here](https://www.kingston.com/en/blog/personal-storage/memory-card-speed-classes)
+- 3X 32GB Samsung Evo+ Micro SD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s)
 - Speed chart [here](https://www.kingston.com/en/blog/personal-storage/memory-card-speed-classes)
 - I used this [article](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019) by [Jeff Geerling](https://www.youtube.com/@JeffGeerling) whom I can thoroughly recommend for all things Pi to choose my SD cards
 
