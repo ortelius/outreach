@@ -6,7 +6,7 @@ In [part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-
 
 ### IP Addresses and DHCP
 
-We need to give the Pi's a home address so that they are contactable and this is where either a [static IP addresse](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) or [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) comes in. Your home internet router generally comes with DHCP pre-configured. I use the (tp-link | AX5400 Wi-Fi 6 Router)(https://www.tp-link.com/us/home-networking/wifi-router/archer-ax73/) and so I will use my router as the example here.
+We need to give the Pi's a home address so that they are contactable and this is where either a [static IP addresse](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) or [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) comes in. Your home internet router generally comes with DHCP pre-configured. I use the [tp-link | AX5400 Wi-Fi 6 Router](https://www.tp-link.com/us/home-networking/wifi-router/archer-ax73/) and so I will use my router as the example here.
 
 - Login to your home router with your browser and look for your DHCP configuration
 - Mine is `Network` --> `DHCP Server`
