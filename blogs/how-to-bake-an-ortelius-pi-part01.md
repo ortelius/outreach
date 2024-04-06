@@ -156,6 +156,6 @@ ssh-keygen -t ed25519 -C "i-love-aliens@solarsystem.com" -f pi8s
 
 ### Conclusion
 
-By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS. Stay tuned for part 2 where we will dive into NextDNS, NFS and install MicroK8s.
+By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS each configured for SSH with a password or preferably a SSH private key and public key. Stay tuned for part 2 where we will dive into NextDNS, NFS and install MicroK8s.
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
