@@ -117,7 +117,7 @@ usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=seri
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/04-choose-ubuntu-server-22-04-4-lts-x64.png)
 
 - Choose Storage
-- This will look different on your machine
+- This will look different on your machine especially if you are using either SD Card or USB flash drive
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/05-choose-device-media.png)
 
