@@ -8,11 +8,20 @@ In [part one](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-par
 
 We need to give the Pi's a home address so that they are contactable and this is where either a [static IP addresse](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) or [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) comes in. Your home internet router generally comes with DHCP pre-configured. I use the (tp-link | AX5400 Wi-Fi 6 Router)(https://www.tp-link.com/us/home-networking/wifi-router/archer-ax73/) and so I will use my router as the example here.
 
+- Login to your home router with your browser and look for your DHCP configuration
+- Mine is `Network` --> `DHCP Server`
+
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/18-dhcp-network.png)
+
+- Here you will see the IP pool range that your router is handing out to your device on your home network
+- I don't want the entire range to be handed out as I need a static IP to be availble for the Metallb load balancer which will run in Kubernetes and one for the Synology NAS.
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/19-dhcp-server.png)
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/20-dhcp-range.png)
+
+- My Pi's have the following IPs which I have reserved
+- Reserving an IP means you tell DHCP to always give these devices the same IP and never to any other device so in a sense making sure they stay static
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
 
@@ -23,11 +32,15 @@ For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its comple
 - Think of a domain name for your environment - mine is pangarabbit.com
 - Go to the NextDNS Wiki [here](https://github.com/nextdns/nextdns/wiki)
 - Install the cli on each Pi and on your NAS
+- Here is a doc on how to configure [SSH](https://kb.synology.com/en-id/DSM/tutorial/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet) for a Synology NAS
+
 ```
 sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 ```
+
 - Run `sudo nextdns config` to view your config
 - Run `sudo nextdns config edit` to edit for each Pi and NAS and configure like this
+
 ```
 debug false
 cache-size 10MB
@@ -49,6 +62,7 @@ detect-captive-portals false
 bogus-priv true
 max-inflight-requests 256
 ```
+
 - Run `sudo nextdns restart` to restart the service
 - Run `sudo nextdns status` to check the service status
 - Then in your NextDNS portal go to `Settings`
@@ -136,15 +150,19 @@ I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following st
 - [MicroK8s docs](https://microk8s.io/docs)
 - Configure Pi BIOS `sudo vi /boot/firmware/cmdline.txt` and add the following `cgroup_enable=memory cgroup_memory=1`
 - Below is the config from my Pi as an example
+
 ```
 cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
 ```
+
 - Install Kernel Modules `sudo apt install linux-modules-extra-raspi`
 - Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
 - Install Microk8s on each Pi
+
 ```
 sudo snap install microk8s --classic
 ```
+
 - This installs the latest version of Microk8s
 
 #### Create highly available 3 node cluster with MicroK8s
@@ -153,11 +171,14 @@ MicroK8s uses [Dqlite](https://dqlite.io/) as a highly available SQLite database
 
 - Choose a Pi to start the process, I used `pi01`
 - SSH onto `pi01` and run this command on `pi01`
+
 ```
 sudo microk8s add-node
 ```
+
 - You will need to run this `3 times` on the same node to generate a unique key for each node you wish to join
 - This will return some joining instructions which should be executed on the MicroK8s instance that you wish to join to the cluster `(NOT THE NODE YOU RAN add-node FROM)` <-- Taken from Canonicals docs.
+
 ```
 From the node you wish to join to this cluster, run the following:
 microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
@@ -170,11 +191,13 @@ microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 microk8s join 10.23.209.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 ```
+
 - Referenced from [here](https://microk8s.io/docs/clustering)
 - On the same Pi run `sudo microk8s config`
 - This will return config you will need to access your Microk8s cluster
 - On your computer you will need to configure Kubectl by editing your `kube config`
 - My Kubectl configuration is here on my Mac `/home/.kube/config`
+
 ```
 - cluster:
     certificate-authority-data: <your certificate authority data goes here>
