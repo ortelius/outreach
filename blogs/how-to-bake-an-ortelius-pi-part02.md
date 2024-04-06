@@ -84,6 +84,12 @@ max-inflight-requests 256
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
 - Install Helm [here](https://helm.sh/) on your local machine
 - Helm docs [here](https://helm.sh/docs/)
+- Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+- Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- This would also be a good time to install Helm on your local machine as we will need it in part 3
+- Install Helm with Homebrew package manager `brew install helm` generally used on Mac
+- Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 - Update all packages to the latest with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 
 ### NFS Prep
@@ -197,13 +203,6 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - This will return config you will need to access your Microk8s cluster
 - On your computer you will need to configure Kubectl by editing your `kube config`
 - My Kubectl configuration is here on my Mac `/home/.kube/config`
-- Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
-- Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
-- Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- This would also be a good time to install Helm on your local machine as we will need it in part 3
-- Install Helm with Homebrew package manager `brew install helm` generally used on Mac
-- Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
-- Taken from the official Helm page on the web [here](https://helm.sh/)
 
 ```
 - cluster:
