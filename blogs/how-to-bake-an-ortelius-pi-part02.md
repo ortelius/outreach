@@ -203,6 +203,7 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - This would also be a good time to install Helm on your local machine
 - Install Helm with Homebrew package manager `brew install helm` generally used on Mac
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
+- Taken from the official Helm page on the web [here](https://helm.sh/)
 
 ```
 - cluster:
