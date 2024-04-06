@@ -27,7 +27,7 @@ We need to give the Pi's a home address so that they are contactable and this is
 
 ### NextDNS
 
-For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices (smart phones, tablets, routers, home internet, NAS devices, laptops and desktops) including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
+For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices no matter where you go in the world for all your devices including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
 
 - Think of a domain name for your environment - mine is pangarabbit.com
 - Go to the NextDNS Wiki [here](https://github.com/nextdns/nextdns/wiki)
