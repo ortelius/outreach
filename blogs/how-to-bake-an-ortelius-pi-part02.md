@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In [part one](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we installed Ubuntu 22.04.4 LTS on our Raspberry Pi's. In part two we will prepare our three Pi's for DNS, NFS (Network File System) storage with a [Synology NAS](https://www.synology.com/) and install [MicroK8s](https://microk8s.io/).
+In [part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/) of this series we installed Ubuntu 22.04.4 LTS on our Raspberry Pi's. In part two we will prepare our three Pi's for DNS, NFS (Network File System) storage with a [Synology NAS](https://www.synology.com/) and install [MicroK8s](https://microk8s.io/).
 
 ### IP Addresses and DHCP
 
@@ -200,7 +200,7 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
 - Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- This would also be a good time to install Helm on your local machine
+- This would also be a good time to install Helm on your local machine as we will need it in part 3
 - Install Helm with Homebrew package manager `brew install helm` generally used on Mac
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 - Taken from the official Helm page on the web [here](https://helm.sh/)
