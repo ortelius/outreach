@@ -162,8 +162,8 @@ I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following st
 - Congrats you just configured the Synology for NFS!
 
 ### MicroK8s Prep
-- [MicroK8s docs](https://microk8s.io/docs)
-- Configure Pi BIOS `sudo vi /boot/firmware/cmdline.txt` and add the following `cgroup_enable=memory cgroup_memory=1`
+- [MicroK8s docs](https://microk8s.io/docs) for your reference
+- SSH into each Pi and configure the Pi BIOS `sudo vi /boot/firmware/cmdline.txt` and add the following `cgroup_enable=memory cgroup_memory=1`
 - Below is the config from my Pi as an example
 
 ```
