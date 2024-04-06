@@ -200,6 +200,9 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
 - Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- This would also be a good time to install Helm on your local machine
+- Install Helm with Homebrew package manager `brew install helm` generally used on Mac
+- Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 
 ```
 - cluster:
