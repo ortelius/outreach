@@ -71,9 +71,11 @@ Product: USB Flash Drive
 [    3.157922] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
 ```
 - Getting your USB flash drives details
+
 ```
 sudo dmesg | grep usb-storage
 ```
+
 ```
 [    0.000000] Kernel command line: coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1 bcm2708_fb.fbwidth=1600 bcm2708_fb.fbheight=900 bcm2708_fb.fbswap=1 smsc95xx.macaddr=DC:A6:32:B1:5D:DF vc_mem.mem_base=0x3eb00000 vc_mem.mem_size=0x3ff00000  usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=ttyS0,115200 dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
 [    2.958568] usb-storage 2-2:1.0: USB Mass Storage device detected
@@ -81,9 +83,11 @@ sudo dmesg | grep usb-storage
 [    2.959059] scsi host0: usb-storage 2-2:1.0
 [    2.959390] usbcore: registered new interface driver usb-storage
 ```
+
+```
 usb-storage.quirks=05dc:a838:u
 ```
-```
+
 - Pi01's BIOS config at `/boot/firware/cmdline.txt` aka Pi 4 BIOS file
 ```
 usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
