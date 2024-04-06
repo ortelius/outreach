@@ -73,8 +73,8 @@ Product: USB Flash Drive
 ```
 - Getting your USB flash drives details
 ```
-sudo dmesg | grep usb-storage
 ```
+sudo dmesg | grep usb-storage
 ```
 [    0.000000] Kernel command line: coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1 bcm2708_fb.fbwidth=1600 bcm2708_fb.fbheight=900 bcm2708_fb.fbswap=1 smsc95xx.macaddr=DC:A6:32:B1:5D:DF vc_mem.mem_base=0x3eb00000 vc_mem.mem_size=0x3ff00000  usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=ttyS0,115200 dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
 [    2.958568] usb-storage 2-2:1.0: USB Mass Storage device detected
