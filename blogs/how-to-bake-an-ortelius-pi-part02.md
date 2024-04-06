@@ -191,6 +191,7 @@ sudo microk8s add-node
 - This will return some joining instructions which should be executed on the MicroK8s instance that you wish to join to the cluster `(NOT THE NODE YOU RAN add-node FROM)` <-- Taken from Canonicals docs.
 
 ```
+# EXAMPLE from Canonicals docs
 From the node you wish to join to this cluster, run the following:
 microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 
