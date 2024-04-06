@@ -2,7 +2,7 @@
 
 ### Introduction
 
-I recently started building an entire Cloud Native environment on three Raspberry Pi 4 B's with an old Synology DS413j (ARMv5 architecture) running the latest firmware update DSM 6.2.4-25556 Update 7 [Release Notes](https://www.synology.com/en-af/releaseNote/DSM) and so far its been quite a journey. In this blog post I would like to share my undertakings in a series of blog posts. First I will cover the Raspberry Pi hardware, NFS and setup and then move on to [Canonicals MicroK8s](https://microk8s.io/) (Kubernetes), [Traefik](https://doc.traefik.io/traefik/) (Cloud Native Proxy and Load Balancer), [Netdata](https://www.netdata.cloud/) for observability, [ArgoCD](https://argo-cd.readthedocs.io/en/stable/), [DevPod](https://devpod.sh/)(Loft Labs) [LocalStack](https://www.localstack.cloud/) (AWS Cloud at home) and [Ortelius](https://ortelius.io/) the ultimate evidence store.
+I recently started building an entire Cloud Native environment on three Raspberry Pi 4 B's with an old Synology DS413j (ARMv5 architecture) running the latest firmware update DSM 6.2.4-25556 Update 7 [Release Notes](https://www.synology.com/en-af/releaseNote/DSM) and so far its been quite a journey. In this blog post I would like to share my undertakings in a series of blog posts. First I will cover the Raspberry Pi hardware, NFS and setup and then move on to [Canonicals MicroK8s](https://microk8s.io/) (Kubernetes), [Traefik](https://doc.traefik.io/traefik/) (Cloud Native Proxy and Load Balancer), [Ortelius](https://ortelius.io/) the ultimate evidence store, [Netdata](https://www.netdata.cloud/) for observability, [ArgoCD](https://argo-cd.readthedocs.io/en/stable/), [DevPod](https://devpod.sh/)(Loft Labs) and [LocalStack](https://www.localstack.cloud/) (AWS Cloud at home).
 
 Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa where we are experiencing some of the worst electricity outages in years thus we need to share electricity by taking turns through rotational blocks of time commonly know to locals as Load Shedding. We use an app like this one [Load Shedding App](https://play.google.com/store/apps/details?id=com.abisoft.loadsheddingnotifier&hl=en_ZA&gl=US) to inform ourselves when the next bout of load shedding will be hitting our area. Raspberry Pi 4 B's pack a punch with a Broadcom Quad Core ARMv8 processor and 8 GB ram. They are very light on electricy thus saving on cost and only require a single small UPS (uninterruptable power supply) to stay online. They are very mobile and take up extremely little space in my man cave.
 
@@ -94,7 +94,7 @@ usb-storage.quirks=05dc:a838:u cgroup_enable=memory cgroup_memory=1 console=seri
 ### Using the Raspberry Pi Imager
 - Repeat these steps for each SD Card or USB flash stick
 - The opening screen will present you with `CHOOSE DEVICE` | `CHOOSE OS` | `CHOOSE STORAGE`
-- Choose Device
+- Chose `CHOOSE DEVICE`
 
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/00-choose-device-os-storage.png)
 
