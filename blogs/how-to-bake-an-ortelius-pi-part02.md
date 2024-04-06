@@ -20,7 +20,7 @@ We need to give the Pi's a home address so that they are contactable and this is
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/20-dhcp-range.png)
 
-- My Pi's have the following IPs which I have reserved
+- My Pi's have the following IPs which I have reserved with their mac addresses
 - Reserving an IP means you tell DHCP to always give these devices the same IP and never to any other device so in a sense making sure they stay static
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
