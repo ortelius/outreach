@@ -12,11 +12,10 @@ We need to give the Pi's a home address so that they are contactable and this is
 - Mine is `Network` --> `DHCP Server`
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/18-dhcp-network.png)
+![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/19-dhcp-server.png)
 
 - Here you will see the IP pool range that your router is handing out to your device on your home network
 - I don't want the entire range to be handed out as I need a static IP to be availble for the Metallb load balancer which will run in Kubernetes and one for the Synology NAS.
-
-![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/19-dhcp-server.png)
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/20-dhcp-range.png)
 
