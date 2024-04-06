@@ -71,9 +71,6 @@ Product: USB Flash Drive
 [    3.157900] usb 1-1: New USB device found, idVendor=2109, idProduct=3431, bcdDevice= 4.21
 [    3.157922] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
 ```
-```
-usb-storage.quirks=05dc:a838:u
-```
 - Getting your USB flash drives details
 ```
 sudo dmesg | grep usb-storage
@@ -84,6 +81,9 @@ sudo dmesg | grep usb-storage
 [    2.958964] usb-storage 2-2:1.0: Quirks match for vid 05dc pid a838: 800000
 [    2.959059] scsi host0: usb-storage 2-2:1.0
 [    2.959390] usbcore: registered new interface driver usb-storage
+```
+usb-storage.quirks=05dc:a838:u
+```
 ```
 - Pi01's BIOS config at `/boot/firware/cmdline.txt` aka Pi 4 BIOS file
 ```
