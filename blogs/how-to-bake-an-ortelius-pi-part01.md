@@ -4,7 +4,7 @@
 
 I recently started building a [Cloud Native Environment](https://filedn.eu/lJEPcSQWQQPRsWJKijxnXCQ/ortelius/gitops/01-ci-dev-ortelius-cloudnative-architecture-poc.html) on three [Raspberry Pi](https://www.raspberrypi.com/]) 4 B's with a [Synology DS413j NAS (ARMv5 architecture)](https://www.synology.com/) running the latest firmware update DSM 6.2.4-25556 Update 7 [Release Notes](https://www.synology.com/en-af/releaseNote/DSM) and so far its been quite a journey. In this blog post I would like to share my undertakings in a series of blog posts. First I will cover the Raspberry Pi hardware, NFS and setup and then move on to [Canonicals MicroK8s](https://microk8s.io/) (Kubernetes), [Traefik](https://doc.traefik.io/traefik/) (Cloud Native Proxy and Load Balancer), [Ortelius (The Ultimate Evidence Store)](https://ortelius.io/), [Netdata](https://www.netdata.cloud/) for observability, [ArgoCD (GitOps)](https://argoproj.github.io/), [DevPod (Open-Source Codespaces)](https://devpod.sh/), [LocalStack (AWS Cloud)](https://www.localstack.cloud/) and maybe even [vCluster (Virtual Kubernetes Clusters)](https://www.vcluster.com/).
 
-Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa where we are experiencing some of the worst electricity outages in years thus we need to share electricity by taking turns through rotational blocks of time commonly know to locals as Load Shedding. We use an app like this one [Load Shedding App](https://play.google.com/store/apps/details?id=com.abisoft.loadsheddingnotifier&hl=en_ZA&gl=US) to inform ourselves when the next bout of load shedding will be hitting our area. Raspberry Pi 4 B's pack a punch with a Broadcom Quad Core ARMv8 processor and 8 GB ram. They are very light on electricy thus saving on cost and only require a single small UPS (uninterruptable power supply) to stay online. They are very mobile and take up extremely little space in my man cave.
+Why Raspberry Pis you ask, well first of all I live in Cape Town South Africa where we are experiencing some of the worst electricity outages in years thus we need to share electricity by taking turns through rotational blocks of time commonly know to locals as Load Shedding. We use an app like this one [Load Shedding App](https://play.google.com/store/apps/details?id=com.abisoft.loadsheddingnotifier&hl=en_ZA&gl=US) to inform ourselves when the next bout of load shedding will be hitting our area. Raspberry Pi 4 B's pack a punch with a Broadcom Quad Core ARMv8 processor and 8 GB ram. They are very light on electricy thus saving on cost and only require a single small UPS (uninterruptable power supply) to stay online. They are very mobile and take up extremely little space in my man cave.
 
 ### My Home Setup
 - 3X [Raspberry Pi4 Model B 8GB Red/White Official Case Essentials Kit Boxed White Power Supply](https://www.pishop.co.za/store/custom-kits/raspberry-pi4-model-b-8gb-redwhite-official-case-essentials-kit-boxed-white-power-supply)
@@ -26,7 +26,7 @@ Why Raspberry Pi's you ask, well first of all I live in Cape Town South Africa w
 - 1X [KVM Switch device](https://www.amazon.com/3-port-kvm-switch/s?k=3+port+kvm+switch)
 - 1X 8 Port Switch
 - Networking | Use [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) or [static IP addresses](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) in a [private range](https://www.lifewire.com/what-is-a-private-ip-address-2625970).
-- 1X UPS (Uninterruptable Power Supply) for the Pi's and switch | Something like this [Mecer 650VA](https://mecer.co.za/mecer-line-interactive-ups/). Please note this is a South African brand of UPS but I am showing this for example purposes. The Mecer brand is extremely good and all my lead acid battery UPS's are from Mecer. I have a combination of the 650VA, 2000VA and 3000VA to keep me going (7 in all)
+- 1X UPS (Uninterruptable Power Supply) for the Pis and switch | Something like this [Mecer 650VA](https://mecer.co.za/mecer-line-interactive-ups/). Please note this is a South African brand of UPS but I am showing this for example purposes. The Mecer brand is extremely good and all my lead acid battery UPS's are from Mecer. I have a combination of the 650VA, 2000VA and 3000VA to keep me going (7 in all)
 
 ### NFS Storage
 - 1X NAS device for the NFS storage which can be a virtual machine, laptop, old desktop or Synology type device. There are plenty options out there just do a internet search.
@@ -48,9 +48,9 @@ The imaging utility will be used install Ubuntu onto your SD Card or USB flash d
 If you use USB flash drives you will need to do the following as mentioned in this [post](https://forums.raspberrypi.com/viewtopic.php?f=28&t=245931). It all comes down to the implementation of the UAS specification.
 
 - In the article the author says to go here `/boot/cmdline.txt` but on my Pi4 I had to go here `/boot/firmware/cmdline.txt`
-- A Pi has no BIOS so this is how you configure a Pi's BIOS by editing `/boot/firmware/cmdline.txt`
+- A Pi has no BIOS so this is how you configure a Pis BIOS by editing `/boot/firmware/cmdline.txt`
 - Install dmesg `sudo apt install dmesg -y`
-- Raspi-Config allows you to configure your Pi's hardware without having to fiddle with `/boot/firmware/cmdline.txt`
+- Raspi-Config allows you to configure your Pis hardware without having to fiddle with `/boot/firmware/cmdline.txt`
 - Run Raspi-Config like this `sudo raspi-config` and you will get a screen like this
 
 ![raspi-config](images/how-to-bake-an-ortelius-pi/part01/12-raspi-config.png)

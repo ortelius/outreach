@@ -2,11 +2,11 @@
 
 ### Introduction
 
-In [Part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/), of this series we installed Ubuntu Server 22.04.4 LTS on our Raspberry Pi's. In Part 2 we will prepare our three Pis for DHCP, DNS, NFS (Network File System) storage with a [Synology NAS](https://www.synology.com/) and install [MicroK8s](https://microk8s.io/).
+In [Part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-1-the-hardware/), of this series we installed Ubuntu Server 22.04.4 LTS on our Raspberry Pis. In Part 2 we will prepare our three Pis for DHCP, DNS, NFS (Network File System) storage with a [Synology NAS](https://www.synology.com/) and install [MicroK8s](https://microk8s.io/).
 
 ### IP Addresses and DHCP
 
-We need to give the Pi's a home address so that they are contactable and this is where either a [static IP addresse](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) or [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) comes in. Your home internet router generally comes with DHCP pre-configured. I use the [tp-link | AX5400 Wi-Fi 6 Router](https://www.tp-link.com/us/home-networking/wifi-router/archer-ax73/) and so I will use my router as the example here.
+We need to give the Pis a home address so that they are contactable and this is where either a [static IP addresse](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address) or [DHCP](https://www.youtube.com/watch?v=ldtUSSZJCGg) comes in. Your home internet router generally comes with DHCP pre-configured. I use the [tp-link | AX5400 Wi-Fi 6 Router](https://www.tp-link.com/us/home-networking/wifi-router/archer-ax73/) and so I will use my router as the example here.
 
 - Login to your home router with your browser and look for your DHCP configuration
 - Mine is `Network` --> `DHCP Server`
@@ -21,6 +21,7 @@ We need to give the Pi's a home address so that they are contactable and this is
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/20-dhcp-range.png)
 
 - My Pi's have the following IPs which I have reserved with their mac addresses
+- You can get the mac addresses from the DHCP list of IPs handed out to your Pis
 - Reserving an IP means you tell DHCP to always give these devices the same IP and never to any other device so in a sense making sure they stay static
 
 ![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
