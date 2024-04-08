@@ -81,6 +81,8 @@ With MetalLB we will setup a unique IP address on our homework to expose the Mic
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
+- Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
+
 - Helm add the repo
 ```
 helm repo add metallb https://metallb.github.io/metallb
@@ -140,6 +142,8 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 
 - Traefik docs [here](https://doc.traefik.io/traefik/)
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+- Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
+
 - Helm add the repo
 
 ```
@@ -172,6 +176,16 @@ kubectl get pods
 
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/05-traefik-pods.png)
 
+- Using GitHub fork the [Traefik Helm Chart](https://github.com/traefik/traefik-helm-chart)
+- Clone the Helm Chart to your local machine
+-
+
+
+- Kubectl show me the Traefik ingress routes
+
+```
+kubectl get ingressroutes.traefik.io
+```
 
 ### Ortelius the Ultimate Evidence Store
 
