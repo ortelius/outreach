@@ -10,7 +10,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Kubernetes Storage Class docs [here](https://kubernetes.io/docs/concepts/storage/storage-classes/)
-- NFS CSI Driver help written by Rudi Martinsen [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
+- An excellent blog written by Rudi Martinsen on the NFS CSI Driver [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 
 - On your local machine open the terminal and use Helm to add the repo and install the driver
