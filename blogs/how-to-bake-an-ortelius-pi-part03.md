@@ -25,6 +25,7 @@ helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/cs
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.6.0 \
   --set controller.dnsPolicy=ClusterFirstWithHostNet \
   --set node.dnsPolicy=ClusterFirstWithHostNet \
+  # The Kubelet has permissions at this location to mount the NFS shares
   --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
 ```
 - Run following to see your pods deployed
@@ -34,7 +35,7 @@ kubectl get pods
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
 - Now lets create a Storage Class to be used for central data access between our nodes and pods
-- Copy this into `nfs-setup.yaml` and run `kubectl apply -f nfs-setup.yaml`
+- Create a file called `nfs-setup.yaml` and copy the logic below and run `kubectl apply -f nfs-setup.yaml`
 ```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
