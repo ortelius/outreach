@@ -143,6 +143,7 @@ spec:
 ```
 
 - MetalLB show me the IP address pools
+- The `ipaddresspools.metallb.io` is a CRD whats are custom resources created in our Kubernetes cluster that add additional magic
 
 ```
 kubectl get ipaddresspools.metallb.io
