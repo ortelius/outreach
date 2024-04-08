@@ -56,7 +56,7 @@ kubectl get sc
 ```
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
-- If you do not want to undo making it the default Storage Class
+- If you want to undo making it the default Storage Class
 ```
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
