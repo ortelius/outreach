@@ -269,6 +269,9 @@ spec:
 kubectl get ingressroutes.traefik.io
 ```
 
+![traefik pod](images/how-to-bake-an-ortelius-pi/part03/08-traefik-ingressroute-dashboard.png)
+
+
 ### Ortelius the Ultimate Evidence Store
 
 
