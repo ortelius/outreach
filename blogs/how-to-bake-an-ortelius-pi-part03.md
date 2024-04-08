@@ -214,7 +214,7 @@ helm upgrade --install traefik traefik/traefik --values values.yaml
 - CRDs are custom resources created in our Kubernetes cluster that add additional magic
 - Create a file called `dashboard.yaml` and apply the following logic with `kubectl apply -f dashboard.yaml`
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
-- Edit Mac localhosts file here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.com`
+- Edit Linux and Mac localhosts file here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.com`
 - Edit Windows localhosts file here with administrartor rights `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.com`
 
 ```
