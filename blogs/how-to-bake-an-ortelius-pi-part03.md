@@ -72,7 +72,7 @@ With MetalLB we will setup a unique IP address on our homework to expose the Mic
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
-- Helm please add the repo
+- Helm add the repo
 ```
 helm repo add metallb https://metallb.github.io/metallb
 ```
