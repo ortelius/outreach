@@ -104,13 +104,13 @@ helm repo add metallb https://metallb.github.io/metallb
 helm install metallb metallb/metallb -n metallb-system
 ```
 
-- Switch to the `metallb-system` namespace
+- Kubectl switch to the `metallb-system` namespace
 
 ```
 kubectl config set-context --current --namespace=metallb-system
 ```
 
-- Kubernetes show me the MetalLB pods in the `metallb-system` namespace
+- Kubectl show me the MetalLB pods in the `metallb-system` namespace
 
 ```
 kubectl get pods
@@ -184,7 +184,7 @@ helm repo add traefik https://traefik.github.io/charts
 kubectl create ns traefik-v2
 ```
 
-- Switch to the traefik-v2 namespace
+- Kubectl switch to the traefik-v2 namespace
 
 ```
 kubectl config set-context --current --namespace=traefik-v2
@@ -272,7 +272,7 @@ kubectl get ingressroutes.traefik.io
 
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/08-traefik-ingressroute-dashboard.png)
 
-- Kubectl show me that the Traefik Kubernetes service has claimed our MetalLB single IP address
+- Kubectl show me that the Traefik service has claimed our MetalLB single IP address
 
 ```
 kubectl get svc
