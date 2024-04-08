@@ -80,6 +80,15 @@ helm repo add metallb https://metallb.github.io/metallb
 ```
 helm install metallb metallb/metallb -n metallb-system
 ```
+- Run the following to switch to the metallb-system namespace
+```
+kubectl config set-context --current --namespace=metallb-system
+```
+- Kubernetes show me the MetalLB pods in the `metallb-system` namespace
+```
+kubectl get pods
+```
+
 
 
 
