@@ -277,6 +277,7 @@ kubectl get svc
 
 ![traefik service](images/how-to-bake-an-ortelius-pi/part03/09-traefik-service.png)
 
+- I am so stoked right now my Traefik has claimed the IP
 
 ### Ortelius the Ultimate Evidence Store
 
