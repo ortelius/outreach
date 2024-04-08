@@ -143,7 +143,7 @@ spec:
 ```
 
 - MetalLB show me the IP address pools
-- The `ipaddresspools.metallb.io` is a CRD whats are custom resources created in our Kubernetes cluster that add additional magic
+- The `ipaddresspools.metallb.io` is a [CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) which is a custom resource created in our Kubernetes cluster that adds additional magic Kubernetes
 
 ```
 kubectl get ipaddresspools.metallb.io
@@ -224,7 +224,7 @@ helm upgrade --install traefik traefik/traefik --values values.yaml
 ```
 
 - Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that where installed with Traefik
-- CRDs are custom resources created in our Kubernetes cluster that add additional magic
+- CRDs are custom resources created in our Kubernetes cluster that add additional magic to our Kubernetes cluster
 - Create a file called `dashboard.yaml` and apply the following logic with `kubectl apply -f dashboard.yaml`
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
 - Edit Linux and Mac localhosts file here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.com`
