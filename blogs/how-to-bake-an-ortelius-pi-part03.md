@@ -8,7 +8,6 @@ In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - On your local machine open the terminal and use Helm to add the repo and install the driver
-
 - Run following to switch to the kube-system namespace
 ```
 kubectl config set-context --current --namespace=kube-system
