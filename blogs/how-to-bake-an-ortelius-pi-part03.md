@@ -163,11 +163,14 @@ kubectl get ipaddresspools.metallb.io
 
 ### Traefik the Cloud Native Proxy
 
-With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for our Microservices in the Kubernetes cluster and protect our endpoints using a combination of routers, services and middlewares.
+With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for our Microservices in the Kubernetes cluster and protect our endpoints using a combination of entrypoints, routers, services, providers and middlewares.
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Traefik docs [here](https://doc.traefik.io/traefik/)
-- Traefik defines services into two groups Traefik services and Kubernetes Services
+- Traefik [EntryPoints](https://doc.traefik.io/traefik/routing/entrypoints/)
+- Traefik [Routers](https://doc.traefik.io/traefik/routing/routers/)
+- Traefik [Services](https://doc.traefik.io/traefik/routing/services/) can be divided into two groups `Traefik Services` and `Kubernetes Services`
+- Traefik [Providers](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
 - Helm add the repo
 
