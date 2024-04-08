@@ -32,7 +32,7 @@ kubectl get pods
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
 - Now lets create a Storage Class to be used for central data access between our nodes and pods
-- We are using NFS version 4
+- Copy this into `nfs-setup.yaml` and run `kubectl apply -f nfs-setup.yaml`
 ```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
