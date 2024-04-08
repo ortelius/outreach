@@ -146,8 +146,11 @@ spec:
 - Kubectl show me all CRDs
 
 ```
-kubectl get crds
+kubectl get crds | grep metallb
 ```
+
+![metallb crds](images/how-to-bake-an-ortelius-pi/part03/04-metallb-crds.png)
+
 
 - Kubectl show me the IP address pools
 
@@ -155,7 +158,7 @@ kubectl get crds
 kubectl get ipaddresspools.metallb.io
 ```
 
-![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/04-metallb-ip-pool.png)
+![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/05-metallb-ip-pool.png)
 
 - Epic we have a working load balancer for our Kubernetes cluster on a single IP address which means a single gate into our Kubernetes cluster which we can control with Traefik Proxy
 
@@ -198,7 +201,7 @@ helm install traefik traefik/traefik --namespace=traefik-v2
 kubectl get pods
 ```
 
-![traefik pod](images/how-to-bake-an-ortelius-pi/part03/05-traefik-pods.png)
+![traefik pods](images/how-to-bake-an-ortelius-pi/part03/06-traefik-pods.png)
 
 - Using GitHub fork the [Traefik Helm Chart](https://github.com/traefik/traefik-helm-chart)
 - Clone the Helm Chart to your local machine and enable the Traefik `dashboard, kubernetesCRD and kubernetesIngress` in `values.yaml` and don't forget to save - FYI they might already be enabled
@@ -233,8 +236,10 @@ helm upgrade traefik traefik/traefik --values values.yaml
 - Kubectl show me all CRDs
 
 ```
-kubectl get crds
+kubectl get crds | grep traefik
 ```
+
+![traefik pod](images/how-to-bake-an-ortelius-pi/part03/07-traefik-crds.png)
 
 - Create a file called `dashboard.yaml` and apply the following logic with `kubectl apply -f dashboard.yaml`
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
