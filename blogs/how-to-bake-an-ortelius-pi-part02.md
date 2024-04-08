@@ -230,6 +230,29 @@ users:
   user:
     client-certificate-data: <your client certificate data goes here>
 ```
+- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+- Use Kubectl to connect to your cluster
+- To view your current kube config
+```
+kubectl config view
+```
+- Get your available contexts
+```
+kubectl config get-context
+```
+- Switch context to Microk8s
+```
+kubectl config use-context microk8s
+```
+- Run the following to see all namespaces
+```
+kubectl get ns
+```
+- Run the following to see all pods
+```
+kubectl get pods --all-namespaces
+```
+- Well done you are now using your Microk8s Kubernetes cluster
 
 ### Conclusion
 
