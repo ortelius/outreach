@@ -157,6 +157,7 @@ kubectl get ipaddresspools.metallb.io
 With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for our Microservices cluster and protect our endpoints using a combination of routers, services and middlewares.
 
 - Traefik docs [here](https://doc.traefik.io/traefik/)
+- Traefik defines services into two groups Traefik services and Kubernetes Services
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
 
@@ -193,7 +194,7 @@ kubectl get pods
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/05-traefik-pods.png)
 
 - Using GitHub fork the [Traefik Helm Chart](https://github.com/traefik/traefik-helm-chart)
-- Clone the Helm Chart to your local machine and enable the Traefik dashboard in `values.yaml`
+- Clone the Helm Chart to your local machine and enable the Traefik `dashboard, kubernetesCRD and kubernetesIngress` in `values.yaml`
 - Don't forget to save
 
 ```
@@ -201,6 +202,17 @@ kubectl get pods
 ingressRoute:
   dashboard:
     # -- Create an IngressRoute for the dashboard
+    enabled: true
+```
+```
+providers:
+  kubernetesCRD:
+    # -- Load Kubernetes IngressRoute provider
+    enabled: true
+```
+```
+  kubernetesIngress:
+    # -- Load Kubernetes Ingress provider
     enabled: true
 ```
 
