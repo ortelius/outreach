@@ -5,7 +5,7 @@
 In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-2-the-preperation/), of this series we configured DHCP, DNS, NFS and deployed MicroK8s. In Part 3 we will deploy the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised storage, deploy [MetalLB load-balancer](https://metallb.universe.tf/), deploy [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and deploy [Ortelius](https://ortelius.io/) the ultimate evidence store.
 
 ### NFS CSI Driver
-- [Kubectl quick reference](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - On your local machine open the terminal and use Helm to add the repo and install the driver
 
