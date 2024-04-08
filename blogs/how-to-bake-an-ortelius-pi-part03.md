@@ -126,22 +126,33 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - Traefik docs [here](https://doc.traefik.io/traefik/)
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm add the repo
+
 ```
 helm repo add traefik https://traefik.github.io/charts
 ```
+
 - Kubectl create the Traefik namespace
+
 ```
 kubectl create ns traefik-v2
 ```
+
 - Switch to the traefik-v2 namespace
+
 ```
 kubectl config set-context --current --namespace=traefik-v2
 ```
+
 - Helm install Traefik
+
 ```
 helm install traefik traefik/traefik --namespace=traefik-v2
 ```
+
 - Kubectl show me the pods
+
+```
+kubectl get pods
 ```
 
 
