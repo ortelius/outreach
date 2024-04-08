@@ -17,8 +17,11 @@ helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-syste
   --set node.dnsPolicy=ClusterFirstWithHostNet \
   --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
 ```
-
-
+- The K8s Kubelet will mount the shares for us
+- Run following to switch to the kube-system namespace
+```
+kubectl config set-context --current --namespace=kube-system
+```
 
 
 
