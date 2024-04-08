@@ -88,7 +88,28 @@ kubectl config set-context --current --namespace=metallb-system
 ```
 kubectl get pods
 ```
-
+![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
+- Now lets ensure ARP broadcasts work and setup our IP pool
+- Copy this into `metallb-setup.yaml` and run `kubectl apply -f metallb-setup.yaml`
+```
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: default-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.168.0.151-192.168.0.151 # change this to your private ip
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: default-pool
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - default-pool
+```
 
 
 
