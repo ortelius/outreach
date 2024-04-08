@@ -12,7 +12,8 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - NFS CSI Driver help written by Rudi Martinsen [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - On your local machine open the terminal and use Helm to add the repo and install the driver
-- Run the following to switch to the kube-system namespace
+
+- Switch to the `kube-system` namespace
 ```
 kubectl config set-context --current --namespace=kube-system
 ```
@@ -51,7 +52,7 @@ volumeBindingMode: Immediate
 mountOptions:
   - nfsvers=4
 ```
-- Lets see our new Storage Class
+- Kubectl show me the Storage Class
 ```
 kubectl get sc
 ```
@@ -80,7 +81,7 @@ helm repo add metallb https://metallb.github.io/metallb
 ```
 helm install metallb metallb/metallb -n metallb-system
 ```
-- Run the following to switch to the metallb-system namespace
+- Switch to the `metallb-system` namespace
 ```
 kubectl config set-context --current --namespace=metallb-system
 ```
@@ -131,9 +132,15 @@ helm repo add traefik https://traefik.github.io/charts
 ```
 kubectl create ns traefik-v2
 ```
+- Switch to the traefik-v2 namespace
+```
+kubectl config set-context --current --namespace=traefik-v2
+```
 - Helm install Traefik
 ```
 helm install traefik traefik/traefik --namespace=traefik-v2
+```
+- Kubectl show me the pods
 ```
 
 
