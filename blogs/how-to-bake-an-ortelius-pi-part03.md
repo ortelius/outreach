@@ -6,12 +6,13 @@ In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-
 
 ### NFS CSI Driver
 
-With the NFS CSI Driver we will use Kubernetes to dynamically manage the creation and mounting of volumes to our pods.
+With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we will use Kubernetes to dynamically manage the creation and mounting of volumes to our pods.
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+- NFS CSI Driver help written by Rudi Martinsen [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - On your local machine open the terminal and use Helm to add the repo and install the driver
-- Run following to switch to the kube-system namespace
+- Run the following to switch to the kube-system namespace
 ```
 kubectl config set-context --current --namespace=kube-system
 ```
