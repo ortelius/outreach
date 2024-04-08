@@ -193,7 +193,46 @@ kubectl get pods
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/05-traefik-pods.png)
 
 - Using GitHub fork the [Traefik Helm Chart](https://github.com/traefik/traefik-helm-chart)
-- Clone the Helm Chart to your local machine
+- Clone the Helm Chart to your local machine and enable the Traefik dashboard in `values.yaml`
+- Don't forget to save
+
+```
+## Create an IngressRoute for the dashboard
+ingressRoute:
+  dashboard:
+    # -- Create an IngressRoute for the dashboard
+    enabled: true
+```
+
+- Because Traefik is deployed with Helm we will use Helm to update our deployment from `values.yaml`
+
+```
+helm upgrade --install traefik traefik/traefik --values values.yaml
+```
+
+- Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that where installed with Traefik
+- CRDs are custom resources created in our Kubernetes cluster that add additional magic
+- Create a file called `dashboard.yaml` and apply the following logic with `kubectl apply -f dashboard.yaml`
+- You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
+- Edit Mac localhosts file here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.com`
+- Edit Windows localhosts file here with administrartor rights `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.com`
+
+```
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+  namespace: traefik-v2
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`traefik.yourdomain.com`) # This where your DNS records come into play
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+```
 
 - Kubectl show me the Traefik ingress routes
 
