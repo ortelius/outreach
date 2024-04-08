@@ -27,7 +27,8 @@ kubectl get pods
 ```
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
-- Now lets create a storage class
+- Now lets create a Storage Class to be used for central data access between our nodes and pods
+- We are using NFS version 4
 ```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -46,12 +47,19 @@ volumeBindingMode: Immediate
 mountOptions:
   - nfsvers=4
 ```
-- Lets see our new storage class
+- Lets see our new Storage Class
 ```
 kubectl get sc
 ```
 ![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/02-csi-nfs-driver-storage-class.png)
-
+- Lets make this the default Storage Class as in the above image
+```
+kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+- If you do not want to undo making it the default Storage Class
+```
+kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+```
 
 
 ### MetalLB load-balancer for bare metal Kubernetes
