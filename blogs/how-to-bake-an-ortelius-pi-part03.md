@@ -21,13 +21,13 @@ helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-syste
   --set node.dnsPolicy=ClusterFirstWithHostNet \
   --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
 ```
-- The K8s Kubelet will mount the shares for us
+- Run following to see your pods deployed
+```
+kubectl get pods
+```
+- You should see something like this
 
-
-
-
-
-
+![synology file services](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
 
 
