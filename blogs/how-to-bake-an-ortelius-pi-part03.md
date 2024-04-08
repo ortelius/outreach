@@ -25,10 +25,32 @@ helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-syste
 ```
 kubectl get pods
 ```
-- You should see something like this
+![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
-![synology file services](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
-
+- Now lets create a storage class
+```
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-csi-default
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: <your nfs server ip goes here>
+  share: /volume4/pi8s/
+  # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
+  # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
+  # csi.storage.k8s.io/provisioner-secret-namespace: "default"
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions:
+  - nfsvers=4
+```
+- Lets see our new storage class
+```
+kubectl get sc
+```
+![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/02-csi-nfs-driver-storage-class.png)
 
 
 
