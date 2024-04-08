@@ -87,7 +87,7 @@ kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclas
 
 ### MetalLB load-balancer for bare metal Kubernetes
 
-With MetalLB we will setup a unique IP address on our homework to expose the Microservices running in our Kubernetes cluster. A public cloud provider would give you this during the deployment of your Kubernetes cluster but since we are the cloud we need to provide it and that where [MetalLB](https://metallb.universe.tf/) comes in.
+With MetalLB we will setup a unique IP address on our home network to expose the Microservices running in our Kubernetes cluster. A public cloud provider would give you this during the deployment of your Kubernetes cluster but since we are the cloud we need to provide it and that where [MetalLB](https://metallb.universe.tf/) comes in.
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
