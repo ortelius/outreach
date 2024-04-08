@@ -233,6 +233,6 @@ users:
 
 ### Conclusion
 
-By this stage you should have three Pi's each with NFS and MicroK8s. Stay tuned for part 3 where we will deploy the NSF [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, deploy [Traefik](https://traefik.io/) and [Ortelius](https://ortelius.io/)
+By this stage you should have three Pi's each with NFS and MicroK8s. Stay tuned for part 3 where we will deploy the NSF [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, deploy [MetalLB load balancer](https://metallb.universe.tf/)  deploy [Traefik](https://traefik.io/) and [Ortelius](https://ortelius.io/)
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
