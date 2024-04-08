@@ -6,7 +6,7 @@ In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-
 
 ### NFS CSI Driver
 - [Kubectl quick reference](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
-- Use this URL [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts) for reference
+- Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - On your local machine open the terminal and use Helm to add the repo and install the driver
 
 - Run following to switch to the kube-system namespace
