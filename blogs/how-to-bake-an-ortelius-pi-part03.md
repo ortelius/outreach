@@ -1,12 +1,13 @@
- ## How to bake an Ortelius Pi Part 2 | The Preparation
+## How to bake an Ortelius Pi Part 3 | The Configuration
 
 ### Introduction
 
-In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-2-the-preperation/), of this series we installed Ubuntu Server 22.04.4 LTS on our Raspberry Pis. In Part 3 we will prepare our three Pis for DHCP, DNS, NFS (Network File System) storage with a [Synology NAS](https://www.synology.com/) and install [MicroK8s](https://microk8s.io/).
+In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-2-the-preperation/), of this series we configured DHCP, DNS, NFS and deployed MicroK8s. In Part 3 we will deploy the NFS CSI Driver for Kubernetes to connect to the Synology NAS for centralised storage, deploy Traefik Proxy and deploy Ortelius and
 
-### NSF CSI Driver
+### NFS CSI Driver
 
 
+### MetalLB load-balancer for bare metal Kubernetes
 
 ### Traefik the Cloud Native Proxy
 
