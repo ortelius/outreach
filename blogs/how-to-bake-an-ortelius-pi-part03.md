@@ -165,11 +165,10 @@ kubectl get ipaddresspools.metallb.io
 
 With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for our Microservices in the Kubernetes cluster and protect our endpoints using a combination of routers, services and middlewares.
 
+- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Traefik docs [here](https://doc.traefik.io/traefik/)
 - Traefik defines services into two groups Traefik services and Kubernetes Services
-- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
-
 - Helm add the repo
 
 ```
@@ -269,6 +268,14 @@ kubectl get ingressroutes.traefik.io
 ```
 
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/08-traefik-ingressroute-dashboard.png)
+
+- Kubectl show me that the Traefik Kubernetes service has claimed our MetalLB single IP address
+
+```
+kubectl get svc
+```
+
+![traefik service](images/how-to-bake-an-ortelius-pi/part03/09-traefik-service.png)
 
 
 ### Ortelius the Ultimate Evidence Store
