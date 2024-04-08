@@ -62,19 +62,27 @@ volumeBindingMode: Immediate
 mountOptions:
   - nfsvers=4
 ```
+
 - Kubectl show me the Storage Class
+
 ```
 kubectl get sc
 ```
+
 ![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/02-csi-nfs-driver-storage-class.png)
+
 - Lets make this the default Storage Class as in the above image
+
 ```
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
+
 - If you want to undo making it the default Storage Class
+
 ```
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
+
 - Great we now have Kubernetes managing NFS volume mounts for us!
 
 ### MetalLB load-balancer for bare metal Kubernetes
@@ -86,17 +94,23 @@ With MetalLB we will setup a unique IP address on our homework to expose the Mic
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
 
 - Helm add the repo
+
 ```
 helm repo add metallb https://metallb.github.io/metallb
 ```
+
 - Helm install MetalLB in the `metallb-system` namespace
+
 ```
 helm install metallb metallb/metallb -n metallb-system
 ```
+
 - Switch to the `metallb-system` namespace
+
 ```
 kubectl config set-context --current --namespace=metallb-system
 ```
+
 - Kubernetes show me the MetalLB pods in the `metallb-system` namespace
 
 ```
@@ -180,8 +194,6 @@ kubectl get pods
 
 - Using GitHub fork the [Traefik Helm Chart](https://github.com/traefik/traefik-helm-chart)
 - Clone the Helm Chart to your local machine
--
-
 
 - Kubectl show me the Traefik ingress routes
 
