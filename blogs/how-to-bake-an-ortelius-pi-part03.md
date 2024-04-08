@@ -282,7 +282,7 @@ kubectl get svc
 
 - Brilliant our Traefik Proxy has claimed the IP
 
-What you see is the `traefik` service with the `TYPE LoadBalancer` which means it has claimed the MetalLB IP that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically updating the routes.
+What you see is the `traefik` service with the `TYPE LoadBalancer` which means it has claimed the MetalLB IP that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
 
 ### Ortelius the Ultimate Evidence Store
 
