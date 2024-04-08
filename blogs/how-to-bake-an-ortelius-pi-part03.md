@@ -25,8 +25,7 @@ helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/cs
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.6.0 \
   --set controller.dnsPolicy=ClusterFirstWithHostNet \
   --set node.dnsPolicy=ClusterFirstWithHostNet \
-  # The Kubelet has permissions at this location to mount the NFS shares
-  --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
+  --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet" # The Kubelet has permissions at this location to mount the NFS shares
 ```
 - Run following to see your pods deployed
 ```
