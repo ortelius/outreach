@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-2-the-preperation/), of this series we configured DHCP, DNS, NFS and deployed MicroK8s. In Part 3 we will deploy the NFS CSI Driver for Kubernetes to connect to the Synology NAS for centralised storage, deploy Traefik Proxy and deploy Ortelius and
+In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-2-the-preperation/), of this series we configured DHCP, DNS, NFS and deployed MicroK8s. In Part 3 we will deploy the NFS CSI Driver for Kubernetes to connect to the Synology NAS for centralised storage, deploy MetalLB load-balancer, deploy Traefik Proxy as the entrypoint for our Microservices and deploy Ortelius the ultimate evidence store.
 
 ### NFS CSI Driver
 
