@@ -88,7 +88,7 @@ kubectl config set-context --current --namespace=metallb-system
 ```
 kubectl get pods
 ```
-![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
+![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
 - Copy this into `metallb-setup.yaml` and run `kubectl apply -f metallb-setup.yaml`
 ```
@@ -110,8 +110,12 @@ spec:
   ipAddressPools:
   - default-pool
 ```
-
-
+- MetalLB show me the IP address pools
+```
+kubectl get ipaddresspools.metallb.io
+```
+![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/04-metallb-ip-pool.png)
+- Epic we have a working load balancer for our Kubernetes cluster
 
 ### Traefik the Cloud Native Proxy
 
