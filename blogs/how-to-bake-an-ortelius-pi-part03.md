@@ -15,26 +15,33 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 - On your local machine open the terminal and use Helm to add the repo and install the driver
 - Switch to the `kube-system` namespace
+
 ```
 kubectl config set-context --current --namespace=kube-system
 ```
+
 ```
 helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 ```
+
 ```
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.6.0 \
   --set controller.dnsPolicy=ClusterFirstWithHostNet \
   --set node.dnsPolicy=ClusterFirstWithHostNet \
   --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet" # The Kubelet has permissions at this location to mount the NFS shares
 ```
+
 - Run following to see your pods deployed
+
 ```
 kubectl get pods
 ```
+
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
 - Now lets create a Storage Class to be used for central data access between our nodes and pods
 - Create a file called `nfs-setup.yaml` and copy the logic below and run `kubectl apply -f nfs-setup.yaml`
+
 ```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -87,12 +94,16 @@ helm install metallb metallb/metallb -n metallb-system
 kubectl config set-context --current --namespace=metallb-system
 ```
 - Kubernetes show me the MetalLB pods in the `metallb-system` namespace
+
 ```
 kubectl get pods
 ```
+
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
+
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
 - Copy this into `metallb-setup.yaml` and run `kubectl apply -f metallb-setup.yaml`
+
 ```
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
@@ -112,11 +123,15 @@ spec:
   ipAddressPools:
   - default-pool
 ```
+
 - MetalLB show me the IP address pools
+
 ```
 kubectl get ipaddresspools.metallb.io
 ```
+
 ![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/04-metallb-ip-pool.png)
+
 - Epic we have a working load balancer for our Kubernetes cluster on a single IP address which means a single gate into our Kubernetes cluster which we can control with Traefik Proxy
 
 ### Traefik the Cloud Native Proxy
