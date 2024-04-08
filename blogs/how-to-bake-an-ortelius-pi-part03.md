@@ -170,6 +170,8 @@ helm install traefik traefik/traefik --namespace=traefik-v2
 kubectl get pods
 ```
 
+![traefik pod](images/how-to-bake-an-ortelius-pi/part03/05-traefik-pods.png)
+
 
 ### Ortelius the Ultimate Evidence Store
 
