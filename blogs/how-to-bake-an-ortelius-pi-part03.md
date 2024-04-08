@@ -92,7 +92,6 @@ With MetalLB we will setup a unique IP address on our home network to expose the
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
-
 - Helm add the repo
 
 ```
