@@ -220,7 +220,7 @@ providers:
 - Because Traefik is deployed with Helm we will use Helm to update our deployment from `values.yaml`
 
 ```
-helm upgrade --install traefik traefik/traefik --values values.yaml
+helm upgrade traefik traefik/traefik --values values.yaml
 ```
 
 - Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that where installed with Traefik
