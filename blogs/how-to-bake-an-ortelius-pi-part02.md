@@ -80,9 +80,11 @@ max-inflight-requests 256
 
 ![nextdns rewrites](images/how-to-bake-an-ortelius-pi/part02/16-dns-rewrites.png)
 
-- And add your private network DNS records like in this example
+- And add your private network DNS records like in this example for the Pis and your NAS
 
 ![nextdns records](images/how-to-bake-an-ortelius-pi/part02/17-dns-records.png)
+
+![nextdns record nas](images/how-to-bake-an-ortelius-pi/part02/22-dns-record-nas.png)
 
 - NextDNS will instantly auto refresh all your NextDNS agents with any configuration changes
 
