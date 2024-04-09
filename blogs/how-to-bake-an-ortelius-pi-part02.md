@@ -11,20 +11,22 @@ We need to give the Pis a home address so that they are contactable and this is 
 - Login to your home router with your browser and look for your DHCP configuration
 - Mine is `Network` --> `DHCP Server`
 
-![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/18-dhcp-network.png)
+![dhcp network](images/how-to-bake-an-ortelius-pi/part02/18-dhcp-network.png)
 
-![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/19-dhcp-server.png)
+![dhcp server](images/how-to-bake-an-ortelius-pi/part02/19-dhcp-server.png)
 
 - Here you will see the IP pool range that your router is handing out to your device on your home network
 - I don't want the entire range to be handed out as I need at least two static IP's to be availble for the Metallb load balancer which will run in Kubernetes and one for the Synology NAS.
 
-![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/20-dhcp-range.png)
+![dhcp range](images/how-to-bake-an-ortelius-pi/part02/20-dhcp-range.png)
 
 - My Pi's have the following IPs which I have reserved with their mac addresses
 - You can get the mac addresses from the DHCP list of IPs handed out to your Pis
 - Reserving an IP means you tell DHCP to always give these devices the same IP and never to any other device so in a sense making sure they stay static
 
-![nextdns settings](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
+![dhcp reservations](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
+
+---------------------------------------------------------------------------------------------------------------
 
 ### NextDNS
 
@@ -83,6 +85,8 @@ max-inflight-requests 256
 ![nextdns records](images/how-to-bake-an-ortelius-pi/part02/17-dns-records.png)
 
 - NextDNS will instantly auto refresh all your NextDNS agents with any configuration changes
+
+---------------------------------------------------------------------------------------------------------------
 
 ### OS Prep
 
