@@ -91,27 +91,6 @@ max-inflight-requests 256
 
 ---------------------------------------------------------------------------------------------------------------
 
-### OS Prep
-
-#### Pis | Ubuntu Server 22.04.4 LTS
-- Update all packages to the latest on each Pi with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
-- Install `sudo apt install nfs-common -y` for each Pi
-
-#### Kubectl | Your machine
-- Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
-- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
-- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on `your local machine`
-- Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
-- Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
-- Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-
-#### Helm | Your machine
-- Helm docs [here](https://helm.sh/docs/)
-- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
-- Install Helm [here](https://helm.sh/) on `your local machine`
-- Install Helm with Homebrew package manager `brew install helm` generally used on Mac
-- Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
-
 ### NFS Prep
 - [Synology](https://www.synology.com/)
 - [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
@@ -175,6 +154,29 @@ max-inflight-requests 256
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/14-syno-file-share-nfs-config.png)
 
 - Congrats you just configured the Synology for NFS!
+
+---------------------------------------------------------------------------------------------------------------
+
+### OS Prep
+
+#### Pis | Ubuntu Server 22.04.4 LTS
+- Update all packages to the latest on each Pi with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
+- Install `sudo apt install nfs-common -y` for each Pi
+
+#### Kubectl | Your machine
+- Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
+- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on `your local machine`
+- Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+- Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+
+#### Helm | Your machine
+- Helm docs [here](https://helm.sh/docs/)
+- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
+- Install Helm [here](https://helm.sh/) on `your local machine`
+- Install Helm with Homebrew package manager `brew install helm` generally used on Mac
+- Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 
 ### MicroK8s Prep
 - MicroK8s docs [here](https://microk8s.io/docs)
