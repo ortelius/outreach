@@ -360,6 +360,7 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 - `--set ms-general.dbpass=postgres` | Set the PostgreSQL database password
 - `--set global.nginxController.enabled=true` | Sets the ingress controller which could be one of `default nginx ingress, AWS Load Balancer or Google Load Balancer` | Refer to the Helm Chart in ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
 - `--set ms-nginx.ingress.type=k3d` | This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for [K3d](https://k3d.io/v5.6.0/) another very lightweight Kubernetes deployment which uses Traefik as the default ingress
+- The `k3d` value enables the Traefik ingress class to make Traefik Ortelius aware.
 - `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
 
 
