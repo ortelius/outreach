@@ -87,6 +87,7 @@ max-inflight-requests 256
 ![nextdns record nas](images/how-to-bake-an-ortelius-pi/part02/22-dns-record-nas.png)
 
 - NextDNS will instantly auto refresh all your NextDNS agents with any configuration changes
+- Great DNS is done!
 
 ---------------------------------------------------------------------------------------------------------------
 
