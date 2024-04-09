@@ -185,7 +185,7 @@ kubectl get ipaddresspools.metallb.io
 
 ![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/05-metallb-ip-pool.png)
 
-- Epic we have a working load balancer for our Kubernetes cluster on a single IP address which means a single gate into our Kubernetes cluster which we can control with Traefik Proxy
+- Epic we have a working load balancer using a single IP address which will act as a gateway into our Kubernetes cluster which we can control with Traefik Proxy
 
 ### Traefik the Cloud Native Proxy
 

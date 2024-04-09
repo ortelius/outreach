@@ -74,6 +74,7 @@ NextDNS is free to a certain amount of DNS queries once you reach that limit res
 - Install the cli on each Pi and on your NAS so that you can SSH into your NAS and install NextDNS
 - Here is a doc on how to configure [SSH](https://kb.synology.com/en-id/DSM/tutorial/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet) for a Synology NAS
 
+
 ```
 sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 ```
