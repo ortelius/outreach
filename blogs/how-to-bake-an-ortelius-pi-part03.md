@@ -434,10 +434,12 @@ status:
 
 Happy alien hunting.......
 
-![ortelius logo](images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg)
+![ortelius logo](images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg =800X600)
+
+<img src="images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg" alt="ortelius-logo" width="600">
 
 ### Conclusion
 
-By this stage you should have three Pi's each ready with the NFS CSI Driver, Traefik and Ortelius up and running. Stay tuned for Part 3 where we
+By this stage you should have three Pi's each ready with the NFS CSI Driver, Traefik and Ortelius up and running. Stay tuned for more extraterrestrial life in a cloud deployment near you........
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
