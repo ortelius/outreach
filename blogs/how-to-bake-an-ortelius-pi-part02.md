@@ -54,6 +54,9 @@ $ dig alderaan.local.gd
 alderaan.local.gd.                 86400	IN	A	127.0.0.10.0.1
 ```
 
+- Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts`
+- Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts`
+
 #### NextDNS
 
 For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices no matter where you go in the world for all your devices including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
