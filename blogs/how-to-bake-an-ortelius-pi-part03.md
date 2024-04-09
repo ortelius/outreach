@@ -11,7 +11,7 @@ We will be using Helm Charts to configure some of our services as this makes get
 With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we will use Kubernetes to dynamically manage the creation and mounting of persistent volumes to our pods using the Synology NAS as the central storage server.
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
-- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
+- Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - Kubernetes Storage Class docs [here](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 - [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
@@ -105,7 +105,7 @@ kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclas
 With MetalLB we will setup a unique IP address on our home network to expose the Microservices running in our Kubernetes cluster. A public cloud provider would give you this during the deployment of your Kubernetes cluster but since we are the cloud we need to provide it and thats where [MetalLB](https://metallb.universe.tf/) comes in.
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
-- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
+- Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
 - MetalLB concepts [here](https://metallb.universe.tf/concepts/)
 
@@ -192,7 +192,7 @@ kubectl get ipaddresspools.metallb.io
 With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for our Microservices into the Kubernetes cluster and protect our endpoints using a combination of entrypoints, routers, services, providers and middlewares.
 
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
-- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
+- Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
 - Traefik docs [here](https://doc.traefik.io/traefik/)
 - Traefik [EntryPoints](https://doc.traefik.io/traefik/routing/entrypoints/)
 - Traefik [Routers](https://doc.traefik.io/traefik/routing/routers/)
@@ -331,7 +331,7 @@ What you see is the `traefik` service with the `TYPE LoadBalancer` which means i
 Well done for making it this far! We have made it to the point where we can deploy Ortelius into our Kubernetes cluster and access Ortelius through the Traefik Proxy inside the Kubernetes Ortelius namespace.
 
 - Kubectl quick reference guide [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
-- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
+- Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
 - Ortelius on GitHub [here](https://github.com/ortelius/)
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
