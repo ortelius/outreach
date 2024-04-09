@@ -114,7 +114,7 @@ max-inflight-requests 256
 - [Synology](https://www.synology.com/)
 - [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
 - [What is NFS?](https://www.minitool.com/lib/what-is-nfs.html)
-- I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology.
+- I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology
 
 ---------------------------------------------------------------------------------------------------------------
 
