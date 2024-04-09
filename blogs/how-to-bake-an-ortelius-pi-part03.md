@@ -16,6 +16,8 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - Kubernetes Storage Class docs [here](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 - An excellent blog written by Rudi Martinsen on the NFS CSI Driver [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 
+---------------------------------------------------------------------------------------------------------------
+
 - On your local machine open the terminal and use Helm to add the repo and install the driver
 - Switch to the `kube-system` namespace
 
@@ -23,11 +25,13 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 kubectl config set-context --current --namespace=kube-system
 ```
 
+- Helm repo add
+
 ```
 helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 ```
 
-- Helm update the repos
+- Helm repo update
 
 ```
 helm repo update
@@ -101,14 +105,16 @@ With MetalLB we will setup a unique IP address on our home network to expose the
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
 - MetalLB concepts [here](https://metallb.universe.tf/concepts/)
 
+---------------------------------------------------------------------------------------------------------------
+
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
-- Helm add the repo
+- Helm repo add
 
 ```
 helm repo add metallb https://metallb.github.io/metallb
 ```
 
-- Helm update the repos
+- Helm repo update
 
 ```
 helm repo update
@@ -190,7 +196,9 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - Traefik [Providers](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
 
-- Helm add the repo
+---------------------------------------------------------------------------------------------------------------
+
+- Helm repo add
 
 ```
 helm repo add traefik https://traefik.github.io/charts
@@ -208,7 +216,7 @@ kubectl create ns traefik-v2
 kubectl config set-context --current --namespace=traefik-v2
 ```
 
-- Helm update the repos
+- Helm repo update
 
 ```
 helm repo update
@@ -317,15 +325,15 @@ Well done for making it this far! We have made it to the point where we can depl
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
 
+---------------------------------------------------------------------------------------------------------------
 
-
-- Helm add the repo
+- Helm repo add
 
 ```
 helm repo add ortelius https://ortelius.github.io/ortelius-charts/
 ```
 
-- Helm update the repos
+- Helm repo update
 
 ```
 helm repo update
