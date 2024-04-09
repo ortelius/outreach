@@ -434,8 +434,6 @@ status:
 
 Happy alien hunting.......
 
-![ortelius logo](images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg =800X600)
-
 <img src="images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg" alt="ortelius-logo" width="600">
 
 ### Conclusion
