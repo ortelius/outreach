@@ -98,7 +98,7 @@ max-inflight-requests 256
 
 #### Kubectl
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
-- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on your local machine
+- Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on `your local machine`
 - Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
 - Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
@@ -106,7 +106,7 @@ max-inflight-requests 256
 #### Helm
 - Helm docs [here](https://helm.sh/docs/)
 - Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
-- Install Helm [here](https://helm.sh/) on your local machine
+- Install Helm [here](https://helm.sh/) on `your local machine`
 - Install Helm with Homebrew package manager `brew install helm` generally used on Mac
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 
