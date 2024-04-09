@@ -340,6 +340,8 @@ Ortelius currently consists of the following Microservices. The one we are most 
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
+![ortelius dashboard](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-dashboard.png)
+
 ##### Ortelius Microservice GitHub repos
 - [ms-dep-pkg-cud](https://github.com/ortelius/ms-dep-pkg-cud)
 - [ms-textfile-crud](https://github.com/ortelius/ms-textfile-crud)
