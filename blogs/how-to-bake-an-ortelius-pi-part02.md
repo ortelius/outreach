@@ -99,6 +99,7 @@ max-inflight-requests 256
 
 #### Kubectl | Your machine
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
+- Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on `your local machine`
 - Install and setup Kubectl on Mac [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - Install and setup Kubectl on Windows [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
