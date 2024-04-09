@@ -281,6 +281,7 @@ kubectl get crds | grep traefik
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
 - Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.your tld`
 - Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.your tld`
+- [TLD = Top Level Domain](https://en.wikipedia.org/wiki/Top-level_domain)
 
 ```
 apiVersion: traefik.io/v1alpha1
