@@ -45,13 +45,13 @@ $ dig startup.local.gd
 startup.local.gd.                  86400	IN	A	127.0.0.1
 
 $ dig www.startup.local.gd
-www.startup.local.gd.	             86400	IN	A	127.0.0.1
+www.startup.local.gd.              86400	IN	A	127.0.0.1
 
 $ dig my.project.company.local.gd
-my.project.company.local.gd.	     86400	IN	A	127.0.0.1
+my.project.company.local.gd.       86400	IN	A	127.0.0.1
 
 $ dig alderaan.local.gd
-alderaan.local.gd.  	             86400	IN	A	127.0.0.10.0.1
+alderaan.local.gd.                 86400	IN	A	127.0.0.10.0.1
 ```
 
 #### NextDNS
