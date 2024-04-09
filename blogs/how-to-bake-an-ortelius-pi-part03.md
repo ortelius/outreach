@@ -350,6 +350,19 @@ helm repo add ortelius https://ortelius.github.io/ortelius-charts/
 helm repo update
 ```
 
+- Helm install Ortelius
+
+```
+helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgres --set global.postgresql.enabled=true --set global.nginxController.enabled=true --set ms-nginx.ingress.type=k3d --set ms-nginx.ingress.dnsname=<your domain name goes here>  --version "${ORTELIUS_VERSION}" --namespace ortelius
+```
+
+-Lets stop here to discuss some of these settings.
+- `--set ms-general.dbpass=postgres` | Set the PostgreSQL database password
+- `--set global.nginxController.enabled=true` | Sets the ingress controller which could be `default nginx ingress, AWS Load Balancer or Google Load Balancer` | Refer to the Helm Chart in ArtifactHub
+- `--set ms-nginx.ingress.type=k3d` | This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for [K3d](https://k3d.io/v5.6.0/) another very lightweight Kubernetes deployment which used Traefik as the default ingress
+- `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
+
+
 ### Conclusion
 
 By this stage you should have three Pi's each ready with the NFS CSI Driver, Traefik and Ortelius up and running. Stay tuned for Part 3 where we
