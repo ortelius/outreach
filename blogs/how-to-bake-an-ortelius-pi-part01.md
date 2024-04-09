@@ -29,6 +29,8 @@ Why Raspberry Pis you ask, well first of all I live in Cape Town South Africa wh
 - 1X UPS (Uninterruptable Power Supply) for the Pis and switch | Something like this [Mecer 650VA](https://mecer.co.za/mecer-line-interactive-ups/). Please note this is a South African brand of UPS but I am showing this for example purposes. The Mecer brand is extremely good and all my lead acid battery UPS's are from Mecer. I have a combination of the 650VA, 2000VA and 3000VA to keep me going (7 in all)
 
 ### NFS Storage
+- [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
+- [What is NFS?](https://www.minitool.com/lib/what-is-nfs.html)
 - 1X NAS device for the NFS storage which can be a virtual machine, laptop, old desktop or Synology type device. There are plenty options out there just do a internet search.
 - 1X 650VA UPS
 
