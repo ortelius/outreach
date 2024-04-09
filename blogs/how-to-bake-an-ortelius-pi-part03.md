@@ -430,7 +430,7 @@ status:
   loadBalancer: {}
 ```
 
-- You now be able to reach the Ortelius dashboard in your browser using the domain name your chose
+- You should be able to reach the Ortelius dashboard in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com`
 
 Happy alien hunting.......
 
@@ -438,6 +438,6 @@ Happy alien hunting.......
 
 ### Conclusion
 
-By this stage you should have three Pi's each ready with the NFS CSI Driver, Traefik and Ortelius up and running. Stay tuned for more extraterrestrial life in a cloud deployment near you........
+By this stage you should have three Pi's each ready with the NFS CSI Driver, Traefik and Ortelius up and running. Stay tuned for Part 4 where we use Cloudflare, Traefik and LetsEncrypt to implement `HTTPS` and `TLS v1.3`. Yes there is more extraterrestrial life in a cloud deployment near you........
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
