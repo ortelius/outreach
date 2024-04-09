@@ -318,6 +318,31 @@ kubectl get svc
 
 ![traefik service](images/how-to-bake-an-ortelius-pi/part03/09-traefik-service.png)
 
+- Here is a view of the services for all namespaces
+```
+NAMESPACE        NAME                                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
+cert-manager     cert-manager                         ClusterIP      10.152.183.42    <none>          9402/TCP                     25h
+cert-manager     cert-manager-webhook                 ClusterIP      10.152.183.32    <none>          443/TCP                      25h
+default          kubernetes                           ClusterIP      10.152.183.1     <none>          443/TCP                      3d3h
+ingress-nginx    ingress-nginx-controller             NodePort       10.152.183.240   <none>          80:31709/TCP,443:30762/TCP   9h
+ingress-nginx    ingress-nginx-controller-admission   ClusterIP      10.152.183.118   <none>          443/TCP                      9h
+kube-system      kube-dns                             ClusterIP      10.152.183.10    <none>          53/UDP,53/TCP,9153/TCP       45h
+metallb-system   metallb-webhook-service              ClusterIP      10.152.183.117   <none>          443/TCP                      3d2h
+netdata          netdata                              ClusterIP      10.152.183.164   <none>          19999/TCP                    2d7h
+ortelius         ms-compitem-crud                     NodePort       10.152.183.91    <none>          80:30288/TCP                 3m24s
+ortelius         ms-dep-pkg-cud                       NodePort       10.152.183.124   <none>          80:32186/TCP                 3m24s
+ortelius         ms-dep-pkg-r                         NodePort       10.152.183.82    <none>          80:31347/TCP                 3m22s
+ortelius         ms-general                           NodePort       10.152.183.171   <none>          8080:30704/TCP               3m21s
+ortelius         ms-nginx                             NodePort       10.152.183.158   <none>          80:32519/TCP,443:31861/TCP   3m19s
+ortelius         ms-postgres                          NodePort       10.152.183.75    <none>          5432:30852/TCP               9h
+ortelius         ms-scorecard                         NodePort       10.152.183.74    <none>          80:30674/TCP                 3m18s
+ortelius         ms-textfile-crud                     NodePort       10.152.183.200   <none>          80:30126/TCP                 3m16s
+ortelius         ms-ui                                NodePort       10.152.183.242   <none>          8080:31073/TCP               3m16s
+ortelius         ms-validate-user                     NodePort       10.152.183.55    <none>          80:30266/TCP                 3m16s
+traefik-v2       traefik                              LoadBalancer   10.152.183.73    192.168.0.151   80:32700/TCP,443:30988/TCP   2d7h
+whoami           whoami                               ClusterIP      10.152.183.168   <none>          80/TCP                       47h```
+```
+
 - Brilliant our Traefik Proxy has claimed the IP
 
 What you see is the `traefik` service with the `TYPE LoadBalancer` which means it has claimed the `MetalLB IP` that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
