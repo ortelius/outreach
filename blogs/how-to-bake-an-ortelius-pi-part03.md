@@ -267,7 +267,7 @@ providers:
 helm upgrade traefik traefik/traefik --values values.yaml
 ```
 
-- Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that where installed with Traefik
+- Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that were installed with Traefik
 - CRDs are custom resources created in our Kubernetes cluster that add additional magic
 - Kubectl show me all CRDs for Traefik
 
