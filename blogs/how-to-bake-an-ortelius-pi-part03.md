@@ -430,9 +430,11 @@ status:
   loadBalancer: {}
 ```
 
+- You now be able to reach the Ortelius dashboard in your browser using the domain name your chose
 
+Happy alien hunting.......
 
-
+![ortelius logo](images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg)
 
 ### Conclusion
 
