@@ -328,7 +328,7 @@ What you see is the `traefik` service with the `TYPE LoadBalancer` which means i
 
 ### Ortelius the Ultimate Evidence Store
 
-Well done for making it this far! We have made it to the point where we can deploy Ortelius in our Kubernetes cluster and access Ortelius through the Traefik Proxy inside the Kubernetes Ortelius namespace.
+Well done for making it this far! We have made it to the point where we can deploy Ortelius into our Kubernetes cluster and access Ortelius through the Traefik Proxy inside the Kubernetes Ortelius namespace.
 
 - Kubectl quick reference guide [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
