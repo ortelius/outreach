@@ -14,11 +14,12 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - Kubernetes Storage Class docs [here](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+- What is network-attached storage (NAS)? - [A Complete Guide](https://www.purestorage.com/knowledge/what-is-nas.html)
 - An excellent blog written by Rudi Martinsen on the NFS CSI Driver [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 
 ---------------------------------------------------------------------------------------------------------------
 
-- On your local machine open the terminal and use Helm to add the repo and install the driver
+- On your local machine open your favourite terminal
 - Switch to the `kube-system` namespace
 
 ```
@@ -37,6 +38,8 @@ helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/cs
 helm repo update
 ```
 
+- Helm repo install
+
 ```
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.6.0 \
   --set controller.dnsPolicy=ClusterFirstWithHostNet \
@@ -53,7 +56,7 @@ kubectl get pods
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
 - Now lets create a Storage Class to be used for central data access between our nodes and pods
-- Create a file called `nfs-setup.yaml` and copy the logic below and run `kubectl apply -f nfs-setup.yaml`
+- Create a file called `nfs-setup.yaml`, copy the YAML below and run `kubectl apply -f nfs-setup.yaml`
 
 ```
 apiVersion: storage.k8s.io/v1
@@ -94,7 +97,7 @@ kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclas
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
-- Great we now have Kubernetes managing NFS volume mounts for us!
+- Great we now have Kubernetes managing NFS volume mounts dynamically for us to our NAS (Network Attached Storage)!
 
 ### MetalLB load-balancer for bare metal Kubernetes
 
@@ -141,7 +144,7 @@ kubectl get pods
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
 
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
-- Copy this into `metallb-setup.yaml` and run `kubectl apply -f metallb-setup.yaml`
+- Copy the YAML below into `metallb-setup.yaml` and run `kubectl apply -f metallb-setup.yaml`
 
 ```
 apiVersion: metallb.io/v1beta1
