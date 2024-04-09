@@ -47,7 +47,7 @@ helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-syste
   --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet" # The Kubelet has permissions at this location to mount the NFS shares
 ```
 
-- Run following to see your pods deployed
+- Kubectl show me the pods
 
 ```
 kubectl get pods
