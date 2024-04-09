@@ -321,7 +321,7 @@ What you see is the `traefik` service with the `TYPE LoadBalancer` which means i
 
 - Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) you set
 
-![traefik service](images/how-to-bake-an-ortelius-pi/part03/10-traefik-dashboard.png)
+![traefik dashboard](images/how-to-bake-an-ortelius-pi/part03/10-traefik-dashboard.png)
 
 ### Ortelius the Ultimate Evidence Store
 
@@ -332,7 +332,9 @@ Well done for making it this far! We have made it to the point where we can depl
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
 
-Ortelius currently consists of
+Ortelius currently consists of the following Microservices.
+
+![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
 ---------------------------------------------------------------------------------------------------------------
 
