@@ -27,8 +27,12 @@ We need to give the Pis a home address so that they are contactable and this is 
 ![dhcp reservations](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
 
 ---------------------------------------------------------------------------------------------------------------
+### DNS
 
-### NextDNS
+- [NIP.IO](https://github.com/exentriquesolutions/nip.io)
+
+
+#### NextDNS
 
 For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its complete protection for all your devices no matter where you go in the world for all your devices including your Pi MicroK8s nodes. It will use `127.0.0.1:53` to resolve your local IPs but to do that we need to do some configuration by logging into the NextDNS portal and installing the cli.
 
