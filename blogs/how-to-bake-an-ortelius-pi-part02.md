@@ -95,6 +95,7 @@ max-inflight-requests 256
 
 #### Pis | Ubuntu Server 22.04.4 LTS
 - Update all packages to the latest on each Pi with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
+- Install `sudo apt install nfs-common -y` for each Pi
 
 #### Kubectl | Your machine
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
@@ -120,7 +121,6 @@ max-inflight-requests 256
 
 #### Enable NFS on the Synology
 
-- Install `sudo apt install nfs-common -y` for each Pi
 - Login to the Synology and go to `File Services`
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/01-syno-file-services-icon.png)
