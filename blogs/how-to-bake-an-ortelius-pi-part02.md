@@ -42,7 +42,7 @@ Use any subdomain you like, and sub-sub-domains work too!
 
 ```
 $ dig startup.local.gd
-startup.local.gd.	                 86400	IN	A	127.0.0.1
+startup.local.gd.                  86400	IN	A	127.0.0.1
 
 $ dig www.startup.local.gd
 www.startup.local.gd.	             86400	IN	A	127.0.0.1
