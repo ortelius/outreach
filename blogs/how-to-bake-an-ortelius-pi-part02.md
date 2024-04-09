@@ -111,16 +111,16 @@ max-inflight-requests 256
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 
 ### NFS Prep
-
-I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology.
-- Install `sudo apt install nfs-common -y` for each Pi
-
-#### Enable NFS on the Synology
 - [Synology](https://www.synology.com/)
 - [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
+- [What is NFS?](https://www.minitool.com/lib/what-is-nfs.html)
+- I am using a `Synology DS413j with DSM 6.2.4-25556 Update 7` so the following steps will be inline with my Synology.
 
 ---------------------------------------------------------------------------------------------------------------
 
+#### Enable NFS on the Synology
+
+- Install `sudo apt install nfs-common -y` for each Pi
 - Login to the Synology and go to `File Services`
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/01-syno-file-services-icon.png)
