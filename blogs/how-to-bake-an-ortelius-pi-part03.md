@@ -336,6 +336,7 @@ Ortelius currently consists of the following Microservices. The one we are most 
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
+##### Ortelius Microservice GitHub repos
 - [ms-dep-pkg-cud](https://github.com/ortelius/ms-dep-pkg-cud)
 - [ms-textfile-crud](https://github.com/ortelius/ms-textfile-crud)
 - [ms-dep-pkg-r](https://github.com/ortelius/ms-dep-pkg-r)
@@ -344,6 +345,7 @@ Ortelius currently consists of the following Microservices. The one we are most 
 - [ms-postgres](https://github.com/ortelius/ms-postgres)
 - [ms-sbom-export](https://github.com/ortelius/ms-sbom-export)
 - [ms-scorecard](https://github.com/ortelius/ms-scorecard)
+- [scec-nginx](https://github.com/ortelius/scec-nginx)
 
 ---------------------------------------------------------------------------------------------------------------
 
