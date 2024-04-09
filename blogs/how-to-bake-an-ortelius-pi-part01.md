@@ -13,9 +13,9 @@ Why Raspberry Pis you ask, well first of all I live in Cape Town South Africa wh
 ![raspberry-pi-4b](images/how-to-bake-an-ortelius-pi/part01/raspberry-pi-4b.png)
 
 -------------------------------------------------------------------------------------------------------------
-- 3X 32GB Samsung Evo+ Micro SD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s)
-- Speed chart [here](https://www.kingston.com/en/blog/personal-storage/memory-card-speed-classes)
-- I used this [article](https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019) by [Jeff Geerling](https://www.youtube.com/@JeffGeerling) whom I can thoroughly recommend for all things Pi to choose my SD cards
+- 3X 32GB Samsung Evo+ microSD Card (UHS-II: theoretical maximum transfer speeds up to 312MB/s)
+- Use this [article](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards#section-quick-list) from Toms Hardware for microSD card benchmarking
+- I can recommend [Jeff Geerling](https://www.youtube.com/@JeffGeerling) for all things Raspberry Pi
 
 `OR`
 
@@ -56,7 +56,7 @@ If you use USB flash drives you will need to do the following as mentioned in th
 ![raspi-config](images/how-to-bake-an-ortelius-pi/part01/12-raspi-config.png)
 
 - Use Raspi-Config to configure boot order, enable or disable read-only filesystem and many other tweaks
-- I found it much easier just to use the right Micro SD Card and skip all this but it was still a good learning curve
+- I found it much easier just to use the right microSD Card and skip all this but it was still a good learning curve
 
 #### Example from configuring my Pi to use USB flash sticks
 - You will need to do this for each Pi
