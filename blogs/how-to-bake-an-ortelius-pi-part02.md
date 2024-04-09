@@ -179,7 +179,7 @@ max-inflight-requests 256
 - [MicroK8s docs](https://microk8s.io/docs) for your reference
 - [Microk8s on a Pi](https://microk8s.io/docs/install-raspberry-pi)
 - [Microk8s host interface configuration](https://microk8s.io/docs/configure-host-interfaces)
-- [Microk8s cluster creation](https://microk8s.io/docs/clustering)
+- [Microk8s multi-node cluster creation](https://microk8s.io/docs/clustering)
 
 ---------------------------------------------------------------------------------------------------------------
 
