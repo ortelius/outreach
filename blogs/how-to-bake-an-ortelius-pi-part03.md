@@ -376,6 +376,7 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 - `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
 
 - Kubectl show me the pods for Ortelius
+
 ```
 kubectl get pods
 ```
