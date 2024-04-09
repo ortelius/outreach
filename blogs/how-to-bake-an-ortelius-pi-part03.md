@@ -27,6 +27,12 @@ kubectl config set-context --current --namespace=kube-system
 helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 ```
 
+- Helm update the repos
+
+```
+helm repo update
+```
+
 ```
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.6.0 \
   --set controller.dnsPolicy=ClusterFirstWithHostNet \
@@ -100,6 +106,12 @@ With MetalLB we will setup a unique IP address on our home network to expose the
 
 ```
 helm repo add metallb https://metallb.github.io/metallb
+```
+
+- Helm update the repos
+
+```
+helm repo update
 ```
 
 - Helm install MetalLB in the `metallb-system` namespace
@@ -177,6 +189,7 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - Traefik [Services](https://doc.traefik.io/traefik/routing/services/) can be divided into two groups `Traefik Services` and `Kubernetes Services`
 - Traefik [Providers](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
+
 - Helm add the repo
 
 ```
@@ -193,6 +206,12 @@ kubectl create ns traefik-v2
 
 ```
 kubectl config set-context --current --namespace=traefik-v2
+```
+
+- Helm update the repos
+
+```
+helm repo update
 ```
 
 - Helm install Traefik
@@ -297,8 +316,20 @@ Well done for making it this far! We have made it to the point where we can depl
 - Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
+
+
+
 - Helm add the repo
 
+```
+helm repo add ortelius https://ortelius.github.io/ortelius-charts/
+```
+
+- Helm update the repos
+
+```
+helm repo update
+```
 
 ### Conclusion
 
