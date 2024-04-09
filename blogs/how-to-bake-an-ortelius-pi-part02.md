@@ -33,13 +33,10 @@ We need to give the Pis a home address so that they are contactable and this is 
 
 If you don't have something like NextDNS or similar you can use `local.gd` which works really well is very easy to setup.
 
-The easiest way to serve localhost. DNS that always resolves to 127.0.0.1. Use mysite.local.gd when developing locally and it'll resolve to 127.0.0.1 just like magic! Any subdomain like*.local.gd will work. It's like xip.io and nip.io but straight up easier since we always point to 127.0.0.1. The easiest way to serve localhost. DNS that always resolves to 127.0.0.1.
+The easiest way to serve localhost. DNS that always resolves to 127.0.0.1. Use mysite.local.gd when developing locally and it'll resolve to 127.0.0.1. Any subdomain like *.local.gd will work. Its the easiest way to serve localhost as its DNS that always resolves to 127.0.0.1.
 
-#### Synopsis
-Use mysite.local.gd when developing locally and it'll resolve to 127.0.0.1 just like magic! Any subdomain like *.local.gd will work.
-It's like xip.io and nip.io but straight up easier since we always point to 127.0.0.1.
+Use mysite.local.gd when developing locally and it'll resolve to 127.0.0.1. Any subdomain like *.local.gd will work.
 We use Netlify DNS so we're pretty sure you're always within 10ms of a DNS server, wherever you are. It's super quick!
-Try it now!
 
 Use any subdomain you like, and sub-sub-domains work too!
 
