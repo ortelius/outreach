@@ -332,6 +332,7 @@ Well done for making it this far! We have made it to the point where we can depl
 
 - Kubectl quick reference guide [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
+- Ortelius on GitHub [here](https://github.com/ortelius/)
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
 
