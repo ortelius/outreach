@@ -338,6 +338,18 @@ Ortelius currently consists of the following Microservices. The one we are most 
 
 ---------------------------------------------------------------------------------------------------------------
 
+- Kubectl create the Ortelius namespace
+
+```
+kubectl create ns ortelius
+```
+
+- Kubectl switch to the ortelius namespace
+
+```
+kubectl config set-context --current --namespace=ortelius
+```
+
 - Helm repo add
 
 ```
@@ -364,6 +376,9 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 - `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
 
 - Kubectl show me Ortelius
+```
+kubectl get pods
+```
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
