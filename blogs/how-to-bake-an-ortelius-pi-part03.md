@@ -280,7 +280,7 @@ kubectl get crds | grep traefik
 - Create a file called `dashboard.yaml` and apply the following logic with `kubectl apply -f dashboard.yaml`
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
 - Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.com`
-- Edit Windows localhosts file here with administrator rights `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.com`
+- Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.com`
 
 ```
 apiVersion: traefik.io/v1alpha1
