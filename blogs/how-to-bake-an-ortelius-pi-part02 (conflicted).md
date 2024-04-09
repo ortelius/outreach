@@ -181,8 +181,8 @@ max-inflight-requests 256
 - [Microk8s on a Raspberry Pi](https://microk8s.io/docs/install-raspberry-pi)
 - [Microk8s host interface configuration](https://microk8s.io/docs/configure-host-interfaces)
 - [Microk8s multi-node cluster creation](https://microk8s.io/docs/clustering)
-- `FYI` there are commands related to `Kubectl` such as `kubectl get nodes` which are run from your machine
-- `FYI` there are commands related to `MickroK8s` such as `sudo microk8s config` which are run on the Pis where MicroK8s is installed
+- FYI there are commands related to `Kubectl` such as `kubectl get nodes` which are run from your machine
+- FYI there are commands related to `MickroK8s` such as `sudo microk8s config` which are run on the Pis where MicroK8s is installed
 - Please find the MicroK8s command reference [here](https://microk8s.io/docs/command-reference)
 
 ---------------------------------------------------------------------------------------------------------------
@@ -281,4 +281,4 @@ kubectl get pods --all-namespaces
 
 By this stage you should have three Pi's each with NFS and MicroK8s. Stay tuned for Part 3 where we will deploy the NSF [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, deploy [MetalLB load balancer](https://metallb.universe.tf/), deploy [Traefik](https://traefik.io/) and [Ortelius](https://ortelius.io/).
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my ho
+#### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup!
