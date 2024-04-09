@@ -177,12 +177,12 @@ max-inflight-requests 256
 - Congrats you just configured the Synology for NFS!
 
 ### MicroK8s Prep
-- [MicroK8s docs](https://microk8s.io/docs) for your reference
+- MicroK8s docs [here](https://microk8s.io/docs)
 - [Microk8s on a Pi](https://microk8s.io/docs/install-raspberry-pi)
 - [Microk8s host interface configuration](https://microk8s.io/docs/configure-host-interfaces)
 - [Microk8s multi-node cluster creation](https://microk8s.io/docs/clustering)
-- FYI there are commands related to `Kubectl` such as `kubectl get nodes` and are run from your machine
-- FYI there are commands related to MickroK8s such as `sudo microk8s config`, all the MicroK8s command are prefixed with `microk8s` and are generally run on the Pis where MicroK8s is installed
+- FYI there are commands related to `Kubectl` such as `kubectl get nodes` which are run from your machine
+- FYI there are commands related to `MickroK8s` such as `sudo microk8s config` which are run on the Pis where MicroK8s is installed
 - Please find the MicroK8s command reference [here](https://microk8s.io/docs/command-reference)
 
 ---------------------------------------------------------------------------------------------------------------
