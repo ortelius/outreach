@@ -15,7 +15,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - Helm Chart reference [here](https://github.com/kubernetes-csi/csi-driver-nfs/tree/master/charts)
 - Kubernetes Storage Class docs [here](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 - [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
-- An excellent blog written by Rudi Martinsen on the NFS CSI Driver [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
+- An excellent blog written by Rudi Martinsen on the NFS CSI Driver with step-by-step instructions for reference [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 
 ---------------------------------------------------------------------------------------------------------------
 
