@@ -105,6 +105,7 @@ max-inflight-requests 256
 
 #### Helm
 - Helm docs [here](https://helm.sh/docs/)
+- Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
 - Install Helm [here](https://helm.sh/) on your local machine
 - Install Helm with Homebrew package manager `brew install helm` generally used on Mac
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
