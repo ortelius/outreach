@@ -241,7 +241,8 @@ kubectl get pods
 ![traefik pods](images/how-to-bake-an-ortelius-pi/part03/06-traefik-pods.png)
 
 - Using GitHub fork the [Traefik Helm Chart](https://github.com/traefik/traefik-helm-chart)
-- Clone the Helm Chart to your local machine and enable the Traefik `dashboard, kubernetesCRD and kubernetesIngress` in `values.yaml` and don't forget to save - FYI they might already be enabled
+- Clone the Helm Chart to your local machine and enable the Traefik `dashboard, kubernetesCRD and kubernetesIngress` in `values.yaml` and don't forget to save
+- `FYI` they might already be enabled
 
 ```
 ## Create an IngressRoute for the dashboard
