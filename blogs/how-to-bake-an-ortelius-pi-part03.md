@@ -167,7 +167,7 @@ spec:
 ```
 
 - The `ipaddresspools.metallb.io` is a [CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) which is a custom resource created in our Kubernetes cluster that adds additional magic
-- Kubectl show me all CRDs
+- Kubectl show me all CRDs for MetalLB
 
 ```
 kubectl get crds | grep metallb
@@ -176,7 +176,7 @@ kubectl get crds | grep metallb
 ![metallb crds](images/how-to-bake-an-ortelius-pi/part03/04-metallb-crds.png)
 
 
-- Kubectl show me the IP address pools
+- Kubectl show me the IP address pools for MetalLB
 
 ```
 kubectl get ipaddresspools.metallb.io
@@ -231,7 +231,7 @@ helm repo update
 helm install traefik traefik/traefik --namespace=traefik-v2
 ```
 
-- Kubectl show me the pods
+- Kubectl show me the pods for Traefik
 
 ```
 kubectl get pods
@@ -268,8 +268,8 @@ helm upgrade traefik traefik/traefik --values values.yaml
 ```
 
 - Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that where installed with Traefik
-- CRDs are custom resources created in our Kubernetes cluster that add additional magic to our Kubernetes cluster
-- Kubectl show me all CRDs
+- CRDs are custom resources created in our Kubernetes cluster that add additional magic
+- Kubectl show me all CRDs for Traefik
 
 ```
 kubectl get crds | grep traefik
@@ -317,7 +317,11 @@ kubectl get svc
 
 - Brilliant our Traefik Proxy has claimed the IP
 
-What you see is the `traefik` service with the `TYPE LoadBalancer` which means it has claimed the MetalLB IP that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
+What you see is the `traefik` service with the `TYPE LoadBalancer` which means it has claimed the `MetalLB IP` that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
+
+- Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) you set
+
+![traefik service](images/how-to-bake-an-ortelius-pi/part03/10-traefik-dashboard.png)
 
 ### Ortelius the Ultimate Evidence Store
 
@@ -327,6 +331,8 @@ Well done for making it this far! We have made it to the point where we can depl
 - Helm quick reference guide [here](https://helm.sh/docs/intro/cheatsheet/)
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
+
+Ortelius currently consists of
 
 ---------------------------------------------------------------------------------------------------------------
 
