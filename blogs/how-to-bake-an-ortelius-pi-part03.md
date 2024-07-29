@@ -447,7 +447,7 @@ kubectl config set-context --current --namespace=kube-system
 - Kubectl show me the pods
 
 ```shell
-kubectl get pods
+kubectl get pods -n kube-system
 ```
 
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
@@ -455,7 +455,7 @@ kubectl get pods
 - Kubectl show me the Storage Class
 
 ```shell
-kubectl get sc
+kubectl get sc --all-namespaces
 ```
 
 ![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/02-csi-nfs-driver-storage-class.png)
@@ -470,11 +470,11 @@ kubectl get sc
 - Manually setting and unsetting the default Storage Class
 
 ```shell
-kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+kubectl -n kube-system patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
 ```shell
-kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl -n kube-system patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
 - Great we now have Kubernetes managing NFS volume mounts dynamically!
@@ -945,7 +945,7 @@ kubectl config set-context --current --namespace=infrastructure
 - Kubectl show me the MetalLB pods in the `infrastructure` namespace
 
 ```shell
-kubectl get pods
+kubectl get pods -n infrastructure
 ```
 
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
@@ -2102,7 +2102,7 @@ kubectl config set-context --current --namespace=infrastructure
 - Kubectl show me the pods for Traefik
 
 ```shell
-kubectl get pods
+kubectl get pods -n infrastructure
 ```
 
 ![traefik pods](images/how-to-bake-an-ortelius-pi/part03/06-traefik-pods.png)
@@ -2119,21 +2119,7 @@ ingressRoute:
     enabled: true
 ```
 
-
-```yaml
-  kubernetesIngress:
-    # -- Load Kubernetes Ingress provider
-    enabled: true
-```
-
-- Because Traefik is deployed with Helm we will use Helm to update our deployment from `values.yaml`
-
-```shell
-helm upgrade traefik traefik/traefik --values values.yaml
-```
-
-- Now we need to deploy an `ingress route` which forms part of the [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) that were installed with Traefik
-- CRDs are custom resources created in our Kubernetes cluster that add additional magic
+- [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)are custom resources created in our Kubernetes cluster that add additional functionality
 - Kubectl show me all CRDs for Traefik
 
 ```shell
@@ -2142,18 +2128,23 @@ kubectl get crds | grep traefik
 
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/07-traefik-crds.png)
 
-- Create a file called `dashboard.yaml` and apply the following logic with `kubectl apply -f dashboard.yaml`
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
 - Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.your tld`
 - Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.your tld`
 - [TLD = Top Level Domain](https://en.wikipedia.org/wiki/Top-level_domain)
+- From here on if we want to access our Microservice frontends we will need to create an `IngressRoute` for each one.
+- If its infrastructure create it in the `infrastructure` namespace
+- If its an application create it in the `applications` namespace
+- Here is an example of an `IngressRoute` for the Traefik Dashboard
+- Remember that the services piece will be different for your applications and should point to the service created in Kubernetes for the application
+- Use the Ortelius `IngressRoute` as an example otherwise hit the Traefik docs
 
 ```yaml
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: dashboard
-  namespace: traefik-v2
+  namespace: infrastructure
 spec:
   entryPoints:
     - websecure
@@ -2168,7 +2159,7 @@ spec:
 - Kubectl show me the Traefik ingress routes
 
 ```shell
-kubectl get ingressroutes.traefik.io
+kubectl get ingressroutes.traefik.io -n infrastructure
 ```
 
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/08-traefik-ingressroute-dashboard.png)
@@ -2176,7 +2167,7 @@ kubectl get ingressroutes.traefik.io
 - Kubectl show me that the Traefik service has claimed our MetalLB single IP address
 
 ```shell
-kubectl get svc
+kubectl get svc -n infrastructure
 ```
 
 ![traefik service](images/how-to-bake-an-ortelius-pi/part03/09-traefik-service.png)
