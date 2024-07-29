@@ -20,7 +20,7 @@ Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Application
 
 Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) and [Cloud hosted](https://accounts.gimlet.io/signup/). I am using Cloud hosted due to the very generous humans at Gimlet.
 
-### Gimlet Installation
+### Gimlet Installation Self-Hosted
 
 #### Prerequisites
 
