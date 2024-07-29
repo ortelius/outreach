@@ -378,10 +378,6 @@ spec:
         - nfsvers=4
 ```
 
-#### Manifest (manually applied K8s manifests)
-
-- N/A
-
 - Lets git it
 
 ```shell
@@ -454,7 +450,11 @@ kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclas
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
-- Great we now have Kubernetes managing NFS volume mounts dynamically for us to our NAS!
+- Great we now have Kubernetes managing NFS volume mounts dynamically!
+
+#### Manifest (manually applied K8s manifests)
+
+- I am currently using the manifests folder for manual Kubernetes manifest deploys
 
 ### MetalLB load-balancer for bare metal Kubernetes
 
@@ -981,7 +981,6 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - Traefik [Providers](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
 
----------------------------------------------------------------------------------------------------------------
 
 - Helm repo add
 
