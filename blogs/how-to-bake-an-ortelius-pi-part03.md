@@ -100,11 +100,9 @@ kubectl get pods
 - You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
 - We will spending our time in the infra one for now
 
-#### Gimlet gitops-<your environment>-infra
+### Gimlet gitops-<your environment>-infra
 
-
-
-### CSI NFS Driver
+#### CSI NFS Driver
 
 With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we will use Kubernetes to dynamically manage the creation and mounting of persistent volumes to our pods using the Synology NAS as the central storage server.
 
