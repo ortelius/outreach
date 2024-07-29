@@ -138,14 +138,14 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: csi-driver-nfs
-  namespace: kube-system # To be installed in the kube-system namespace
+  namespace: kube-system # To be installed in the kube-system namespace as required by the csi-driver-nfs
 spec:
   interval: 60m
   releaseName: csi-driver-nfs # Helm Chart release name
   chart:
     spec:
       chart: csi-driver-nfs # Name of the Helm Chart
-      version: v4.8.0 # Version of the csi-driver-nfs
+      version: v4.8.0 # Version of the csi-driver-nfs | If a new version comes out simply update here
       sourceRef:
         kind: HelmRepository
         name: csi-driver-nfs
@@ -197,11 +197,11 @@ spec:
       enableInlineVolume: false
       propagateHostMountOptions: false
 
-      kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
+      kubeletDir: /var/snap/microk8s/common/var/lib/kubelet # This path is specific to MicroK8s
 
     controller:
       name: csi-nfs-controller
-      replicas: 3
+      replicas: 1 # Change if you want more replicas
       strategyType: Recreate
       runOnMaster: false
       runOnControlPlane: false
@@ -304,10 +304,11 @@ spec:
     imagePullSecrets: []
     # - name: "image-pull-secret"
 
+    # Kubernetes Storage Class creation
     storageClass:
       allowVolumeExpansion: true
       create: true
-      name: nfs-csi-default
+      name: nfs-csi-default # Give your storage class a meaningful name
       annotations:
         storageclass.kubernetes.io/is-default-class: "true"
       provisioner: nfs.csi.k8s.io
@@ -321,7 +322,7 @@ spec:
         # csi.storage.k8s.io/provisioner-secret-namespace: "kube-system"
       reclaimPolicy: Delete
       volumeBindingMode: Immediate
-      mountOptions:
+      mountOptions: # This is where you configure your NFS mounts for Linux
         - hard
         - nfsvers=4
 ```
