@@ -925,6 +925,7 @@ kubectl get pods
 
 #### Manifest (manually applied K8s manifests)
 
+- I am currently using the manifests folder for manual Kubernetes manifest deploys
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
 - Copy the YAML below into `metallb.yaml` and run `kubectl apply -f metallb.yaml`
 
@@ -948,7 +949,7 @@ spec:
   - default-pool
 ```
 
-- The `ipaddresspools.metallb.io` is a [CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) which is a custom resource created in our Kubernetes cluster that adds additional magic
+- The `ipaddresspools.metallb.io` is a [CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) which is a custom resource created in our Kubernetes cluster that adds additional functionality
 - Kubectl show me all CRDs for MetalLB
 
 ```shell
@@ -965,7 +966,7 @@ kubectl get ipaddresspools.metallb.io
 
 ![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/05-metallb-ip-pool.png)
 
-- Epic we have a working load balancer using a single IP address which will act as a gateway into our Kubernetes cluster which we can control with Traefik Proxy
+- Epic we have a working load balancer using a single IP address which will act as a gateway into our Kubernetes cluster which we can control with Traefik Proxy and which Traefik Proxy can bind to
 
 ### Traefik the Cloud Native Proxy
 
