@@ -43,7 +43,7 @@ gimlet --version
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml
 ```
 
-- Then access it with port-forward on http://127.0.0.1:9000
+- Then access it with port-forward on <http://127.0.0.1:9000>
 
 ```shell
 kubectl port-forward svc/gimlet 9000:9000
@@ -435,7 +435,7 @@ kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclas
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
-- Great we now have Kubernetes managing NFS volume mounts dynamically for us to our NAS (Network Attached Storage)!
+- Great we now have Kubernetes managing NFS volume mounts dynamically for us to our NAS!
 
 ### MetalLB load-balancer for bare metal Kubernetes
 
