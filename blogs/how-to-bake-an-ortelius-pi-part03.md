@@ -363,6 +363,14 @@ spec:
         - nfsvers=4
 ```
 
+- Lets git it
+
+```shell
+git add .
+git committ -m "k8s csi nfs driver deploy"
+git push
+```
+
 #### Fluxcd takes care of the following but I am listing the manual steps for illustrative purposes
 
 - Helm repo add
