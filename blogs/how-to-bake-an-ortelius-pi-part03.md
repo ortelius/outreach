@@ -102,7 +102,7 @@ kubectl get pods
 
 ### Gimlet GitOps Infrastructure
 
-#### CSI NFS Driver
+#### Kubernetes CSI NFS Driver
 
 With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we will use Kubernetes to dynamically manage the creation and mounting of persistent volumes to our pods using the Synology NAS as the central storage server.
 
