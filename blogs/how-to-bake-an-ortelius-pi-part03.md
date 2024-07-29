@@ -131,6 +131,10 @@ kubectl get pods
 git clone https://github.com/<your profile>/gitops-<your environment>-infra.git
 ```
 
+```shell
+git clone https://github.com/<your profile>/gitops-<your environment>-apps.git
+```
+
 ### Gimlet GitOps Infrastructure
 
 #### Kubernetes CSI NFS Driver
