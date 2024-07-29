@@ -120,10 +120,11 @@ kubectl get pods
 - Clone this repo to your local machine
 
 - Gimlet Gitops Infra
+
 ![gimlet infra repo](images/how-to-bake-an-ortelius-pi/part03/22-gimlet-infra-repo.png)
 
-
 - Gimlet Gitops Apps
+
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
 ```shell
