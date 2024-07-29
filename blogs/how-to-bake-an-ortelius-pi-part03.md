@@ -92,7 +92,7 @@ kubectl get pods
 
 #### Github check
 
-- Go to Github.com and click on your profile in the top right hand corner of your browser tab
+- Go to [Github.com](https://github.com/) and click on your profile in the top right hand corner of your browser tab
 
 ![github settings](images/how-to-bake-an-ortelius-pi/part03/16-github-settings.png)
 
