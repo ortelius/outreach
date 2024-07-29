@@ -42,10 +42,12 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 #### Prerequisites
 
-- You will need to have an account with a provider such as [Github](https://github.com/) which is the provider I use as Gimlet is going to use this provider for all things GitOps
+- You will need to have an account with a provider such as [Github](https://github.com/) which is the provider I use
+- Gimlet is going to use this provider for all things GitOps
 - [Install Gimlet CLI](https://gimlet.io/docs/installing-gimlet-cli)
 
 ```shell
+# Check the current version before you install
 curl -L "https://github.com/gimlet-io/gimlet/releases/download/cli-v0.27.0/gimlet-$(uname)-$(uname -m)" -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
