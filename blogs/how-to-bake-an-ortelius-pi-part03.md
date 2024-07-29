@@ -1,4 +1,4 @@
-## How to bake an Ortelius Pi Part 3 | The Configuration
+## How to bake an Ortelius Pi Part 3 | The GitOps Configuration
 
 ### Introduction
 
