@@ -55,7 +55,7 @@ kubectl port-forward svc/gimlet 9000:9000
 
 #### Connect your repositories
 
-- Only connect your application repositories here and not anything to do with infrastructure
+- Only import your application repositories here and not anything to do with infrastructure
 
 ![gimlet repos](images/how-to-bake-an-ortelius-pi/part03/15-gimlet-repos.png)
 
@@ -143,7 +143,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
 
-#### Helm-Repositories
+#### Helm-Repository
 
 - Lets add the Kubernetes CSI NFS Driver Helm repository
 - A Helm repository is a collection of Helm charts that are made available for download and installation
@@ -162,7 +162,7 @@ spec:
   url: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 ```
 
-#### Helm-Releases
+#### Helm-Release
 
 - Lets create a Helm release of the Kubernetes CSI NFS Driver
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
@@ -369,7 +369,7 @@ spec:
 
 ```shell
 git add .
-git commit -m "k8s csi nfs driver deploy"
+git commit -m "k8s infra csi nfs driver deploy"
 git push
 ```
 
@@ -448,36 +448,457 @@ With MetalLB we will setup a unique IP address on our home network to expose the
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
 - MetalLB concepts [here](https://metallb.universe.tf/concepts/)
 
----------------------------------------------------------------------------------------------------------------
+#### Helm-Repository
 
+- Lets add the Metallb Helm repository
+- A Helm repository is a collection of Helm charts that are made available for download and installation
+- Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
+- Create a file called `metallb.yaml` in the `helm-repositories` directory and paste the following YAML
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
+
+```yaml
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: metallb
+  namespace: infrastructure
+spec:
+  interval: 60m
+  url: https://metallb.github.io/metallb
+```
+
+#### Helm-Release
+
+- Lets create a Helm release for Metallb
+- A Helm release is an instance of a Helm chart running in a Kubernetes cluster
+- Each release is a deployment of a particular version of a chart with a specific configuration
+- Create a file called `metallb.yaml` in the `helm-releases` directory and paste the following YAML
+
+```yaml
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: metallb
+  namespace: infrastructure
+spec:
+  interval: 60m
+  releaseName: metallb
+  chart:
+    spec:
+      chart: metallb
+      version: v0.14.8
+      sourceRef:
+        kind: HelmRepository
+        name: metallb
+      interval: 10m
+  values:
+    # Default values for metallb.
+    # This is a YAML-formatted file.
+    # Declare variables to be passed into your templates.
+
+    imagePullSecrets: []
+    nameOverride: ""
+    fullnameOverride: ""
+    loadBalancerClass: ""
+
+    # To configure MetalLB, you must specify ONE of the following two
+    # options.
+
+    rbac:
+      # create specifies whether to install and use RBAC rules.
+      create: true
+
+    prometheus:
+      # scrape annotations specifies whether to add Prometheus metric
+      # auto-collection annotations to pods. See
+      # https://github.com/prometheus/prometheus/blob/release-2.1/documentation/examples/prometheus-kubernetes.yml
+      # for a corresponding Prometheus configuration. Alternatively, you
+      # may want to use the Prometheus Operator
+      # (https://github.com/coreos/prometheus-operator) for more powerful
+      # monitoring configuration. If you use the Prometheus operator, this
+      # can be left at false.
+      scrapeAnnotations: false
+
+      # port both controller and speaker will listen on for metrics
+      metricsPort: 7472
+
+      # if set, enables rbac proxy on the controller and speaker to expose
+      # the metrics via tls.
+      # secureMetricsPort: 9120
+
+      # the name of the secret to be mounted in the speaker pod
+      # to expose the metrics securely. If not present, a self signed
+      # certificate to be used.
+      speakerMetricsTLSSecret: ""
+
+      # the name of the secret to be mounted in the controller pod
+      # to expose the metrics securely. If not present, a self signed
+      # certificate to be used.
+      controllerMetricsTLSSecret: ""
+
+      # prometheus doens't have the permission to scrape all namespaces so we give it permission to scrape metallb's one
+      rbacPrometheus: true
+
+      # the service account used by prometheus
+      # required when " .Values.prometheus.rbacPrometheus == true " and " .Values.prometheus.podMonitor.enabled=true or prometheus.serviceMonitor.enabled=true "
+      serviceAccount: ""
+
+      # the namespace where prometheus is deployed
+      # required when " .Values.prometheus.rbacPrometheus == true " and " .Values.prometheus.podMonitor.enabled=true or prometheus.serviceMonitor.enabled=true "
+      namespace: ""
+
+      # the image to be used for the kuberbacproxy container
+      rbacProxy:
+        repository: gcr.io/kubebuilder/kube-rbac-proxy
+        tag: v0.12.0
+        pullPolicy:
+
+      # Prometheus Operator PodMonitors
+      podMonitor:
+        # enable support for Prometheus Operator
+        enabled: false
+
+        # optional additionnal labels for podMonitors
+        additionalLabels: {}
+
+        # optional annotations for podMonitors
+        annotations: {}
+
+        # Job label for scrape target
+        jobLabel: "app.kubernetes.io/name"
+
+        # Scrape interval. If not set, the Prometheus default scrape interval is used.
+        interval:
+
+        # 	metric relabel configs to apply to samples before ingestion.
+        metricRelabelings: []
+        # - action: keep
+        #   regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
+        #   sourceLabels: [__name__]
+
+        # 	relabel configs to apply to samples before ingestion.
+        relabelings: []
+        # - sourceLabels: [__meta_kubernetes_pod_node_name]
+        #   separator: ;
+        #   regex: ^(.*)$
+        #   target_label: nodename
+        #   replacement: $1
+        #   action: replace
+
+      # Prometheus Operator ServiceMonitors. To be used as an alternative
+      # to podMonitor, supports secure metrics.
+      serviceMonitor:
+        # enable support for Prometheus Operator
+        enabled: false
+
+        speaker:
+          # optional additional labels for the speaker serviceMonitor
+          additionalLabels: {}
+          # optional additional annotations for the speaker serviceMonitor
+          annotations: {}
+          # optional tls configuration for the speaker serviceMonitor, in case
+          # secure metrics are enabled.
+          tlsConfig:
+            insecureSkipVerify: true
+
+        controller:
+          # optional additional labels for the controller serviceMonitor
+          additionalLabels: {}
+          # optional additional annotations for the controller serviceMonitor
+          annotations: {}
+          # optional tls configuration for the controller serviceMonitor, in case
+          # secure metrics are enabled.
+          tlsConfig:
+            insecureSkipVerify: true
+
+        # Job label for scrape target
+        jobLabel: "app.kubernetes.io/name"
+
+        # Scrape interval. If not set, the Prometheus default scrape interval is used.
+        interval:
+
+        # 	metric relabel configs to apply to samples before ingestion.
+        metricRelabelings: []
+        # - action: keep
+        #   regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
+        #   sourceLabels: [__name__]
+
+        # 	relabel configs to apply to samples before ingestion.
+        relabelings: []
+        # - sourceLabels: [__meta_kubernetes_pod_node_name]
+        #   separator: ;
+        #   regex: ^(.*)$
+        #   target_label: nodename
+        #   replacement: $1
+        #   action: replace
+
+      # Prometheus Operator alertmanager alerts
+      prometheusRule:
+        # enable alertmanager alerts
+        enabled: false
+
+        # optional additionnal labels for prometheusRules
+        additionalLabels: {}
+
+        # optional annotations for prometheusRules
+        annotations: {}
+
+        # MetalLBStaleConfig
+        staleConfig:
+          enabled: true
+          labels:
+            severity: warning
+
+        # MetalLBConfigNotLoaded
+        configNotLoaded:
+          enabled: true
+          labels:
+            severity: warning
+
+        # MetalLBAddressPoolExhausted
+        addressPoolExhausted:
+          enabled: true
+          labels:
+            severity: alert
+
+        addressPoolUsage:
+          enabled: true
+          thresholds:
+            - percent: 75
+              labels:
+                severity: warning
+            - percent: 85
+              labels:
+                severity: warning
+            - percent: 95
+              labels:
+                severity: alert
+
+        # MetalLBBGPSessionDown
+        bgpSessionDown:
+          enabled: true
+          labels:
+            severity: alert
+
+        extraAlerts: []
+
+    # controller contains configuration specific to the MetalLB cluster
+    # controller.
+    controller:
+      enabled: true
+      # -- Controller log level. Must be one of: `all`, `debug`, `info`, `warn`, `error` or `none`
+      logLevel: info
+      # command: /controller
+      # webhookMode: enabled
+      image:
+        repository: quay.io/metallb/controller
+        tag:
+        pullPolicy:
+      ## @param controller.updateStrategy.type Metallb controller deployment strategy type.
+      ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+      ## e.g:
+      ## strategy:
+      ##  type: RollingUpdate
+      ##  rollingUpdate:
+      ##    maxSurge: 25%
+      ##    maxUnavailable: 25%
+      ##
+      strategy:
+        type: RollingUpdate
+      serviceAccount:
+        # Specifies whether a ServiceAccount should be created
+        create: true
+        # The name of the ServiceAccount to use. If not set and create is
+        # true, a name is generated using the fullname template
+        name: ""
+        annotations: {}
+      securityContext:
+        runAsNonRoot: true
+        # nobody
+        runAsUser: 65534
+        fsGroup: 65534
+      resources:
+        {}
+        # limits:
+        # cpu: 100m
+        # memory: 100Mi
+      nodeSelector: {}
+      tolerations: []
+      priorityClassName: ""
+      runtimeClassName: ""
+      affinity: {}
+      podAnnotations: {}
+      labels: {}
+      livenessProbe:
+        enabled: true
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      readinessProbe:
+        enabled: true
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      tlsMinVersion: "VersionTLS12"
+      tlsCipherSuites: ""
+
+      extraContainers: []
+
+    # speaker contains configuration specific to the MetalLB speaker
+    # daemonset.
+    speaker:
+      enabled: true
+      # command: /speaker
+      # -- Speaker log level. Must be one of: `all`, `debug`, `info`, `warn`, `error` or `none`
+      logLevel: info
+      tolerateMaster: true
+      memberlist:
+        enabled: true
+        mlBindPort: 7946
+        mlBindAddrOverride: ""
+        mlSecretKeyPath: "/etc/ml_secret_key"
+      excludeInterfaces:
+        enabled: true
+      # ignore the exclude-from-external-loadbalancer label
+      ignoreExcludeLB: false
+
+      image:
+        repository: quay.io/metallb/speaker
+        tag:
+        pullPolicy:
+      ## @param speaker.updateStrategy.type Speaker daemonset strategy type
+      ## ref: https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/
+      ##
+      updateStrategy:
+        ## StrategyType
+        ## Can be set to RollingUpdate or OnDelete
+        ##
+        type: RollingUpdate
+      serviceAccount:
+        # Specifies whether a ServiceAccount should be created
+        create: true
+        # The name of the ServiceAccount to use. If not set and create is
+        # true, a name is generated using the fullname template
+        name: ""
+        annotations: {}
+      securityContext: {}
+      ## Defines a secret name for the controller to generate a memberlist encryption secret
+      ## By default secretName: {{ "metallb.fullname" }}-memberlist
+      ##
+      # secretName:
+      resources:
+        {}
+        # limits:
+        # cpu: 100m
+        # memory: 100Mi
+      nodeSelector: {}
+      tolerations: []
+      priorityClassName: ""
+      affinity: {}
+      ## Selects which runtime class will be used by the pod.
+      runtimeClassName: ""
+      podAnnotations: {}
+      labels: {}
+      livenessProbe:
+        enabled: true
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      readinessProbe:
+        enabled: true
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      startupProbe:
+        enabled: true
+        failureThreshold: 30
+        periodSeconds: 5
+      # frr contains configuration specific to the MetalLB FRR container,
+      # for speaker running alongside FRR.
+      frr:
+        enabled: true
+        image:
+          repository: quay.io/frrouting/frr
+          tag: 9.1.0
+          pullPolicy:
+        metricsPort: 7473
+        resources: {}
+
+        # if set, enables a rbac proxy sidecar container on the speaker to
+        # expose the frr metrics via tls.
+        # secureMetricsPort: 9121
+
+      reloader:
+        resources: {}
+
+      frrMetrics:
+        resources: {}
+
+      extraContainers: []
+
+    crds:
+      enabled: true
+      validationFailurePolicy: Fail
+
+    # frrk8s contains the configuration related to using an frrk8s instance
+    # (github.com/metallb/frr-k8s) as the backend for the BGP implementation.
+    # This allows configuring additional frr parameters in combination to those
+    # applied by MetalLB.
+    frrk8s:
+      # if set, enables frrk8s as a backend. This is mutually exclusive to frr
+      # mode.
+      enabled: false
+      external: false
+      namespace: ""
+```
+
+- Lets git it
+
+```shell
+git add .
+git commit -m "k8s infra metallb"
+git push
+```
+
+#### Fluxcd takes care of the following | Manual steps for illustrative purposes
+
 - Helm repo add
 
-```
+```shell
 helm repo add metallb https://metallb.github.io/metallb
 ```
 
 - Helm repo update
 
-```
+```shell
 helm repo update
 ```
 
 - Helm install MetalLB in the `metallb-system` namespace
 
-```
+```shell
 helm install metallb metallb/metallb -n metallb-system
 ```
 
 - Kubectl switch to the `metallb-system` namespace
 
-```
+```shell
 kubectl config set-context --current --namespace=metallb-system
 ```
 
 - Kubectl show me the MetalLB pods in the `metallb-system` namespace
 
-```
+```shell
 kubectl get pods
 ```
 
