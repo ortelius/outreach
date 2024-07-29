@@ -101,7 +101,7 @@ kubectl get pods
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/20-github-gimlet-repos.png)
 
 - You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
-- We will spending our time in the infra one for now
+- We will be spending our time in the infra one for now
 - You will also notice that this repo is private thus no one can see any sensitive information such as secrets
 - Clone this repo to your local machine
 
