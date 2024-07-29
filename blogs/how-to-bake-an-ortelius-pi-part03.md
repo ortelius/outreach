@@ -18,6 +18,8 @@ Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface int
 
 Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Applications. Infrastructure is the bedrock to deploy applications in an environment such as security, observability, storage, load balancer, proxy and Ortelius. Applications would be the services you provide to end users and customers. This concept is fundamental to understanding the ways of Gimlet and Fluxcd.
 
+Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) and [Cloud hosted](https://accounts.gimlet.io/signup/). I am using Cloud hosted due to the very generous humans at Gimlet.
+
 ### Gimlet Installation
 
 #### Prerequisites
@@ -99,6 +101,14 @@ kubectl get pods
 
 - You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
 - We will spending our time in the infra one for now
+- Clone this repo to your local machine
+
+```shell
+git clone https://github.com/<your profile>/gitops-<your environment>-infra.git
+```
+
+
+
 
 ### Gimlet GitOps Infrastructure
 
@@ -114,10 +124,207 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - [What is NFS?](https://www.minitool.com/lib/what-is-nfs.html)
 - An excellent blog written by Rudi Martinsen on the NFS CSI Driver with step-by-step instructions for reference [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 
----------------------------------------------------------------------------------------------------------------
+### Gimlet Kubernetes CSI NFS Driver deployment
 
-- On your local machine open your favourite terminal
-- Switch to the `kube-system` namespace
+- On your local machine open your IDE and navigate to your cloned infrastructure repo
+
+![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
+
+- Create a file called `nfs-csi-driver.yaml` and paste the following
+
+```yaml
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: csi-driver-nfs
+  namespace: kube-system # To be installed in the kube-system namespace
+spec:
+  interval: 60m
+  releaseName: csi-driver-nfs # Helm Chart release name
+  chart:
+    spec:
+      chart: csi-driver-nfs # Name of the Helm Chart
+      version: v4.8.0 # Version of the csi-driver-nfs
+      sourceRef:
+        kind: HelmRepository
+        name: csi-driver-nfs
+      interval: 10m
+  values: # This is where you configure your overrides of the default values from the Helm Chart provider
+    customLabels: {}
+    image:
+      baseRepo: registry.k8s.io
+      nfs:
+        repository: registry.k8s.io/sig-storage/nfsplugin
+        tag: v4.8.0
+        pullPolicy: IfNotPresent
+      csiProvisioner:
+        repository: registry.k8s.io/sig-storage/csi-provisioner
+        tag: v5.0.1
+        pullPolicy: IfNotPresent
+      csiSnapshotter:
+        repository: registry.k8s.io/sig-storage/csi-snapshotter
+        tag: v8.0.1
+        pullPolicy: IfNotPresent
+      livenessProbe:
+        repository: registry.k8s.io/sig-storage/livenessprobe
+        tag: v2.13.1
+        pullPolicy: IfNotPresent
+      nodeDriverRegistrar:
+        repository: registry.k8s.io/sig-storage/csi-node-driver-registrar
+        tag: v2.11.1
+        pullPolicy: IfNotPresent
+      externalSnapshotter:
+        repository: registry.k8s.io/sig-storage/snapshot-controller
+        tag: v8.0.1
+        pullPolicy: IfNotPresent
+
+    serviceAccount:
+      create: true # When true, service accounts will be created for you. Set to false if you want to use your own.
+      controller: csi-nfs-controller-sa # Name of Service Account to be created or used
+      node: csi-nfs-node-sa # Name of Service Account to be created or used
+
+    rbac:
+      create: true
+      name: nfs
+
+    driver:
+      name: nfs.csi.k8s.io
+      mountPermissions: 0
+
+    feature:
+      enableFSGroupPolicy: true
+      enableInlineVolume: false
+      propagateHostMountOptions: false
+
+      kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
+
+    controller:
+      name: csi-nfs-controller
+      replicas: 3
+      strategyType: Recreate
+      runOnMaster: false
+      runOnControlPlane: false
+      livenessProbe:
+        healthPort: 29652
+      logLevel: 5
+      workingMountDir: /tmp
+      dnsPolicy: ClusterFirstWithHostNet # available values: Default, ClusterFirstWithHostNet, ClusterFirst
+      defaultOnDeletePolicy: delete # available values: delete, retain
+      affinity: {}
+      nodeSelector: {}
+      priorityClassName: system-cluster-critical
+      tolerations:
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
+          effect: "NoSchedule"
+        - key: "node-role.kubernetes.io/controlplane"
+          operator: "Exists"
+          effect: "NoSchedule"
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
+      resources:
+        csiProvisioner:
+          limits:
+            memory: 400Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        csiSnapshotter:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        livenessProbe:
+          limits:
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        nfs:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+
+    node:
+      name: csi-nfs-node
+      dnsPolicy: ClusterFirstWithHostNet # available values: Default, ClusterFirstWithHostNet, ClusterFirst
+      maxUnavailable: 1
+      logLevel: 5
+      livenessProbe:
+        healthPort: 29653
+      affinity: {}
+      nodeSelector: {}
+      priorityClassName: system-cluster-critical
+      tolerations:
+        - operator: "Exists"
+      resources:
+        livenessProbe:
+          limits:
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        nodeDriverRegistrar:
+          limits:
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        nfs:
+          limits:
+            memory: 300Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+
+    externalSnapshotter:
+      enabled: true
+      name: snapshot-controller
+      priorityClassName: system-cluster-critical
+      controller:
+        replicas: 1
+      resources:
+        limits:
+          memory: 300Mi
+        requests:
+          cpu: 10m
+          memory: 20Mi
+      # Create volume snapshot CRDs.
+      customResourceDefinitions:
+        enabled: true #if set true, VolumeSnapshot, VolumeSnapshotContent and VolumeSnapshotClass CRDs will be created. Set it false, If they already exist in cluster.
+
+    ## Reference to one or more secrets to be used when pulling images
+    ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+    ##
+    imagePullSecrets: []
+    # - name: "image-pull-secret"
+
+    storageClass:
+      allowVolumeExpansion: true
+      create: true
+      name: nfs-csi-default
+      annotations:
+        storageclass.kubernetes.io/is-default-class: "true"
+      provisioner: nfs.csi.k8s.io
+      parameters:
+        server: 192.168.0.152 # Replace with your NFS server ip address or FQDN
+        share: /volume4/pi8s/ # Replace with your NFS share
+        #subDir:
+        mountPermissions: "0"
+        # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
+        # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
+        # csi.storage.k8s.io/provisioner-secret-namespace: "kube-system"
+      reclaimPolicy: Delete
+      volumeBindingMode: Immediate
+      mountOptions:
+        - hard
+        - nfsvers=4
+```
 
 ```shell
 kubectl config set-context --current --namespace=kube-system
