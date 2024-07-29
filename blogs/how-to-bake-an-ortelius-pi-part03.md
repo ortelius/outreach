@@ -130,7 +130,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
 
-- Create a file called `nfs-csi-driver.yaml` and paste the following
+- Create a file called `nfs-csi-driver.yaml` in the `helm-releases` directory and paste the following YAML
 
 ```yaml
 ---
