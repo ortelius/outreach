@@ -413,7 +413,7 @@ git commit -m "k8s infra csi nfs driver deploy"
 git push
 ```
 
-#### Fluxcd is doing the following under the hood
+#### Fluxcd is doing the following under the hood | CSI NFS Driver
 
 - Helm repo add
 
@@ -914,7 +914,7 @@ git commit -m "k8s infra metallb"
 git push
 ```
 
-#### Fluxcd is doing the following under the hood
+#### Fluxcd is doing the following under the hood | Metallb
 
 - Helm repo add
 
@@ -2072,7 +2072,7 @@ git commit -m "k8s infra metallb"
 git push
 ```
 
-#### Fluxcd is doing the following under the hood
+#### Fluxcd is doing the following under the hood | Traefik
 
 - Helm repo add
 
