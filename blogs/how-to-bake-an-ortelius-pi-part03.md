@@ -35,6 +35,12 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml
 ```
 
+- Then access it with port-forward on http://127.0.0.1:9000
+
+```shell
+kubectl port-forward svc/gimlet 9000:9000
+```
+
 - Login with Github
 
 ![gimlet login](images/how-to-bake-an-ortelius-pi/part03/14-gimlet-login.png)
