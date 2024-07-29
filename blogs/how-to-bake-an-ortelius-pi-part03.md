@@ -2,9 +2,16 @@
 
 ### Introduction
 
-In [Part 2](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-2-the-preperation/), of this series we configured DHCP, DNS, NFS and deployed MicroK8s. In Part 3 we will deploy the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised storage, deploy [MetalLB load-balancer](https://metallb.universe.tf/), deploy [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and deploy [Ortelius](https://ortelius.io/) the ultimate evidence store.
+In [Part 2](https://ortelius.io/blog/2024/04/09/how-to-bake-an-ortelius-pi-part-3-the-configuration/), of this series we deployed the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised storage, [MetalLB load-balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store.
 
-We will be using Helm Charts to configure some of our services as this makes getting going a lot easier. Also Helm Charts are great to compare your configuration or reset your `values.yaml` in case you totally lose the plot. Think of `values.yaml` as the defaults for the application you are deploying.
+We used Helm Charts to deploy this infrastructure and it gave us a good introduction to Helm Charts but it was still clunky, not very streamlined and required lots of fiddling but now we are going to take everything and bring all our infrastructure under the GitOps umbrella. All of this preparation is getting us to the point of deploying applications and seeing Ortelius in action on our homegrown environment.
+
+### Enter the GitOps, enter the Gimlet, enter the Fluxcd
+
+I wanted to find a process for repeatable deployments and to keep everything in sync automagically but I was finding it heavy going to use the default values from the providers Helm Chart and then trying to override those with my own values. I couldn't get ArgoCD to do that without some hellish complicated setup until I found Gimlet and Fluxcd which allowed for a one person to have a simple repeatable process for a single engineer.
+
+Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface into the deployments of our infrastructure and applications. Basically like having the [Little Green Mall Wizard](https://youtu.be/dcxZqMIW4OM) in your K8s cluster with the focus on the wizard part.
+
 
 ### NFS CSI Driver
 
@@ -127,16 +134,16 @@ helm repo update
 - Helm install MetalLB in the `metallb-system` namespace
 
 ```
-helm install metallb metallb/metallb -n infrastructure
+helm install metallb metallb/metallb -n metallb-system
 ```
 
 - Kubectl switch to the `metallb-system` namespace
 
 ```
-kubectl config set-context --current --namespace=infrastructure
+kubectl config set-context --current --namespace=metallb-system
 ```
 
-- Kubectl show me the MetalLB pods in the `infrastructure` namespace
+- Kubectl show me the MetalLB pods in the `metallb-system` namespace
 
 ```
 kubectl get pods
@@ -152,7 +159,7 @@ apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
   name: default-pool
-  namespace: infrastructure
+  namespace: metallb-system
 spec:
   addresses:
   - 192.168.0.151-192.168.0.151 # change this to your private ip
@@ -161,7 +168,7 @@ apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: default-pool
-  namespace: infrastructure
+  namespace: metallb-system
 spec:
   ipAddressPools:
   - default-pool
