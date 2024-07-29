@@ -1062,6 +1062,13 @@ deployment:
 ```
 
 ```yaml
+providers:
+  kubernetesCRD:
+    # -- Load Kubernetes IngressRoute provider
+    enabled: true
+```
+
+```yaml
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
@@ -2005,7 +2012,7 @@ spec:
 
 - The folks at Traefik put this nice piece of logic in the Helm Chart that allows you to create a config file which is dynamically monitored by Traefik
 - I used the config file to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
-- I have `DISABLED` this logic in the below Helm Chart values config
+- I have `DISABLED` this logic in the above Helm Chart values config
 
 ```yaml
       file:
@@ -2112,12 +2119,6 @@ ingressRoute:
     enabled: true
 ```
 
-```yaml
-providers:
-  kubernetesCRD:
-    # -- Load Kubernetes IngressRoute provider
-    enabled: true
-```
 
 ```yaml
   kubernetesIngress:
