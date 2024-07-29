@@ -100,7 +100,7 @@ kubectl get pods
 - You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
 - We will spending our time in the infra one for now
 
-### Gimlet gitops-<your environment>-infra
+### Gimlet GitOps Infrastructure
 
 #### CSI NFS Driver
 
