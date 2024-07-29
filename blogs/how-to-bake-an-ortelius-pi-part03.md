@@ -28,7 +28,7 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 - [Install Gimlet CLI](https://gimlet.io/docs/installing-gimlet-cli)
 
 ```shell
-curl -L "https://github.com/gimlet-io/gimlet/releases/download/cli-v0.21.0/gimlet-$(uname)-$(uname -m)" -o gimlet
+curl -L "https://github.com/gimlet-io/gimlet/releases/download/cli-v0.27.0/gimlet-$(uname)-$(uname -m)" -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
 gimlet --version
