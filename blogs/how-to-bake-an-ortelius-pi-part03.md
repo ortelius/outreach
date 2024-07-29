@@ -23,6 +23,10 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 #### Fluxcd
 
 - [Documentation](https://fluxcd.io/flux/)
+- [Flux Ecosystem](https://fluxcd.io/ecosystem/#flux-uis--guis)
+- [VS Code extension](https://marketplace.visualstudio.com/items?itemName=Weaveworks.vscode-gitops-tools)
+
+![gimlet login](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-vscode-extension.png)
 
 ### Gimlet Installation Self-Hosted
 
