@@ -37,7 +37,7 @@ kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/
 
 ```shell
 gimlet environment connect \
-  --env <your environment such as dev or staging or test or prod or anything you think of> \
+  --env <your environment such as dev or staging or test or prod or anything you like> \
   --server https://app.gimlet.io \
   --token <your token>
 ```
