@@ -982,39 +982,54 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
 
 
+
+
+
+
+
+- Lets git it
+
+```shell
+git add .
+git commit -m "k8s infra metallb"
+git push
+```
+
+#### Fluxcd is doing the following under the hood
+
 - Helm repo add
 
-```
+```shell
 helm repo add traefik https://traefik.github.io/charts
 ```
 
 - Kubectl create the Traefik namespace
 
-```
+```shell
 kubectl create ns traefik-v2
 ```
 
 - Kubectl switch to the traefik-v2 namespace
 
-```
+```shell
 kubectl config set-context --current --namespace=traefik-v2
 ```
 
 - Helm repo update
 
-```
+```shell
 helm repo update
 ```
 
 - Helm install Traefik
 
-```
+```shell
 helm install traefik traefik/traefik --namespace=traefik-v2
 ```
 
 - Kubectl show me the pods for Traefik
 
-```
+```shell
 kubectl get pods
 ```
 
@@ -1024,7 +1039,7 @@ kubectl get pods
 - Clone the Helm Chart to your local machine and enable the Traefik `dashboard, kubernetesCRD and kubernetesIngress` in `values.yaml` and don't forget to save
 - `FYI` they might already be enabled
 
-```
+```yaml
 ## Create an IngressRoute for the dashboard
 ingressRoute:
   dashboard:
@@ -1032,14 +1047,14 @@ ingressRoute:
     enabled: true
 ```
 
-```
+```yaml
 providers:
   kubernetesCRD:
     # -- Load Kubernetes IngressRoute provider
     enabled: true
 ```
 
-```
+```yaml
   kubernetesIngress:
     # -- Load Kubernetes Ingress provider
     enabled: true
@@ -1047,7 +1062,7 @@ providers:
 
 - Because Traefik is deployed with Helm we will use Helm to update our deployment from `values.yaml`
 
-```
+```shell
 helm upgrade traefik traefik/traefik --values values.yaml
 ```
 
@@ -1055,7 +1070,7 @@ helm upgrade traefik traefik/traefik --values values.yaml
 - CRDs are custom resources created in our Kubernetes cluster that add additional magic
 - Kubectl show me all CRDs for Traefik
 
-```
+```shell
 kubectl get crds | grep traefik
 ```
 
@@ -1067,7 +1082,7 @@ kubectl get crds | grep traefik
 - Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.your tld`
 - [TLD = Top Level Domain](https://en.wikipedia.org/wiki/Top-level_domain)
 
-```
+```yaml
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
@@ -1086,7 +1101,7 @@ spec:
 
 - Kubectl show me the Traefik ingress routes
 
-```
+```shell
 kubectl get ingressroutes.traefik.io
 ```
 
@@ -1094,7 +1109,7 @@ kubectl get ingressroutes.traefik.io
 
 - Kubectl show me that the Traefik service has claimed our MetalLB single IP address
 
-```
+```shell
 kubectl get svc
 ```
 
@@ -1102,7 +1117,7 @@ kubectl get svc
 
 - Here is a view of the services for all namespaces
 
-```
+```shell
 NAMESPACE        NAME                                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
 cert-manager     cert-manager                         ClusterIP      10.152.183.42    <none>          9402/TCP                     25h
 cert-manager     cert-manager-webhook                 ClusterIP      10.152.183.32    <none>          443/TCP                      25h
