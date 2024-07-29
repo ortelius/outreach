@@ -369,7 +369,7 @@ spec:
 
 ```shell
 git add .
-git committ -m "k8s csi nfs driver deploy"
+git commit -m "k8s csi nfs driver deploy"
 git push
 ```
 
