@@ -405,8 +405,6 @@ spec:
         - nfsvers=4
 ```
 
-- After out chang
-
 - Lets git it
 
 ```shell
