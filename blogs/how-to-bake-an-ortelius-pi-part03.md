@@ -215,7 +215,7 @@ spec:
       enableInlineVolume: false
       propagateHostMountOptions: false
 
-      kubeletDir: /var/snap/microk8s/common/var/lib/kubelet # This path is specific to MicroK8s
+      kubeletDir: /var/snap/microk8s/common/var/lib/kubelet # This path is specific to MicroK8s as per the documentation
 
     controller:
       name: csi-nfs-controller
