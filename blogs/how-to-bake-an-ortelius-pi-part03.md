@@ -143,6 +143,24 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
 
+#### Helm-Repositories
+
+- A Helm repository is a collection of Helm charts that are made available for download and installation
+- Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
+- Create a file called `nfs-csi-driver.yaml` in the `helm-repositories` directory and paste the following YAML
+
+```yaml
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: csi-driver-nfs
+  namespace: kube-system
+spec:
+  interval: 60m
+  url: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+```
+
 #### Helm-Releases
 
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
