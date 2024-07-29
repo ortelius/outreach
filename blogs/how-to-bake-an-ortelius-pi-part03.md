@@ -15,6 +15,10 @@ Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface int
 ### Gimlet
 
 - [Documentation](https://gimlet.io/docs)
+- [Gimlet manifest reference](https://gimlet.io/docs/gimlet-manifest-reference)
+- [Gimlet OneChart reference](https://gimlet.io/docs/onechart-reference)
+- [Gimlet configuration reference](https://gimlet.io/docs/gimlet-configuration-reference)
+- [Upgrading Flux](https://gimlet.io/docs/gitops-bootstrapping-reference)
 
 Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Applications. Infrastructure is the bedrock to deploy applications in an environment such as security, observability, storage, load balancer, proxy and Ortelius. Applications would be the services you provide to end users and customers. This concept is fundamental to understanding the ways of Gimlet and Fluxcd.
 
