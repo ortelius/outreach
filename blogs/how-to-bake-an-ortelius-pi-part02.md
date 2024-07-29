@@ -27,6 +27,7 @@ We need to give the Pis a home address so that they are contactable and this is 
 ![dhcp reservations](images/how-to-bake-an-ortelius-pi/part02/21-dhcp-reservations.png)
 
 ---------------------------------------------------------------------------------------------------------------
+
 ### DNS
 
 #### [Local.gd](https://local.gd)
@@ -37,18 +38,18 @@ A easy way to serve localhost is to use DNS that always resolves to 127.0.0.1. F
 
 - The use of subdomains and sub-sub-domains work too as in the example below
 
-```
+```shell
 $ dig startup.local.gd
-ortelius.local.gd.                  86400	IN	A	127.0.0.1
+ortelius.local.gd.                  86400 IN A 127.0.0.1
 
 $ dig www.startup.local.gd
-www.ortelius.local.gd.              86400	IN	A	127.0.0.1
+www.ortelius.local.gd.              86400 IN A 127.0.0.1
 
 $ dig my.project.company.local.gd
-aliens.are.real.ortelius.local.gd.       86400	IN	A	127.0.0.1
+aliens.are.real.ortelius.local.gd.       86400 IN A 127.0.0.1
 
 $ dig alderaan.local.gd
-xrpl.local.gd.                 86400	IN	A	127.0.0.10.0.1
+xrpl.local.gd.                 86400 IN A 127.0.0.10.0.1
 ```
 
 - Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts`
@@ -64,15 +65,14 @@ For DNS I use [NextDNS](https://nextdns.io/) but this is not just DNS its comple
 
 NextDNS is free to a certain amount of DNS queries once you reach that limit resolution stops. Its inexpensive and totally worth it.
 
--------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 
 - Think of a domain name for your environment - mine is pangarabbit.com
 - Go to the NextDNS Wiki [here](https://github.com/nextdns/nextdns/wiki)
 - Install the cli on each Pi and on your NAS so that you can SSH into your NAS and install NextDNS
 - Here is a doc on how to configure [SSH](https://kb.synology.com/en-id/DSM/tutorial/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet) for a Synology NAS
 
-
-```
+```shell
 sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 ```
 
@@ -123,6 +123,7 @@ max-inflight-requests 256
 ---------------------------------------------------------------------------------------------------------------
 
 ### NFS Prep
+
 - [Synology](https://www.synology.com/)
 - [What is network-attached storage (NAS)?](https://www.purestorage.com/knowledge/what-is-nas.html)
 - [What is NFS?](https://www.minitool.com/lib/what-is-nfs.html)
@@ -143,6 +144,7 @@ max-inflight-requests 256
 ![synology nfs services](images/how-to-bake-an-ortelius-pi/part02/03-syno-nfs-enable.png)
 
 #### Configure Shared Folder
+
 - Go to `File Sharing`
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/04-syno-file-sharing-icon.png)
@@ -191,10 +193,12 @@ max-inflight-requests 256
 ### OS Prep
 
 #### Pis | Ubuntu Server 22.04.4 LTS
+
 - Update all packages to the latest on each Pi with `sudo apt update -y && sudo apt upgrade -y` then go and make coffee
 - Install `sudo apt install nfs-common -y` for each Pi
 
 #### Kubectl | Your machine
+
 - Kubectl docs [here](https://kubernetes.io/docs/reference/kubectl/)
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Install Kubectl [here](https://kubernetes.io/docs/tasks/tools/) on `your local machine`
@@ -203,6 +207,7 @@ max-inflight-requests 256
 - Install and setup Kubectl on Linux [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
 #### Helm | Your machine
+
 - Helm docs [here](https://helm.sh/docs/)
 - Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
 - Install Helm [here](https://helm.sh/) on `your local machine`
@@ -210,6 +215,7 @@ max-inflight-requests 256
 - Install Helm with Chocolatey windows package manager `choco install kubernetes-helm`
 
 ### MicroK8s Prep
+
 - MicroK8s docs [here](https://microk8s.io/docs)
 - [Microk8s on a Raspberry Pi](https://microk8s.io/docs/install-raspberry-pi)
 - [Microk8s host interface configuration](https://microk8s.io/docs/configure-host-interfaces)
@@ -223,7 +229,7 @@ max-inflight-requests 256
 - SSH into each Pi and configure the Pi BIOS `sudo vi /boot/firmware/cmdline.txt` and add the following `cgroup_enable=memory cgroup_memory=1`
 - Below is the config from my Pi as an example
 
-```
+```shell
 cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
 ```
 
@@ -231,7 +237,7 @@ cgroup_enable=memory cgroup_memory=1 console=serial0,115200 dwc_otg.lpm_enable=0
 - Referenced from [here](https://microk8s.io/docs/install-raspberry-pi)
 - Install Microk8s on each Pi
 
-```
+```shell
 sudo snap install microk8s --classic
 ```
 
@@ -244,14 +250,14 @@ MicroK8s uses [Dqlite](https://dqlite.io/) as a highly available SQLite database
 - Choose a Pi to start the process, I used `pi01`
 - SSH onto `pi01` and run this command on `pi01`
 
-```
+```shell
 sudo microk8s add-node
 ```
 
 - You will need to run this `3 times` on the same node to generate a unique key for each node you wish to join
 - This will return some joining instructions which should be executed on the MicroK8s instance that you wish to join to the cluster `(NOT THE NODE YOU RAN add-node FROM)` <-- Taken from Canonicals docs.
 
-```
+```shell
 # EXAMPLE from Canonicals docs
 From the node you wish to join to this cluster, run the following:
 microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
@@ -271,7 +277,7 @@ microk8s join 172.17.0.1:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - On your computer you will need to configure Kubectl by editing your `kube config`
 - My Kubectl configuration is here on my Mac `/Users/<username>/.kube/config`
 
-```
+```yaml
 - cluster:
     certificate-authority-data: <your certificate authority data goes here>
     server: https://<your local network IP for your Pi goes here>:16443
@@ -286,28 +292,39 @@ users:
   user:
     client-certificate-data: <your client certificate data goes here>
 ```
+
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Use Kubectl to connect to your cluster
 - To view your current kube config
-```
+
+```shell
 kubectl config view
 ```
+
 - Get your available contexts
-```
+
+```shell
 kubectl config get-context
 ```
+
 - Switch context to Microk8s
-```
+
+```shell
 kubectl config use-context microk8s
 ```
+
 - Run the following to see all namespaces
-```
+
+```shell
 kubectl get ns
 ```
+
 - Run the following to see all pods
-```
+
+```shell
 kubectl get pods --all-namespaces
 ```
+
 - Well done you are now using your Microk8s Kubernetes cluster
 
 ### Conclusion
