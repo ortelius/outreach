@@ -12,7 +12,50 @@ I wanted to find a process for repeatable deployments, and to incorporate drift 
 
 Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface into the deployments of our infrastructure and applications. Basically like having the [Little Green Mall Wizard](https://youtu.be/dcxZqMIW4OM) in your K8s cluster with the focus on the wizard part.
 
+### Gimlet
+
+- [Documentatiopn](https://gimlet.io/docs)
+
+Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Applications. Infrastructure is the bedrock to deploy applications in an environment such as security, observability, storage, load balancer, proxy and Ortelius. Applications would be the services you provide to end users and customers. This concept is fundamental to understanding the ways of Gimlet and Fluxcd.
+
 ### Gimlet Installation
+
+#### Prerequisites
+
+- You will need to have an account with a provider such as [Github](https://github.com/) which is the provider I use as Gimlet is going use this provider for all things GitOps
+
+#### Install Gimlet
+
+- Explore more involved installations of Gimlet [here](https://github.com/gimlet-io/gimlet/tree/main/examples)
+- We will be using this easy to deploy one-liner for now
+
+```shell
+kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml
+```
+
+- This command line connects your K8s cluster to Gimlet
+
+```shell
+gimlet environment connect \
+  --env <your environment such as dev or staging or test or prod or anything you think of> \
+  --server https://app.gimlet.io \
+  --token <your token>
+```
+
+- Login with Github
+
+![gimlet login](images/how-to-bake-an-ortelius-pi/part03/14-gimlet-login.png)
+
+
+
+
+
+
+
+
+
+
+
 
 ### CSI NFS Driver
 
@@ -31,7 +74,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - On your local machine open your favourite terminal
 - Switch to the `kube-system` namespace
 
-```
+```shell
 kubectl config set-context --current --namespace=kube-system
 ```
 
