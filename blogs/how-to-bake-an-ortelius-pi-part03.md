@@ -156,7 +156,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
 
-#### Helm-Repository
+#### Helm-Repository | CSI NFS Driver
 
 - Lets add the Kubernetes CSI NFS Driver Helm repository
 - A Helm repository is a collection of Helm charts that are made available for download and installation
@@ -175,7 +175,7 @@ spec:
   url: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 ```
 
-#### Helm-Release
+#### Helm-Release | CSI NFS Driver
 
 - Lets create a Helm release of the Kubernetes CSI NFS Driver
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
@@ -465,7 +465,7 @@ With MetalLB we will setup a unique IP address on our home network to expose the
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
 - MetalLB concepts [here](https://metallb.universe.tf/concepts/)
 
-#### Helm-Repository
+#### Helm-Repository | Metallb
 
 - Lets add the Metallb Helm repository
 - A Helm repository is a collection of Helm charts that are made available for download and installation
@@ -485,7 +485,7 @@ spec:
   url: https://metallb.github.io/metallb
 ```
 
-#### Helm-Release
+#### Helm-Release | Metallb
 
 - Lets create a Helm release for Metallb
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
@@ -981,12 +981,12 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - Traefik [Providers](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/)
 - Traefik Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/traefik/traefik)
 
-#### Helm-Repository
+#### Helm-Repository | Traefik
 
-- Lets add the Metallb Helm repository
+- Lets add the Traefik Helm repository
 - A Helm repository is a collection of Helm charts that are made available for download and installation
 - Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
-- Create a file called `metallb.yaml` in the `helm-repositories` directory and paste the following YAML
+- Create a file called `traefik.yaml` in the `helm-repositories` directory and paste the following YAML
 - Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
 
 ```yaml
@@ -1001,7 +1001,7 @@ spec:
   url: https://traefik.github.io/charts
 ```
 
-#### Helm-Release
+#### Helm-Release | Traefik
 
 - Lets create a Helm release for Metallb
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
