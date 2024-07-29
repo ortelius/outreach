@@ -1952,7 +1952,7 @@ spec:
 
 - The folks at Traefik put in this nice piece of logic in the Helm Chart that allows you to create a config file which is monitored by Traefik and thus changes will be dynamically applied
 - I used the config file to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
-- I have disabled this logic in the above values config
+- I have `DISABLED` this logic in the above values config
 
 ```yaml
       file:
@@ -2003,7 +2003,6 @@ spec:
               name: cloudflare
               key: api-token
 ```
-
 
 - Lets git it
 
