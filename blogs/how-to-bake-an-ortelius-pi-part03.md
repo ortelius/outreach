@@ -167,7 +167,8 @@ spec:
         kind: HelmRepository
         name: csi-driver-nfs
       interval: 10m
-  values: # This is where you configure your overrides of the default values from the Helm Chart provider
+  # values: This is where you paste the default values from the Helm Chart provider and configure your overrides for your environment
+  values:
     customLabels: {}
     image:
       baseRepo: registry.k8s.io
