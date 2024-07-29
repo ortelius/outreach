@@ -2097,7 +2097,7 @@ helm install traefik traefik/traefik --namespace=traefik
 
 ```shell
 kubectl config set-context --current --namespace=infrastructure
-
+```
 
 - Kubectl show me the pods for Traefik
 
@@ -2236,11 +2236,10 @@ Ortelius currently consists of the following Microservices. The one we are most 
 
 #### Helm-Repository | Ortelius
 
-- Lets add the Traefik Helm repository
+- Lets add the Ortelius Helm repository
 - A Helm repository is a collection of Helm charts that are made available for download and installation
 - Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
 - Create a file called `ortelius.yaml` in the helm-repositories directory and paste the following YAML
-- Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
 
 ```yaml
 ---
@@ -2256,7 +2255,7 @@ spec:
 
 #### Helm-Release | Ortelius
 
-- Lets create a Helm release for Metallb
+- Lets create a Helm release for Ortelius
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `ortelius.yaml` in the helm-releases directory and paste the following YAML
@@ -2279,30 +2278,26 @@ spec:
         kind: HelmRepository
         name: ortelius
       interval: 10m
-
+  values:
 ```
 
-- Kubectl switch to the ortelius namespace
-
-```
-kubectl config set-context --current --namespace=ortelius
-```
+#### Fluxcd is doing the following under the hood | Ortelius
 
 - Helm repo add
 
-```
+```shell
 helm repo add ortelius https://ortelius.github.io/ortelius-charts/
 ```
 
 - Helm repo update
 
-```
+```shell
 helm repo update
 ```
 
 - Helm install Ortelius
 
-```
+```shell
 helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgres --set global.postgresql.enabled=true --set global.nginxController.enabled=true --set ms-nginx.ingress.type=k3d --set ms-nginx.ingress.dnsname=<your domain name goes here>  --version "${ORTELIUS_VERSION}" --namespace ortelius
 ```
 
@@ -2313,10 +2308,15 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 - `--set ms-nginx.ingress.type=k3d` | This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for [K3d](https://k3d.io/v5.6.0/) another very lightweight Kubernetes deployment which uses Traefik as the default ingress
 - The `k3d` value enables the Traefik ingress class to make Traefik Ortelius aware.
 - `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
+- Kubectl switch to the ortelius namespace
+
+```shell
+kubectl config set-context --current --namespace=ortelius
+```
 
 - Kubectl show me the pods for Ortelius
 
-```
+```shell
 kubectl get pods
 ```
 
