@@ -199,4 +199,4 @@ Host pi03.yourdomain.com
 
 By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS each configured for SSH with a password or preferably a SSH private key and public key. Stay tuned for part 2 where we will dive into DHCP, NextDNS, NFS and install MicroK8s.
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup
+#### Disclaimer: Any brands I mention in this blog post series are not monetised

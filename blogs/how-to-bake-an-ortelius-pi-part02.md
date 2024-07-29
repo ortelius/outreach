@@ -332,6 +332,6 @@ kubectl get pods --all-namespaces
 
 ### Conclusion
 
-By this stage you should have three Pi's each with MicroK8s in an HA configuration and a Synology ready with NFS. Stay tuned for Part 3 where we will use GitOps to deploy the following NSF [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, [MetalLB Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) and [Ortelius](https://ortelius.io/).
+By this stage you should have three Pi's each with MicroK8s in an HA configuration and a Synology ready with NFS. Stay tuned for Part 3 where we will use GitOps to deploy the following NFS [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, [MetalLB Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) and [Ortelius](https://ortelius.io/).
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised. This is my home setup
+#### Disclaimer: Any brands I mention in this blog post series are not monetised
