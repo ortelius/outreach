@@ -237,7 +237,7 @@ spec:
 
     controller:
       name: csi-nfs-controller
-      replicas: 1 # Change if you want more replicas
+      replicas: 3 # Change if you want more replicas
       strategyType: Recreate
       runOnMaster: false
       runOnControlPlane: false
