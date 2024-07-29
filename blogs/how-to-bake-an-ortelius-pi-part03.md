@@ -2279,6 +2279,19 @@ spec:
         name: ortelius
       interval: 10m
   values:
+    ms-general:
+      dbpass: postgres
+
+    global:
+      postgresql:
+        enabled: true
+      nginxController:
+        enabled: true
+
+    ms-nginx:
+      ingress:
+        type: k3d
+        dnsname: ortelius.pangarabbit.com
 ```
 
 #### Fluxcd is doing the following under the hood | Ortelius
@@ -2301,7 +2314,7 @@ helm repo update
 helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgres --set global.postgresql.enabled=true --set global.nginxController.enabled=true --set ms-nginx.ingress.type=k3d --set ms-nginx.ingress.dnsname=<your domain name goes here>  --version "${ORTELIUS_VERSION}" --namespace ortelius
 ```
 
--Lets stop here to discuss some of these settings.
+- Lets stop here to discuss some of these settings.
 
 - `--set ms-general.dbpass=postgres` | Set the PostgreSQL database password
 - `--set global.nginxController.enabled=true` | Sets the ingress controller which could be one of `default nginx ingress, AWS Load Balancer or Google Load Balancer` | Refer to the Helm Chart in ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
