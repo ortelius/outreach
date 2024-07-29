@@ -377,6 +377,10 @@ spec:
         - nfsvers=4
 ```
 
+#### Manifest (manually applied K8s manifests)
+
+- N/A
+
 - Lets git it
 
 ```shell
@@ -902,6 +906,8 @@ helm repo update
 helm install metallb metallb/metallb -n infrastructure
 ```
 
+#### Kubernetes check
+
 - Kubectl switch to the `infrastructure` namespace
 
 ```shell
@@ -916,24 +922,26 @@ kubectl get pods
 
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
 
-- Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
-- Copy the YAML below into `metallb-setup.yaml` and run `kubectl apply -f metallb-setup.yaml`
+#### Manifest (manually applied K8s manifests)
 
-```
+- Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
+- Copy the YAML below into `metallb.yaml` and run `kubectl apply -f metallb.yaml`
+
+```yaml
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
   name: default-pool
-  namespace: metallb-system
+  namespace: infrastructure
 spec:
   addresses:
-  - 192.168.0.151-192.168.0.151 # change this to your private ip
+  - 192.168.0.151-192.168.0.151 # Amend this to match your private ip address pool
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: default-pool
-  namespace: metallb-system
+  namespace: infrastructure
 spec:
   ipAddressPools:
   - default-pool
@@ -942,7 +950,7 @@ spec:
 - The `ipaddresspools.metallb.io` is a [CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) which is a custom resource created in our Kubernetes cluster that adds additional magic
 - Kubectl show me all CRDs for MetalLB
 
-```
+```shell
 kubectl get crds | grep metallb
 ```
 
@@ -950,7 +958,7 @@ kubectl get crds | grep metallb
 
 - Kubectl show me the IP address pools for MetalLB
 
-```
+```shell
 kubectl get ipaddresspools.metallb.io
 ```
 
