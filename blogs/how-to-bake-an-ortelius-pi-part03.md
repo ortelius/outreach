@@ -460,7 +460,7 @@ kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclas
 
 - Great we now have Kubernetes managing NFS volume mounts dynamically!
 
-#### Manifest Folder (manually applied K8s manifests)
+#### Manifest Folder | CSI NFS Driver
 
 - I am currently using the manifests folder for manual Kubernetes manifest deploys
 
@@ -931,7 +931,7 @@ kubectl get pods
 
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
 
-#### Manifest Folder (manually applied K8s manifests)
+#### Manifest Folder | Metallb
 
 - I am currently using the manifests folder for manual Kubernetes manifest deploys
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
@@ -1014,7 +1014,89 @@ spec:
 - Lets create a Helm release for Metallb
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
 - Each release is a deployment of a particular version of a chart with a specific configuration
-- Create a file called `metallb.yaml` in the `helm-releases` directory and paste the following YAML
+- Create a file called `traefik.yaml` in the `helm-releases` directory and paste the following YAML
+
+#### FYI | Helm Chart configuration | Config changes you need to make to Traefik to fit your environment
+
+```yaml
+deployment:
+  replicas: 3 # Maybe you only want 1
+```
+
+```yaml
+    # The gatekeeper to your Microservices
+    ingressRoute:
+      dashboard:
+        # -- Create an IngressRoute for the dashboard
+        enabled: true
+        # -- Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
+        annotations: {}
+        # -- Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
+        labels: {}
+        # -- The router match rule used for the dashboard ingressRoute
+        matchRule: Host(`<add your fqdn here>`) #PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+        # -- Specify the allowed entrypoints to use for the dashboard ingress route, (e.g. traefik, web, websecure).
+        # By default, it's using traefik entrypoint, which is not exposed.
+        # /!\ Do not expose your dashboard without any protection over the internet /!\
+        entryPoints: ["web", "websecure"]
+        # -- Additional ingressRoute middlewares (e.g. for authentication)
+```
+
+#### Manifest Folder | Traefik
+
+- The folks at Traefik put this nice piece of logic in the Helm Chart that allows you to create a config file which is dynamically monitored by Traefik
+- I used the config file to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
+- I have `DISABLED` this logic in the below Helm Chart values config
+
+```yaml
+      file:
+        # -- Create a file provider
+        enabled: false
+        # -- Allows Traefik to automatically watch for file changes
+        watch: true
+        # -- File content (YAML format, go template supported) (see https://doc.traefik.io/traefik/providers/file/)
+        # content:
+        providers:
+          file:
+            directory: /manifests/traefik-dynamic-config.yaml
+```
+
+- Create the following file `traefik-dynamic-config.yaml` and add the following YAML config if you are using Cloudflare
+- Otherwise refer to these configuration examples for the Traefik Helm Chart for certificates and more [here](https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md)
+
+```yaml
+---
+# Kubernetes secret containing the Cloudflare api token
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare
+  namespace: infrastructure
+type: Opaque
+stringData:
+  api-token: "<add your cloudflare api token>"
+---
+# Certificate configuration and renewal structure stored in cert-manager
+# !!!!WARNING!!!! If you want to use cert-manager you need have this installed before you initiate the certifcate configuration
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: cloudflare
+  namespace: infrastructure
+spec:
+  acme:
+    email: <add your email address>
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: cloudflare-key
+    solvers:
+      - dns01:
+          cloudflare:
+            email: sachajw@gmail.com
+            apiTokenSecretRef:
+              name: cloudflare
+              key: api-token
+```
 
 ```yaml
 ---
@@ -1954,62 +2036,6 @@ spec:
             insecureSkipVerify:
       # Enable export of errors logs to the platform. Default: true.
       sendlogs:
-```
-
-#### Manifest Folder
-
-- The folks at Traefik put in this nice piece of logic in the Helm Chart that allows you to create a config file which is monitored by Traefik and thus changes will be dynamically applied
-- I used the config file to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
-- I have `DISABLED` this logic in the above values config
-
-```yaml
-      file:
-        # -- Create a file provider
-        enabled: false
-        # -- Allows Traefik to automatically watch for file changes
-        watch: true
-        # -- File content (YAML format, go template supported) (see https://doc.traefik.io/traefik/providers/file/)
-        # content:
-        providers:
-          file:
-            directory: /manifests/traefik-dynamic-config.yaml
-```
-
-- Create the following file `traefik-dynamic-config.yaml` and add the following YAML config if you are using Cloudflare
-- Otherwise refer to these configuration for the Traefik Helm Chart [here](https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md)
-
-```yaml
----
-# Kubernetes secret containing the Cloudflare api token
-apiVersion: v1
-kind: Secret
-metadata:
-  name: cloudflare
-  namespace: infrastructure
-type: Opaque
-stringData:
-  api-token: "<add your cloudflare api token>"
----
-# Certificate configuration and renewal structure stored in cert-manager
-# !!!!WARNING!!!! If you want to use cert-manager you need have this installed before you initiate the certifcate configuration
-apiVersion: cert-manager.io/v1
-kind: Issuer
-metadata:
-  name: cloudflare
-  namespace: infrastructure
-spec:
-  acme:
-    email: <add your email address>
-    server: https://acme-v02.api.letsencrypt.org/directory
-    privateKeySecretRef:
-      name: cloudflare-key
-    solvers:
-      - dns01:
-          cloudflare:
-            email: sachajw@gmail.com
-            apiTokenSecretRef:
-              name: cloudflare
-              key: api-token
 ```
 
 - Lets git it
