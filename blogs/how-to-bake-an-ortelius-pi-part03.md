@@ -2216,13 +2216,13 @@ Well done for making it this far! We have made it to the point where we can depl
 - Ortelius docs [here](https://docs.ortelius.io/guides/)
 - Ortelius Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
 
-Ortelius currently consists of the following Microservices. The one we are most interested at this point is `ms-nginx` which is the gateway to all the backing microservices for Ortelius. We are going to deploy Ortelius using Helm then configure Traefik to send requests to `ms-nginx` and then we should get the Ortelius dashboard.
+Ortelius currently consists of the following Microservices. The one we are most interested at this point is `ms-nginx` which is the gateway to all the backing microservices for Ortelius. We are going to deploy Ortelius using Gimlet and Fluxcd then configure Traefik to send requests to `ms-nginx` which should allow us to load the Ortelius frontend.
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
-![ortelius dashboard](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-dashboard.png)
+![ortelius frontend](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-frontend.png)
 
-##### Ortelius Microservice GitHub repos
+#### Ortelius Microservice GitHub repos
 
 - [ms-dep-pkg-cud](https://github.com/ortelius/ms-dep-pkg-cud)
 - [ms-textfile-crud](https://github.com/ortelius/ms-textfile-crud)
@@ -2234,12 +2234,52 @@ Ortelius currently consists of the following Microservices. The one we are most 
 - [ms-scorecard](https://github.com/ortelius/ms-scorecard)
 - [scec-nginx](https://github.com/ortelius/scec-nginx)
 
----------------------------------------------------------------------------------------------------------------
+#### Helm-Repository | Ortelius
 
-- Kubectl create the Ortelius namespace
+- Lets add the Traefik Helm repository
+- A Helm repository is a collection of Helm charts that are made available for download and installation
+- Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
+- Create a file called `ortelius.yaml` in the helm-repositories directory and paste the following YAML
+- Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
 
+```yaml
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: ortelius
+  namespace: infrastructure
+spec:
+  interval: 60m
+  url: https://ortelius.github.io/ortelius-charts/
 ```
-kubectl create ns ortelius
+
+#### Helm-Release | Ortelius
+
+- Lets create a Helm release for Metallb
+- A Helm release is an instance of a Helm chart running in a Kubernetes cluster
+- Each release is a deployment of a particular version of a chart with a specific configuration
+- Create a file called `ortelius.yaml` in the helm-releases directory and paste the following YAML
+
+```yaml
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: ortelius
+  namespace: infrastructure
+spec:
+  interval: 60m
+  releaseName: ortelius
+  chart:
+    spec:
+      chart: ortelius
+      version: v10.0.4533
+      sourceRef:
+        kind: HelmRepository
+        name: ortelius
+      interval: 10m
+
 ```
 
 - Kubectl switch to the ortelius namespace
@@ -2285,7 +2325,7 @@ kubectl get pods
 - Now we will deploy a Traefik ingress route for Ortelius by applying the following YAML
 - Create a YAML file called `ortelius-traefik.yaml`, copy the YAML into the file and then run `kubectl apply -f ortelius-traefik.yaml`
 
-```
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
