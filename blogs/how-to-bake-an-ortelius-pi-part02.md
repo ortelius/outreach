@@ -46,10 +46,10 @@ $ dig www.startup.local.gd
 www.ortelius.local.gd.              86400 IN A 127.0.0.1
 
 $ dig my.project.company.local.gd
-aliens.are.real.ortelius.local.gd.       86400 IN A 127.0.0.1
+aliens.are.real.ortelius.local.gd.  86400 IN A 127.0.0.1
 
 $ dig alderaan.local.gd
-xrpl.local.gd.                 86400 IN A 127.0.0.10.0.1
+xrpl.local.gd.                      86400 IN A 127.0.0.10.0.1
 ```
 
 - Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts`
@@ -79,7 +79,7 @@ sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 - Run `sudo nextdns config` to view your config
 - Run `sudo nextdns config edit` to edit for each Pi and NAS and configure like this
 
-```
+```shell
 debug false
 cache-size 10MB
 max-ttl 5s

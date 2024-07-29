@@ -2,18 +2,17 @@
 
 ### Introduction
 
-In [Part 2](https://ortelius.io/blog/2024/04/09/how-to-bake-an-ortelius-pi-part-3-the-configuration/), of this series we deployed the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised storage, [MetalLB load-balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store.
+In [Part 2](https://ortelius.io/blog/2024/04/09/how-to-bake-an-ortelius-pi-part-2-the-configuration/), of this series we deployed DHCP, DNS, NFS (Network File System) storage with a [Synology NAS](https://www.synology.com/) and installed [MicroK8s](https://microk8s.io/) HA cluster.
 
-We used Helm Charts to deploy this infrastructure and it gave us a good introduction to Helm Charts but it was still clunky, not very streamlined and required lots of fiddling but now we are going to take everything and bring all our infrastructure under the GitOps umbrella. All of this preparation is getting us to the point of deploying applications and seeing Ortelius in action on our homegrown environment.
+In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to deploy the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised dynamic volume storage, [MetalLB Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store using [Gimlet](https://gimlet.io/) as the UI to [Fluxcd](https://fluxcd.io/).
 
 ### Enter the GitOps, enter the Gimlet, enter the Fluxcd
 
-I wanted to find a process for repeatable deployments and to keep everything in sync automagically but I was finding it heavy going to use the default values from the providers Helm Chart and then trying to override those with my own values. I couldn't get ArgoCD to do that without some hellish complicated setup until I found Gimlet and Fluxcd which allowed for a one person to have a simple repeatable process for a single engineer.
+I wanted to find a process for repeatable deployments, and to incorporate drift detection for Kubernetes infrastructure and applications but I was finding it heavy going to use the default values from the providers Helm Chart and then trying to override those with my own values. I couldn't get ArgoCD to do that without some hellish complicated setup until I found Gimlet and Fluxcd which allowed for a single human to have a simple repeatable process.
 
 Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface into the deployments of our infrastructure and applications. Basically like having the [Little Green Mall Wizard](https://youtu.be/dcxZqMIW4OM) in your K8s cluster with the focus on the wizard part.
 
-
-### NFS CSI Driver
+### CSI NFS Driver
 
 With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we will use Kubernetes to dynamically manage the creation and mounting of persistent volumes to our pods using the Synology NAS as the central storage server.
 
@@ -183,7 +182,6 @@ kubectl get crds | grep metallb
 
 ![metallb crds](images/how-to-bake-an-ortelius-pi/part03/04-metallb-crds.png)
 
-
 - Kubectl show me the IP address pools for MetalLB
 
 ```
@@ -258,12 +256,14 @@ ingressRoute:
     # -- Create an IngressRoute for the dashboard
     enabled: true
 ```
+
 ```
 providers:
   kubernetesCRD:
     # -- Load Kubernetes IngressRoute provider
     enabled: true
 ```
+
 ```
   kubernetesIngress:
     # -- Load Kubernetes Ingress provider
@@ -326,6 +326,7 @@ kubectl get svc
 ![traefik service](images/how-to-bake-an-ortelius-pi/part03/09-traefik-service.png)
 
 - Here is a view of the services for all namespaces
+
 ```
 NAMESPACE        NAME                                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
 cert-manager     cert-manager                         ClusterIP      10.152.183.42    <none>          9402/TCP                     25h
@@ -375,6 +376,7 @@ Ortelius currently consists of the following Microservices. The one we are most 
 ![ortelius dashboard](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-dashboard.png)
 
 ##### Ortelius Microservice GitHub repos
+
 - [ms-dep-pkg-cud](https://github.com/ortelius/ms-dep-pkg-cud)
 - [ms-textfile-crud](https://github.com/ortelius/ms-textfile-crud)
 - [ms-dep-pkg-r](https://github.com/ortelius/ms-dep-pkg-r)
@@ -418,6 +420,7 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 ```
 
 -Lets stop here to discuss some of these settings.
+
 - `--set ms-general.dbpass=postgres` | Set the PostgreSQL database password
 - `--set global.nginxController.enabled=true` | Sets the ingress controller which could be one of `default nginx ingress, AWS Load Balancer or Google Load Balancer` | Refer to the Helm Chart in ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
 - `--set ms-nginx.ingress.type=k3d` | This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for [K3d](https://k3d.io/v5.6.0/) another very lightweight Kubernetes deployment which uses Traefik as the default ingress
@@ -431,7 +434,6 @@ kubectl get pods
 ```
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
-
 
 - Now we will deploy a Traefik ingress route for Ortelius by applying the following YAML
 - Create a YAML file called `ortelius-traefik.yaml`, copy the YAML into the file and then run `kubectl apply -f ortelius-traefik.yaml`
