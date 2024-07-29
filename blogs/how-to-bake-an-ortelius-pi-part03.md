@@ -52,7 +52,48 @@ gimlet environment connect \
   --token <your token>
 ```
 
+#### K8s check
 
+- Now if you list your namespaces with the below command you should see `infrastructure`, `flux` and `flux-system`
+
+```shell
+kubectl get namespaces
+```
+
+- Switch to the namespace `infrastructure`
+
+```shell
+kubectl config set-context --current --namespace=infrastructure
+```
+
+- List pods and you should see `gimlet-agent-<blah blah blah>`
+
+```shell
+kubectl get pods
+```
+
+#### Github check
+
+- Go to Github.com and click on your profile in the top right hand corner of your browser tab
+![github settings](images/how-to-bake-an-ortelius-pi/part03/16-github-settings.png)
+
+- Scroll down until the left hand coloumn shows `Applications` under the title `Integrations`
+![github application](images/how-to-bake-an-ortelius-pi/part03/17-github-application.png)
+
+- You should see the Gimlet application installed
+![github gimlet app](images/how-to-bake-an-ortelius-pi/part03/18-github-gimlet-app.png)
+
+#### Github Gimlet repo check
+
+- Click on repositories at the top left of the screen
+![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/19-github-gimlet-repos-button.png)
+
+- Then type `gitops-` in the search bar and you should see two repos pop up
+![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/20-github-gimlet-repos.png)
+- You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
+- We will spending our time in the infra one for now
+
+#### Gimlet gitops-<your environment>-infra
 
 
 
