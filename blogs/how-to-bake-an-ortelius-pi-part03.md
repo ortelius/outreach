@@ -14,7 +14,7 @@ Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface int
 
 ### Gimlet
 
-- [Documentatiopn](https://gimlet.io/docs)
+- [Documentation](https://gimlet.io/docs)
 
 Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Applications. Infrastructure is the bedrock to deploy applications in an environment such as security, observability, storage, load balancer, proxy and Ortelius. Applications would be the services you provide to end users and customers. This concept is fundamental to understanding the ways of Gimlet and Fluxcd.
 
@@ -34,11 +34,13 @@ kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/
 ```
 
 - Login with Github
+
 ![gimlet login](images/how-to-bake-an-ortelius-pi/part03/14-gimlet-login.png)
 
 #### Connect your repositories
 
 - Only connect your application repositories here and not anything to do with infrastructure
+
 ![gimlet repos](images/how-to-bake-an-ortelius-pi/part03/15-gimlet-repos.png)
 
 #### Connect you cluster
@@ -75,12 +77,15 @@ kubectl get pods
 #### Github check
 
 - Go to Github.com and click on your profile in the top right hand corner of your browser tab
+
 ![github settings](images/how-to-bake-an-ortelius-pi/part03/16-github-settings.png)
 
 - Scroll down until the left hand coloumn shows `Applications` under the title `Integrations`
+
 ![github application](images/how-to-bake-an-ortelius-pi/part03/17-github-application.png)
 
 - You should see the Gimlet application installed
+
 ![github gimlet app](images/how-to-bake-an-ortelius-pi/part03/18-github-gimlet-app.png)
 
 #### Github Gimlet repo check
@@ -89,7 +94,9 @@ kubectl get pods
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/19-github-gimlet-repos-button.png)
 
 - Then type `gitops-` in the search bar and you should see two repos pop up
+
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/20-github-gimlet-repos.png)
+
 - You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
 - We will spending our time in the infra one for now
 
