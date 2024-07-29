@@ -328,7 +328,7 @@ spec:
       create: true
       name: nfs-csi-default # Give your storage class a meaningful name
       annotations:
-        storageclass.kubernetes.io/is-default-class: "true"
+        storageclass.kubernetes.io/is-default-class: "true" # Sets this Storage Class as the default
       provisioner: nfs.csi.k8s.io
       parameters:
         server: 192.168.0.152 # Replace with your NFS server ip address or FQDN
@@ -345,78 +345,67 @@ spec:
         - nfsvers=4
 ```
 
-```shell
-kubectl config set-context --current --namespace=kube-system
-```
+#### Fluxcd takes care of the following but I am listing the manual steps for illustrative purposes
 
 - Helm repo add
 
-```
+```shell
 helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 ```
 
 - Helm repo update
 
-```
+```shell
 helm repo update
 ```
 
 - Helm repo install
 
-```
-helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.6.0 \
+```shell
+helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.8.0 \
   --set controller.dnsPolicy=ClusterFirstWithHostNet \
   --set node.dnsPolicy=ClusterFirstWithHostNet \
-  --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet" # The Kubelet has permissions at this location to mount the NFS shares
+  --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
+```
+
+#### Kubernetes check
+
+- Kubectl switch to the `kube-system` namespace
+
+```shell
+kubectl config set-context --current --namespace=kube-system
 ```
 
 - Kubectl show me the pods
 
-```
+```shell
 kubectl get pods
 ```
 
 ![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
 
-- Now lets create a Storage Class to be used for central data access between our nodes and pods
-- Create a file called `nfs-setup.yaml`, copy the YAML below and run `kubectl apply -f nfs-setup.yaml`
-
-```
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: nfs-csi-default
-provisioner: nfs.csi.k8s.io
-parameters:
-  server: <your nfs server ip goes here>
-  share: /volume4/pi8s/
-  # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
-  # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
-  # csi.storage.k8s.io/provisioner-secret-namespace: "default"
-allowVolumeExpansion: true
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-mountOptions:
-  - nfsvers=4
-```
-
 - Kubectl show me the Storage Class
 
-```
+```shell
 kubectl get sc
 ```
 
 ![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/02-csi-nfs-driver-storage-class.png)
 
-- Lets make this the default Storage Class as in the above image
+- From CSI NFS Driver version v4.8.0 you no longer have to do as there is an annotation provided
 
+```yaml
+      annotations:
+        storageclass.kubernetes.io/is-default-class: "true" # Sets this Storage Class as the default
 ```
+
+- Manually setting and unsetting the default Storage Class
+
+```shell
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-- If you want to undo making it the default Storage Class
-
-```
+```shell
 kubectl patch storageclass nfs-csi -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
