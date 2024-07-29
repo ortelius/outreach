@@ -385,7 +385,7 @@ git commit -m "k8s infra csi nfs driver deploy"
 git push
 ```
 
-#### Fluxcd takes care of the following but I am listing the manual steps for illustrative purposes
+#### Fluxcd is doing the following under the hood
 
 - Helm repo add
 
@@ -882,7 +882,7 @@ git commit -m "k8s infra metallb"
 git push
 ```
 
-#### Fluxcd takes care of the following | Manual steps for illustrative purposes
+#### Fluxcd is doing the following under the hood
 
 - Helm repo add
 
