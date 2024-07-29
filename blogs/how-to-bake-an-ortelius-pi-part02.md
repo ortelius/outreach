@@ -186,6 +186,9 @@ max-inflight-requests 256
 
 ![synology file services](images/how-to-bake-an-ortelius-pi/part02/14-syno-file-share-nfs-config.png)
 
+- This `192.168.0.0/24` indicates that only the devices on this subnet can access NFS
+- You would need to change it to your network subnet which you can get from your DHCP configuration
+
 - Congrats you just configured the Synology for NFS!
 
 ---------------------------------------------------------------------------------------------------------------
