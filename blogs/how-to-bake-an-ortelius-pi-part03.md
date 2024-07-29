@@ -33,7 +33,17 @@ Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Application
 kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml
 ```
 
-- This command line connects your K8s cluster to Gimlet
+- Login with Github
+![gimlet login](images/how-to-bake-an-ortelius-pi/part03/14-gimlet-login.png)
+
+#### Connect your repositories
+
+- Only connect your application repositories here and not anything to do with infrastructure
+![gimlet repos](images/how-to-bake-an-ortelius-pi/part03/15-gimlet-repos.png)
+
+#### Connect you cluster
+
+- Connect your K8s cluster to Gimlet
 
 ```shell
 gimlet environment connect \
@@ -41,17 +51,6 @@ gimlet environment connect \
   --server https://app.gimlet.io \
   --token <your token>
 ```
-
-- Login with Github
-
-![gimlet login](images/how-to-bake-an-ortelius-pi/part03/14-gimlet-login.png)
-
-
-
-
-
-
-
 
 
 
