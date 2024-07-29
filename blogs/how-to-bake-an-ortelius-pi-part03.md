@@ -29,6 +29,9 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 ![fluxcd vscode extension](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-vscode-extension.png)
 
+- `kubectl get crds | grep flux`
+![fluxcd crds](images/how-to-bake-an-ortelius-pi/part03/25-fluxcd-crds.png)
+
 ### Gimlet Installation Self-Hosted
 
 #### Prerequisites
