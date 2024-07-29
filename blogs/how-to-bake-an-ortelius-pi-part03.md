@@ -418,7 +418,7 @@ kubectl get sc
 
 ![csi nfs driver storage class](images/how-to-bake-an-ortelius-pi/part03/02-csi-nfs-driver-storage-class.png)
 
-- From CSI NFS Driver version v4.8.0 you no longer have to do as there is an annotation provided
+- From CSI NFS Driver version v4.8.0 you no longer have to manually set the default Storage Class as there is an annotation provided
 
 ```yaml
       annotations:
