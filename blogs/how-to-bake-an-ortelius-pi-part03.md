@@ -163,6 +163,10 @@ git clone https://github.com/<your profile>/gitops-<your environment>-infra.git
 git clone https://github.com/<your profile>/gitops-<your environment>-apps.git
 ```
 
+- On your local machine open your IDE and navigate to your cloned infrastructure repo
+
+![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
+
 ### Gimlet GitOps Infrastructure
 
 #### Kubernetes CSI NFS Driver
@@ -178,10 +182,6 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 - An excellent blog written by Rudi Martinsen on the NFS CSI Driver with step-by-step instructions for reference [here](https://rudimartinsen.com/2024/01/09/nfs-csi-driver-kubernetes/)
 
 ### Gimlet Kubernetes CSI NFS Driver deployment
-
-- On your local machine open your IDE and navigate to your cloned infrastructure repo
-
-![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
 
 #### Helm-Repository | CSI NFS Driver
 
@@ -2073,18 +2073,6 @@ git push
 helm repo add traefik https://traefik.github.io/charts
 ```
 
-- Kubectl create the Traefik namespace
-
-```shell
-kubectl create ns traefik-v2
-```
-
-- Kubectl switch to the traefik-v2 namespace
-
-```shell
-kubectl config set-context --current --namespace=traefik-v2
-```
-
 - Helm repo update
 
 ```shell
@@ -2094,8 +2082,14 @@ helm repo update
 - Helm install Traefik
 
 ```shell
-helm install traefik traefik/traefik --namespace=traefik-v2
+helm install traefik traefik/traefik --namespace=traefik
 ```
+
+
+- Kubectl switch to the infrastructure namespace
+
+```shell
+kubectl config set-context --current --namespace=infrastructure
 
 
 - Kubectl show me the pods for Traefik
