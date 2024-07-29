@@ -117,7 +117,7 @@ kubectl get pods
 - You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
 - We will be spending our time in the infra one for now
 - You will also notice that this repo is private thus no one can see any sensitive information such as secrets
-- I will be including [Doppler](https://www.doppler.com/) later for secrets managment
+- I will be including [Doppler](https://www.doppler.com/) later for secrets management
 - Clone this repo to your local machine
 
 - Gimlet Gitops Infra
