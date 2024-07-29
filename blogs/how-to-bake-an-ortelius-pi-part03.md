@@ -884,19 +884,19 @@ helm repo add metallb https://metallb.github.io/metallb
 helm repo update
 ```
 
-- Helm install MetalLB in the `metallb-system` namespace
+- Helm install MetalLB in the `infrastructure` namespace
 
 ```shell
-helm install metallb metallb/metallb -n metallb-system
+helm install metallb metallb/metallb -n infrastructure
 ```
 
-- Kubectl switch to the `metallb-system` namespace
+- Kubectl switch to the `infrastructure` namespace
 
 ```shell
-kubectl config set-context --current --namespace=metallb-system
+kubectl config set-context --current --namespace=infrastructure
 ```
 
-- Kubectl show me the MetalLB pods in the `metallb-system` namespace
+- Kubectl show me the MetalLB pods in the `infrastructure` namespace
 
 ```shell
 kubectl get pods
