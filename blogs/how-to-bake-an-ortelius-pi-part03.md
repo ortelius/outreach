@@ -2308,7 +2308,10 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 - `--set ms-nginx.ingress.type=k3d` | This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for [K3d](https://k3d.io/v5.6.0/) another very lightweight Kubernetes deployment which uses Traefik as the default ingress
 - The `k3d` value enables the Traefik ingress class to make Traefik Ortelius aware.
 - `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
-- Kubectl switch to the ortelius namespace
+
+#### Kubernetes check | Ortelius
+
+- Kubectl switch to the Ortelius namespace
 
 ```shell
 kubectl config set-context --current --namespace=ortelius
