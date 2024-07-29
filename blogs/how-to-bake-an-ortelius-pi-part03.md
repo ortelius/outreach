@@ -2326,7 +2326,7 @@ kubectl get pods
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
 - Now we will deploy a Traefik ingress route for Ortelius by applying the following YAML
-- Create a YAML file called `ortelius-traefik.yaml`, copy the YAML into the file and then run `kubectl apply -f ortelius-traefik.yaml`
+- Create a YAML file called `ortelius.yaml`, with the following YAML then run `kubectl apply -f ortelius.yaml`
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -2337,9 +2337,9 @@ metadata:
   labels:
     app: ms-nginx
   name: ms-nginx-traefik
-  namespace: ortelius
+  namespace: infrastructure
 spec:
-  ingressClassName: nginx
+  ingressClassName: k3d
   rules:
   - http:
       paths:
