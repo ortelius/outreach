@@ -145,6 +145,7 @@ With the [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) we w
 
 #### Helm-Repositories
 
+- Lets add the Kubernetes CSI NFS Driver Helm repository
 - A Helm repository is a collection of Helm charts that are made available for download and installation
 - Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
 - Create a file called `nfs-csi-driver.yaml` in the `helm-repositories` directory and paste the following YAML
@@ -163,6 +164,7 @@ spec:
 
 #### Helm-Releases
 
+- Lets create a Helm release of the Kubernetes CSI NFS Driver
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `nfs-csi-driver.yaml` in the `helm-releases` directory and paste the following YAML
