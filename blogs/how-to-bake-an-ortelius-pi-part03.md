@@ -119,6 +119,13 @@ kubectl get pods
 - You will also notice that this repo is private thus no one can see any sensitive information such as secrets
 - Clone this repo to your local machine
 
+- Gimlet Gitops Infra
+![gimlet infra repo](images/how-to-bake-an-ortelius-pi/part03/22-gimlet-infra-repo.png)
+
+
+- Gimlet Gitops Apps
+![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
+
 ```shell
 git clone https://github.com/<your profile>/gitops-<your environment>-infra.git
 ```
