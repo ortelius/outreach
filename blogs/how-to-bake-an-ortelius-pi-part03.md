@@ -2119,7 +2119,7 @@ ingressRoute:
     enabled: true
 ```
 
-- [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)are custom resources created in our Kubernetes cluster that add additional functionality
+- [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) are custom resources created in our Kubernetes cluster that add additional functionality
 - Kubectl show me all CRDs for Traefik
 
 ```shell
