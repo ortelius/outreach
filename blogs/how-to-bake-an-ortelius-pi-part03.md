@@ -2037,7 +2037,7 @@ git push
 - Helm repo add
 
 ```shell
-helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+helm repo add jetstack https://charts.jetstack.io --force-update
 ```
 
 - Helm repo update
@@ -2049,10 +2049,7 @@ helm repo update
 - Helm repo install
 
 ```shell
-helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.8.0 \
-  --set controller.dnsPolicy=ClusterFirstWithHostNet \
-  --set node.dnsPolicy=ClusterFirstWithHostNet \
-  --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
+helm install cert-manager --namespace kube-system --version v1.15.1 jetstack/cert-manager
 ```
 
 #### Kubernetes check
