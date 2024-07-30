@@ -24,19 +24,19 @@
     - [Helm-Repository | CSI NFS Driver](#helm-repository--csi-nfs-driver)
     - [Helm-Release | CSI NFS Driver](#helm-release--csi-nfs-driver)
     - [Fluxcd is doing the following under the hood | CSI NFS Driver](#fluxcd-is-doing-the-following-under-the-hood--csi-nfs-driver)
-    - [Kubernetes check](#kubernetes-check)
+    - [Kubernetes check | CSI NFS Driver](#kubernetes-check--csi-nfs-driver)
     - [Kubernetes Cert Manager](#kubernetes-cert-manager)
   - [Gimlet | Cert Manager](#gimlet--cert-manager)
     - [Helm-Repository | Cert Manager](#helm-repository--cert-manager)
     - [Helm-Release | Cert Manager](#helm-release--cert-manager)
     - [FYI | Helm Chart configuration | Amended Cert Manager configs](#fyi--helm-chart-configuration--amended-cert-manager-configs)
     - [Fluxcd is doing the following under the hood | Cert Manager](#fluxcd-is-doing-the-following-under-the-hood--cert-manager)
-    - [Kubernetes check](#kubernetes-check-1)
+    - [Kubernetes check | Cert Manager](#kubernetes-check--cert-manager)
   - [MetalLB load-balancer for bare metal Kubernetes](#metallb-load-balancer-for-bare-metal-kubernetes)
     - [Helm-Repository | Metallb](#helm-repository--metallb)
     - [Helm-Release | Metallb](#helm-release--metallb)
     - [Fluxcd is doing the following under the hood | Metallb](#fluxcd-is-doing-the-following-under-the-hood--metallb)
-    - [Kubernetes check](#kubernetes-check-2)
+    - [Kubernetes check | Metallb](#kubernetes-check--metallb)
     - [Manifest Folder | Metallb](#manifest-folder--metallb)
   - [Traefik the Cloud Native Proxy](#traefik-the-cloud-native-proxy)
     - [Helm-Repository | Traefik](#helm-repository--traefik)
@@ -322,7 +322,7 @@ spec:
         kind: HelmRepository
         name: csi-driver-nfs
       interval: 10m
-  # values: This is where you paste the default values from the Helm Chart provider and configure your overrides for your environment
+  # values: your values go here to override the default values
   values:
     customLabels: {}
     image:
@@ -531,7 +531,7 @@ helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-syste
   --set kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
 ```
 
-#### Kubernetes check
+#### Kubernetes check | CSI NFS Driver
 
 - Kubectl switch to the `kube-system` namespace
 
@@ -672,6 +672,7 @@ spec:
         kind: HelmRepository
         name: external
       interval: 10m
+  # values: your values go here to override the default values
   values:
     # +docs:section=Global
 
@@ -2050,7 +2051,7 @@ helm repo update
 helm install cert-manager --namespace kube-system --version v1.15.1 jetstack/cert-manager
 ```
 
-#### Kubernetes check
+#### Kubernetes check | Cert Manager
 
 - Kubectl switch to the `kube-system` namespace
 
@@ -2123,6 +2124,7 @@ spec:
         kind: HelmRepository
         name: metallb
       interval: 10m
+  # values: your values go here to override the default values
   values:
     # Default values for metallb.
     # This is a YAML-formatted file.
@@ -2520,7 +2522,7 @@ helm repo update
 helm install metallb metallb/metallb -n infrastructure
 ```
 
-#### Kubernetes check
+#### Kubernetes check | Metallb
 
 - Kubectl switch to the `infrastructure` namespace
 
@@ -2674,6 +2676,7 @@ spec:
         kind: HelmRepository
         name: traefik
       interval: 10m
+  # values: your values go here to override the default values
   values:
     # Default values for Traefikk
     # This is a YAML-formatted file.
@@ -3863,6 +3866,7 @@ spec:
         kind: HelmRepository
         name: ortelius
       interval: 10m
+  # values: your values go here to override the default values
   values:
     ms-general:
       dbpass: postgres # --set ms-general.dbpass=postgres
