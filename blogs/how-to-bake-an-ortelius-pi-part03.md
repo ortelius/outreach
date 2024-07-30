@@ -26,6 +26,26 @@ Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Application
 
 Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) and [Cloud hosted](https://accounts.gimlet.io/signup/). I am using Cloud hosted due to the very generous humans at Gimlet.
 
+#### Gimlet Interface
+
+### Repostories
+
+- When the Gimlet dashboard loads you will be met with the repostories section which is where you import your `application` repos to be managed by the GitOps process
+
+![gimlet repos](images/how-to-bake-an-ortelius-pi/part03/27-gimlet-repos.png)
+
+### Environments
+
+- Environments are the representation of your journey to getting your applications to the end user such as dev, staging, production
+
+![gimlet environments](images/how-to-bake-an-ortelius-pi/part03/28-gimlet-environments.png)
+
+### Observability
+
+-
+
+![gimlet environment configs](images/how-to-bake-an-ortelius-pi/part03/29-gimlet-environment-config.png)
+
 #### Fluxcd
 
 - [Documentation](https://fluxcd.io/flux/)
@@ -2269,6 +2289,7 @@ metadata:
   namespace: infrastructure
 spec:
   interval: 60m
+  timeout: 10m # Helps to mitigate "Context deadline exceeded"  https://fluxcd.io/flux/components/helm/helmreleases/#timeout
   releaseName: ortelius
   chart:
     spec:
