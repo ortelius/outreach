@@ -242,7 +242,7 @@ kubectl get pods
 
 #### Gimlet Gitops Apps
 
-- Use the Gimlet walkthrough [here](https://gimlet.io/docs/deploy-your-first-app) to deploy `firstapp`
+- Use the Gimlet walkthrough [here](https://gimlet.io/docs/deploy-your-first-app) to deploy your `firstapp`
 
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
