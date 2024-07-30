@@ -2628,6 +2628,13 @@ deployment:
 ```
 
 ```yaml
+    # -- Create a default IngressClass for Traefik
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
+```
+
+```yaml
     # The gatekeeper to your Microservices
     ingressRoute:
       dashboard:
@@ -2651,6 +2658,21 @@ providers:
   kubernetesCRD:
     # -- Load Kubernetes IngressRoute provider
     enabled: true # Personally I would leave this enabled
+```
+
+```yaml
+      kubernetesIngress:
+        # -- Load Kubernetes Ingress provider
+        enabled: true
+```
+
+```yaml
+# Lets make that CSI NFS Driver work
+    persistence:
+      # -- Enable persistence using Persistent Volume Claims
+      # ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+      # It can be used to store TLS certificates, see `storage` in certResolvers
+      enabled: true
 ```
 
 ```yaml
@@ -3434,7 +3456,7 @@ spec:
       # -- Enable persistence using Persistent Volume Claims
       # ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
       # It can be used to store TLS certificates, see `storage` in certResolvers
-      enabled: false
+      enabled: true
       name: data
       #  existingClaim: ""
       accessMode: ReadWriteOnce
