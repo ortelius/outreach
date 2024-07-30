@@ -3797,6 +3797,8 @@ Well done for making it this far! We have made it to the point where we can depl
 
 Ortelius currently consists of the following Microservices. The one we are most interested at this point is `ms-nginx` which is the gateway to all the backing microservices for Ortelius. We are going to deploy Ortelius using Gimlet and Fluxcd then configure Traefik to send requests to `ms-nginx` which should allow us to load the Ortelius frontend.
 
+- `ms` stands for microservice
+
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
 #### Ortelius Microservice GitHub repos
