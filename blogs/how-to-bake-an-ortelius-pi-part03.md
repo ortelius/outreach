@@ -44,6 +44,7 @@
     - [FYI | Helm Chart configuration | Amended Traefik configs](#fyi--helm-chart-configuration--amended-traefik-configs)
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
     - [Fluxcd is doing the following under the hood | Traefik](#fluxcd-is-doing-the-following-under-the-hood--traefik)
+    - [Further reading | Traefik](#further-reading--traefik)
   - [Ortelius the Ultimate Evidence Store](#ortelius-the-ultimate-evidence-store)
     - [Ortelius Microservice GitHub repos](#ortelius-microservice-github-repos)
     - [Helm-Repository | Ortelius](#helm-repository--ortelius)
@@ -3779,6 +3780,8 @@ traefik                               	LoadBalancer   	10.152.183.135	192.168.0.
 What you see is the `traefik` service with the `TYPE LoadBalancer` and it has claimed the `MetalLB IP` that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
 
 - Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) you set e.g. `traefik.pangarabbit.com`
+
+#### Further reading | Traefik
 
 If you would like to dig deeper into Traefiks API capabilities please go to the following:
 
