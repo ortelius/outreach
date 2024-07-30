@@ -2652,7 +2652,7 @@ deployment:
 providers:
   kubernetesCRD:
     # -- Load Kubernetes IngressRoute provider
-    enabled: true
+    enabled: true # Personally I would leave this enabled
 ```
 
 ```yaml
