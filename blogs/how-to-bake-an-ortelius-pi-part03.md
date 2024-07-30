@@ -7,6 +7,7 @@
   - [Environments](#environments)
   - [Environments | Config](#environments--config)
   - [Observability](#observability)
+  - [Manifest folder](#manifest-folder)
     - [Fluxcd](#fluxcd)
   - [Gimlet Installation Self-Hosted](#gimlet-installation-self-hosted)
     - [Prerequisites](#prerequisites)
@@ -111,6 +112,10 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 - Click describe to run a `kubectl describe`
 
 ![gimlet obs flux runtime](images/how-to-bake-an-ortelius-pi/part03/31-gimlet-obs-flux-runtime.png)
+
+### Manifest folder
+
+- Currently I am using the manifest folder for manual applies
 
 #### Fluxcd
 
