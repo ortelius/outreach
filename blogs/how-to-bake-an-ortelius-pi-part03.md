@@ -7,7 +7,7 @@
     - [Gimlet Environment Config](#gimlet-environment-config)
     - [Gimlet Observability](#gimlet-observability)
     - [Gimlet Manifest folder](#gimlet-manifest-folder)
-    - [Fluxcd](#fluxcd)
+  - [Fluxcd](#fluxcd)
   - [Gimlet Installation Self-Hosted](#gimlet-installation-self-hosted)
     - [Prerequisites](#prerequisites)
     - [Gimlet on the command line](#gimlet-on-the-command-line)
@@ -115,7 +115,7 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 - Currently I am using the manifest folder for manual applies
 
-#### Fluxcd
+### Fluxcd
 
 - [Documentation](https://fluxcd.io/flux/)
 - [Flux CLI](https://fluxcd.io/flux/cmd/)
