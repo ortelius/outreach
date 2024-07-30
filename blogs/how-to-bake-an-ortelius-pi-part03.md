@@ -1,5 +1,6 @@
 - [How to bake an Ortelius Pi Part 3 | The GitOps Configuration](#how-to-bake-an-ortelius-pi-part-3--the-gitops-configuration)
   - [Introduction](#introduction)
+    - [Kubernetes CRDs](#kubernetes-crds)
   - [Enter GitOps | Enter Gimlet | Enter Fluxcd](#enter-gitops--enter-gimlet--enter-fluxcd)
   - [Gimlet](#gimlet)
     - [Gimlet Repostories](#gimlet-repostories)
@@ -60,6 +61,14 @@
 In [part 2](https://ortelius.io/blog/2024/04/09/how-to-bake-an-ortelius-pi-part-2-the-configuration/), of this series we deployed DHCP, DNS, NFS with a [Synology NAS](https://www.synology.com/) and deployed [MicroK8s](https://microk8s.io/) in HA mode.
 
 In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to deploy the [Cert Manager](https://cert-manager.io/), [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised dynamic volume storage, [Metallb Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store using [Gimlet](https://gimlet.io/) as the UI to our GitOps controller [Fluxcd](https://fluxcd.io/).
+
+#### Kubernetes CRDs
+
+- [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) are custom resources created in our Kubernetes cluster that add additional functionality
+
+```shell
+kubectl get crds --all-namespaces
+```
 
 ### Enter GitOps | Enter Gimlet | Enter Fluxcd
 
@@ -3680,7 +3689,6 @@ kubectl get pods -n infrastructure
 
 ![traefik pods](images/how-to-bake-an-ortelius-pi/part03/06-traefik-pods.png)
 
-- [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) are custom resources created in our Kubernetes cluster that add additional functionality
 - Kubectl show me all CRDs for Traefik
 
 ```shell
