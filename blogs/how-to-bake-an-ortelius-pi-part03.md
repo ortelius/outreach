@@ -64,7 +64,7 @@ In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to d
 
 #### Kubernetes CRDs
 
-- [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) are custom resources created in our Kubernetes cluster that add additional functionality
+[CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) are custom resources created in our Kubernetes cluster that add additional functionality and most of the infrastructure components you will be deploying will create CRDs in your Kubernetes cluster.
 
 ```shell
 kubectl get crds --all-namespaces
