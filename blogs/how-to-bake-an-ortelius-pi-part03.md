@@ -3634,7 +3634,8 @@ stringData:
   api-token: "<add your cloudflare api token>"
 ---
 # Certificate configuration and renewal structure stored in cert-manager
-# !!!!WARNING!!!! If you want to use cert-manager you need to have this installed before you initiate the certifcate configuration
+# !!!!WARNING!!!! If you want to use cert-manager you need to have this installed
+# before you initiate the certifcate configuration
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
