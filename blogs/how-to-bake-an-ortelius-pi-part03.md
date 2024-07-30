@@ -45,10 +45,10 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 - These are pre baked in environment configs which can be turned on and off with a toggle
 ![gimlet environment configs](images/how-to-bake-an-ortelius-pi/part03/29-gimlet-environment-config.png)
 
-
 ### Observability
 
 - This is where you can cycle through different elements of the GitOps process and get feedback on deployments
+- Click on the environment name at the bottom left of the interface
 
 ![gimlet obs gitops](images/how-to-bake-an-ortelius-pi/part03/30-gimlet-obs-gitops.png)
 
