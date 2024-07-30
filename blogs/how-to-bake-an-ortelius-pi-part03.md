@@ -32,7 +32,7 @@
     - [FYI | Helm Chart configuration | Amended Cert Manager configs](#fyi--helm-chart-configuration--amended-cert-manager-configs)
     - [Fluxcd is doing the following under the hood | Cert Manager](#fluxcd-is-doing-the-following-under-the-hood--cert-manager)
     - [Kubernetes check | Cert Manager](#kubernetes-check--cert-manager)
-  - [MetalLB load-balancer for bare metal Kubernetes](#metallb-load-balancer-for-bare-metal-kubernetes)
+  - [Metallb load-balancer for bare metal Kubernetes](#metallb-load-balancer-for-bare-metal-kubernetes)
     - [Helm-Repository | Metallb](#helm-repository--metallb)
     - [Helm-Release | Metallb](#helm-release--metallb)
     - [Fluxcd is doing the following under the hood | Metallb](#fluxcd-is-doing-the-following-under-the-hood--metallb)
@@ -2070,7 +2070,7 @@ kubectl get pods -n kube-system | grep cert
 
 - Great we now have infrastructure for managing certificates!
 
-### MetalLB load-balancer for bare metal Kubernetes
+### Metallb load-balancer for bare metal Kubernetes
 
 With MetalLB we will setup a unique IP address on our home network to expose the Microservices running in our Kubernetes cluster. A public cloud provider would give you this during the deployment of your Kubernetes cluster but since we are the cloud we need to provide it and thats where [MetalLB](https://metallb.universe.tf/) comes in.
 
