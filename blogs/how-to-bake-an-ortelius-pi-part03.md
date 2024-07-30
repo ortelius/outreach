@@ -30,7 +30,7 @@
     - [Helm-Repository | Cert Manager](#helm-repository--cert-manager)
     - [Helm-Release | Cert Manager](#helm-release--cert-manager)
     - [FYI | Helm Chart configuration | Amended Cert Manager configs](#fyi--helm-chart-configuration--amended-cert-manager-configs)
-    - [Fluxcd is doing the following under the hood | CSI NFS Driver](#fluxcd-is-doing-the-following-under-the-hood--csi-nfs-driver-1)
+    - [Fluxcd is doing the following under the hood | Cert Manager](#fluxcd-is-doing-the-following-under-the-hood--cert-manager)
     - [Kubernetes check](#kubernetes-check-1)
   - [MetalLB load-balancer for bare metal Kubernetes](#metallb-load-balancer-for-bare-metal-kubernetes)
     - [Helm-Repository | Metallb](#helm-repository--metallb)
@@ -2027,7 +2027,7 @@ git commit -m "k8s infra cert manager deploy"
 git push
 ```
 
-#### Fluxcd is doing the following under the hood | CSI NFS Driver
+#### Fluxcd is doing the following under the hood | Cert Manager
 
 - Helm repo add
 
