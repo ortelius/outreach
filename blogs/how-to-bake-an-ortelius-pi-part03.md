@@ -2571,7 +2571,7 @@ kubectl get crds | grep metallb
 - Kubectl show me the ip address pools for Metallb
 
 ```shell
-kubectl get ipaddresspools.metallb.io
+kubectl get ipaddresspools.metallb.io -n infrastructure
 ```
 
 ![metallb ip pools](images/how-to-bake-an-ortelius-pi/part03/05-metallb-ip-pool.png)
