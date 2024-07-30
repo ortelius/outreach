@@ -3677,7 +3677,7 @@ spec:
 
 ```shell
 git add .
-git commit -m "k8s infra traefik proxy"
+git commit -m "k8s infra traefik proxy deploy"
 git push
 ```
 
