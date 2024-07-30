@@ -45,7 +45,7 @@
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
     - [Fluxcd is doing the following under the hood | Traefik](#fluxcd-is-doing-the-following-under-the-hood--traefik)
     - [Further reading | Traefik](#further-reading--traefik)
-  - [Ortelius the Ultimate Evidence Store](#ortelius-the-ultimate-evidence-store)
+  - [Ortelius The Ultimate Evidence Store](#ortelius-the-ultimate-evidence-store)
     - [Ortelius Microservice GitHub repos](#ortelius-microservice-github-repos)
     - [Helm-Repository | Ortelius](#helm-repository--ortelius)
     - [Helm-Release | Ortelius](#helm-release--ortelius)
@@ -3792,7 +3792,7 @@ If you would like to dig deeper into Traefiks API capabilities please go to the 
 
 ![traefik dashboard](images/how-to-bake-an-ortelius-pi/part03/10-traefik-dashboard.png)
 
-### Ortelius the Ultimate Evidence Store
+### Ortelius The Ultimate Evidence Store
 
 Well done for making it this far! We have made it to the point where we can deploy Ortelius into our Kubernetes cluster and configure Ortelius to accessed through the Traefik Proxy.
 
