@@ -686,7 +686,7 @@ spec:
     crds:
       # This option decides if the CRDs should be installed
       # as part of the Helm installation.
-      enabled: false
+      enabled: true
 
       # This option makes it so that the "helm.sh/resource-policy": keep
       # annotation is added to the CRD. This will prevent Helm from uninstalling
@@ -706,7 +706,7 @@ spec:
     #
     # Note that cert-manager uses leader election to ensure that there can
     # only be a single instance active at a time.
-    replicaCount: 1
+    replicaCount: 3
 
     # Deployment update strategy for the cert-manager controller deployment.
     # For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy).
@@ -1183,7 +1183,7 @@ spec:
       # availability.
       #
       # If `replicas > 1`, consider setting `webhook.podDisruptionBudget.enabled=true`.
-      replicaCount: 1
+      replicaCount: 3
 
       # The number of seconds the API server should wait for the webhook to respond before treating the call as a failure.
       # The value must be between 1 and 30 seconds. For more information, see
@@ -1550,7 +1550,7 @@ spec:
       #
       # Note that cert-manager uses leader election to ensure that there can
       # only be a single instance active at a time.
-      replicaCount: 1
+      replicaCount: 3
 
       # This is used to configure options for the cainjector pod.
       # It allows setting options that are usually provided via flags.
