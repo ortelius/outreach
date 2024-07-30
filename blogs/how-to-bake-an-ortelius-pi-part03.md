@@ -3704,8 +3704,8 @@ kubectl get crds | grep traefik
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/07-traefik-crds.png)
 
 - You will need a DNS record created either on your DNS server or in localhosts file to access the dashboard
-- Edit localhosts on Linux and Mac here with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.your tld`
-- Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.your tld`
+- Edit localhosts on Linux and Mac with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.your tld` e.g. `traefik.pangarabbit.com`
+- Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.your tld` e.g. `traefik.pangarabbit.com`
 - [TLD = Top Level Domain](https://en.wikipedia.org/wiki/Top-level_domain)
 - From here on if we want to access our Microservice frontends we will need to create an `IngressRoute` for each one.
 - If its infrastructure create it in the `infrastructure` namespace
