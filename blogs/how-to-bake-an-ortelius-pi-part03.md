@@ -3806,8 +3806,6 @@ Ortelius currently consists of the following Microservices. The one we are most 
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
-![ortelius frontend](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-frontend.png)
-
 #### Ortelius Microservice GitHub repos
 
 - [ms-dep-pkg-cud](https://github.com/ortelius/ms-dep-pkg-cud)
@@ -3955,7 +3953,9 @@ status:
   loadBalancer: {}
 ```
 
-- You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com`
+You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com`
+
+![ortelius frontend](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-frontend.png)
 
 Happy alien hunting.......
 
