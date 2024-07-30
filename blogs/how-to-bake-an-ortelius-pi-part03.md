@@ -3778,7 +3778,13 @@ traefik                               	LoadBalancer   	10.152.183.135	192.168.0.
 
 What you see is the `traefik` service with the `TYPE LoadBalancer` and it has claimed the `MetalLB IP` that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with MetalLB and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
 
-- Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) you set
+- Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) you set e.g. `traefik.pangarabbit.com`
+
+If you would like to dig deeper into Traefiks API capabilities please go to the following:
+
+- [Traefik Hub API Gateway](https://traefik.io/traefik-hub-api-gateway/)
+- [Traefik Enterprise](https://traefik.io/traefik-enterprise/)
+- [Traefik Hub](https://traefik.io/traefik-hub/)
 
 ![traefik dashboard](images/how-to-bake-an-ortelius-pi/part03/10-traefik-dashboard.png)
 
