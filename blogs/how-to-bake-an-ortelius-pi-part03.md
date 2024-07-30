@@ -1,6 +1,8 @@
 - [How to bake an Ortelius Pi Part 3 | The GitOps Configuration](#how-to-bake-an-ortelius-pi-part-3--the-gitops-configuration)
   - [Introduction](#introduction)
-    - [Kubernetes CRDs](#kubernetes-crds)
+  - [Kubernetes](#kubernetes)
+    - [CRDs](#crds)
+    - [Namespace Switching](#namespace-switching)
   - [Enter GitOps | Enter Gimlet | Enter Fluxcd](#enter-gitops--enter-gimlet--enter-fluxcd)
   - [Gimlet](#gimlet)
     - [Gimlet Repostories](#gimlet-repostories)
@@ -62,13 +64,27 @@ In [part 2](https://ortelius.io/blog/2024/04/09/how-to-bake-an-ortelius-pi-part-
 
 In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to deploy the [Cert Manager](https://cert-manager.io/), [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised dynamic volume storage, [Metallb Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store using [Gimlet](https://gimlet.io/) as the UI to our GitOps controller [Fluxcd](https://fluxcd.io/).
 
-#### Kubernetes CRDs
+### Kubernetes
+
+#### CRDs
 
 [CRDs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) are custom resources created in our Kubernetes cluster that add additional functionality and most of the infrastructure components you will be deploying will create CRDs in your Kubernetes cluster.
 
 ```shell
 kubectl get crds --all-namespaces
 ```
+
+#### Namespace Switching
+
+All the context and name space switching can get really tedious so I introduce to you a wonderful tool called KubeSwitch.
+
+- [Kubeswitch on Github](https://github.com/danielfoehrKn/kubeswitch)
+- [The case of Kubeswitch](https://danielfoehrkn.medium.com/the-case-of-kubeswitch-aff4b6a04ae7)
+- Unified searh over multiple providers
+- Change namespace
+- Change to any context and namespace from the history
+- Terminal window isolation
+- Advanced search capabilties
 
 ### Enter GitOps | Enter Gimlet | Enter Fluxcd
 
@@ -3694,7 +3710,6 @@ helm repo add traefik https://traefik.github.io/charts --force-update
 ```shell
 helm install traefik traefik/traefik --namespace=traefik
 ```
-
 
 - Kubectl switch to the infrastructure namespace
 
