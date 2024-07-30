@@ -1,3 +1,15 @@
+- [How to bake an Ortelius Pi Part 1 | The Hardware](#how-to-bake-an-ortelius-pi-part-1--the-hardware)
+  - [Introduction](#introduction)
+  - [My Home Setup](#my-home-setup)
+  - [NFS Storage](#nfs-storage)
+  - [Raspberry Pi Imaging Utility for the Ubuntu 22.04 LTS x64 OS installation](#raspberry-pi-imaging-utility-for-the-ubuntu-2204-lts-x64-os-installation)
+  - [Preparing the OS for installation](#preparing-the-os-for-installation)
+    - [USB 3 flash drives](#usb-3-flash-drives)
+    - [Example from configuring my Pi to use USB flash sticks](#example-from-configuring-my-pi-to-use-usb-flash-sticks)
+  - [Using the Raspberry Pi Imager](#using-the-raspberry-pi-imager)
+  - [Conclusion](#conclusion)
+    - [Disclaimer: Any brands I mention in this blog post series are not monetised](#disclaimer-any-brands-i-mention-in-this-blog-post-series-are-not-monetised)
+
 ## How to bake an Ortelius Pi Part 1 | The Hardware
 
 ### Introduction
