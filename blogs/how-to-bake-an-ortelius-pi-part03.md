@@ -550,6 +550,45 @@ spec:
 - Create a file called `certman.yaml` in the `helm-releases` directory and paste the following YAML
 
 ```yaml
+    crds:
+      # This option decides if the CRDs should be installed
+      # as part of the Helm installation.
+      enabled: true
+```
+
+```yaml
+    replicaCount: 3
+```
+
+```yaml
+    webhook:
+      # Number of replicas of the cert-manager webhook to run.
+      #
+      # The default is 1, but in production set this to 2 or 3 to provide high
+      # availability.
+      #
+      # If `replicas > 1`, consider setting `webhook.podDisruptionBudget.enabled=true`.
+      replicaCount: 3
+```
+
+```yaml
+    cainjector:
+      # Create the CA Injector deployment
+      enabled: true
+
+      # The number of replicas of the cert-manager cainjector to run.
+      #
+      # The default is 1, but in production set this to 2 or 3 to provide high
+      # availability.
+      #
+      # If `replicas > 1`, consider setting `cainjector.podDisruptionBudget.enabled=true`.
+      #
+      # Note that cert-manager uses leader election to ensure that there can
+      # only be a single instance active at a time.
+      replicaCount: 3
+```
+
+```yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
