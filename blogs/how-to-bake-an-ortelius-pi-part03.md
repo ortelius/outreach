@@ -50,9 +50,11 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 - This is where you can cycle through different elements of the GitOps process and get feedback on deployments
 
-![gimlet obs gitops](images/how-to-bake-an-ortelius-pi/part03/30-gimlet-obs.png)
+![gimlet obs gitops](images/how-to-bake-an-ortelius-pi/part03/30-gimlet-obs-gitops.png)
 
 - The `Flux Runtime` shows you exactly what Flux is chewing on and gives the operator visuals into whats going on in the environment
+- Click on logs to get logs
+- Click describe to run a `kubectl describe`
 
 ![gimlet obs flux runtime](images/how-to-bake-an-ortelius-pi/part03/31-gimlet-obs-flux-runtime.png)
 
