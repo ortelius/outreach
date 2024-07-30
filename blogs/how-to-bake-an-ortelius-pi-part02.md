@@ -1,3 +1,22 @@
+- [How to bake an Ortelius Pi Part 2 | The Preparation](#how-to-bake-an-ortelius-pi-part-2--the-preparation)
+  - [Introduction](#introduction)
+  - [IP Addresses and DHCP](#ip-addresses-and-dhcp)
+  - [DNS](#dns)
+    - [Local.gd](#localgd)
+    - [NextDNS](#nextdns)
+    - [Disclaimer](#disclaimer)
+  - [NFS Prep](#nfs-prep)
+    - [Enable NFS on the Synology](#enable-nfs-on-the-synology)
+    - [Configure Shared Folder](#configure-shared-folder)
+  - [OS Prep](#os-prep)
+    - [Pis | Ubuntu Server 22.04.4 LTS](#pis--ubuntu-server-22044-lts)
+    - [Kubectl | Your machine](#kubectl--your-machine)
+    - [Helm | Your machine](#helm--your-machine)
+  - [MicroK8s Prep](#microk8s-prep)
+    - [Create highly available 3 node cluster with MicroK8s](#create-highly-available-3-node-cluster-with-microk8s)
+  - [Conclusion](#conclusion)
+    - [Disclaimer: Any brands I mention in this blog post series are not monetised](#disclaimer-any-brands-i-mention-in-this-blog-post-series-are-not-monetised)
+
 ## How to bake an Ortelius Pi Part 2 | The Preparation
 
 ### Introduction
