@@ -40,11 +40,21 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 ![gimlet environments](images/how-to-bake-an-ortelius-pi/part03/28-gimlet-environments.png)
 
+### Environments | Config
+
+- These are pre baked in environment configs which can be turned on and off with a toggle
+![gimlet environment configs](images/how-to-bake-an-ortelius-pi/part03/29-gimlet-environment-config.png)
+
+
 ### Observability
 
--
+- This is where you can cycle through different elements of the GitOps process and get feedback on deployments
 
-![gimlet environment configs](images/how-to-bake-an-ortelius-pi/part03/29-gimlet-environment-config.png)
+![gimlet obs gitops](images/how-to-bake-an-ortelius-pi/part03/30-gimlet-obs.png)
+
+- The `Flux Runtime` shows you exactly what Flux is chewing on and gives the operator visuals into whats going on in the environment
+
+![gimlet obs flux runtime](images/how-to-bake-an-ortelius-pi/part03/31-gimlet-obs-flux-runtime.png)
 
 #### Fluxcd
 
