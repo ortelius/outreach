@@ -3713,7 +3713,7 @@ kubectl get crds | grep traefik
 - Here is an example of an `IngressRoute` for the Traefik Dashboard
 - Remember that the services piece will be different for your applications and should point to the service created in Kubernetes for the application
 - Use the Ortelius `IngressRoute` as an example otherwise hit the Traefik docs
-- `TraefikService` is a service unique to Traefik is never exposed
+- `TraefikService` is a service unique to Traefik and is never exposed
 
 ```yaml
 apiVersion: traefik.io/v1alpha1
