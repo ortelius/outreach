@@ -3923,7 +3923,11 @@ kubectl get pods
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
 
 - Now we will deploy a Traefik ingress route for Ortelius by applying the following YAML
-- Create a YAML file called `ortelius.yaml`, with the following YAML then run `kubectl apply -f ortelius.yaml`
+- Create a YAML file in the `manifests directory` called `ortelius.yaml`, with the following YAML then run
+
+```shell
+kubectl apply -f ortelius.yaml
+```
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -3951,7 +3955,7 @@ status:
   loadBalancer: {}
 ```
 
-- You should be able to reach the Ortelius dashboard in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com`
+- You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com`
 
 Happy alien hunting.......
 
@@ -3959,6 +3963,8 @@ Happy alien hunting.......
 
 ### Conclusion
 
-By this stage you should have three Pi's each with the NFS CSI Driver, Traefik and Ortelius up and running. Stay tuned for Part 4 where we unleash GitOps using Gimlet to deploy the following Kubernetes NFS CSI Driver, Metallb load balancer, Traefik Proxy,LetsEncrypt and use Cloudflare to provide email, certificate and TLS services. Yes there is more extraterrestrial life in a cloud deployment near you........
+By this stage you should have three Pi's each with MicroK8s, NFS CSI Driver, Cert Manager, Traefik, Ortelius and a NFS server up and running. Stay tuned for Part 4 where we unleash LetsEncrypt with Cloudflare for automatic certificate renewal to provide certificate and TLS services. Lastly we will include secrets management with Doppler.
+
+Yes there is more extraterrestrial life in a cloud deployment near you........
 
 #### Disclaimer: Any brands I mention in this blog post series are not monetised
