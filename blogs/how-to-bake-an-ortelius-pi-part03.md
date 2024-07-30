@@ -2,7 +2,7 @@
   - [Introduction](#introduction)
   - [Kubernetes](#kubernetes)
     - [CRDs](#crds)
-    - [Namespace Switching](#namespace-switching)
+    - [Context and Namespace Switching](#context-and-namespace-switching)
   - [Enter GitOps | Enter Gimlet | Enter Fluxcd](#enter-gitops--enter-gimlet--enter-fluxcd)
   - [Gimlet](#gimlet)
     - [Gimlet Repostories](#gimlet-repostories)
@@ -74,7 +74,7 @@ In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to d
 kubectl get crds --all-namespaces
 ```
 
-#### Namespace Switching
+#### Context and Namespace Switching
 
 All the context and name space switching can get really tedious so I introduce to you a wonderful tool called KubeSwitch.
 
