@@ -3883,7 +3883,7 @@ spec:
                   # This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius
                   # K3d https://k3d.io/v5.6.0/ is a lightweight Kubernetes deployment which uses Traefik as the default
         dnsname: ortelius.pangarabbit.com # --set ms-nginx.ingress.dnsname=<your domain name goes here>
-                                          # This URL that will go in your browser to access Ortelius
+                                          # The URL that will go in your browser to access Ortelius
 ```
 
 #### Fluxcd is doing the following under the hood | Ortelius
