@@ -2066,7 +2066,7 @@ kubectl config set-context --current --namespace=kube-system
 kubectl get pods -n kube-system
 ```
 
-![csi nfs driver storage pods](images/how-to-bake-an-ortelius-pi/part03/01-csi-nfs-driver-pods.png)
+![cert manager pods](images/how-to-bake-an-ortelius-pi/part03/34-cert-manager-pods.png)
 
 
 - Great we now have infrastructure for managing certificates!
