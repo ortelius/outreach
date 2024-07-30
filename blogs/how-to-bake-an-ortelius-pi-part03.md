@@ -549,6 +549,10 @@ spec:
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `certman.yaml` in the `helm-releases` directory and paste the following YAML
 
+#### FYI | Helm Chart configuration | Amended Cert Manager configs
+
+- You may want to edit these to suit your environment
+
 ```yaml
     crds:
       # This option decides if the CRDs should be installed
@@ -2557,11 +2561,13 @@ spec:
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `traefik.yaml` in the `helm-releases` directory and paste the following YAML
 
-#### FYI | Helm Chart configuration | Config changes you need to make to Traefik to fit your environment
+#### FYI | Helm Chart configuration | Amended Traefik configs
+
+- You may want to edit these to suit your environment
 
 ```yaml
 deployment:
-  replicas: 3 # Maybe you only want 1
+  replicas: 3
 ```
 
 ```yaml
