@@ -16,6 +16,8 @@
     - [K8s check](#k8s-check)
     - [Github check](#github-check)
     - [Github Gimlet repo check](#github-gimlet-repo-check)
+    - [Gimlet Gitops Infra](#gimlet-gitops-infra)
+    - [Gimlet Gitops Apps](#gimlet-gitops-apps)
   - [Gimlet GitOps Infrastructure](#gimlet-gitops-infrastructure)
     - [Kubernetes CSI NFS Driver](#kubernetes-csi-nfs-driver)
   - [Gimlet Kubernetes CSI NFS Driver deployment](#gimlet-kubernetes-csi-nfs-driver-deployment)
@@ -231,13 +233,15 @@ kubectl get pods
 - I will be including [Doppler](https://www.doppler.com/) later for secrets management
 - Clone this repo to your local machine
 
-`Gimlet Gitops Infra`
+#### Gimlet Gitops Infra
 
 - Currently I am using the `manifest folder` for manual applies
 
 ![gimlet infra repo](images/how-to-bake-an-ortelius-pi/part03/22-gimlet-infra-repo.png)
 
-`Gimlet Gitops Apps`
+#### Gimlet Gitops Apps
+
+- `firstapp` was my first app deployed using the Gimlet walkthrough [here](https://gimlet.io/docs/deploy-your-first-app)
 
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
