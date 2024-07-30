@@ -482,8 +482,8 @@ spec:
       reclaimPolicy: Delete
       allowVolumeExpansion: true
       parameters:
-        server: 192.168.0.152
-        share: /volume4/pi8s/
+        server: 192.168.0.152 # Replace with your nfs server ip
+        share: /volume4/pi8s/ # Replace with your nfs volume share
         #subDir:
         mountPermissions: "0"
         # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
