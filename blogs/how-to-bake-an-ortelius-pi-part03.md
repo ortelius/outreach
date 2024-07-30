@@ -384,23 +384,23 @@ spec:
 
     # Kubernetes Storage Class creation
     storageClass:
-      allowVolumeExpansion: true
       create: true
-      name: nfs-csi-default # Give your storage class a meaningful name
+      name: nfs-csi-default
       annotations:
-        storageclass.kubernetes.io/is-default-class: "true" # Sets this Storage Class as the default
+        storageclass.kubernetes.io/is-default-class: "true"
       provisioner: nfs.csi.k8s.io
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
       parameters:
-        server: 192.168.0.152 # Replace with your NFS server ip address or FQDN
-        share: /volume4/pi8s/ # Replace with your NFS share
+        server: 192.168.0.152
+        share: /volume4/pi8s/
         #subDir:
         mountPermissions: "0"
         # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
         # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
         # csi.storage.k8s.io/provisioner-secret-namespace: "kube-system"
-      reclaimPolicy: Delete
       volumeBindingMode: Immediate
-      mountOptions: # This is where you configure your NFS mounts for Linux
+      mountOptions:
         - hard
         - nfsvers=4
 ```
