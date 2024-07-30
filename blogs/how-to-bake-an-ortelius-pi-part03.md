@@ -86,6 +86,37 @@ All the context and name space switching can get really tedious so I introduce t
 - Terminal window isolation
 - Advanced search capabilties
 
+- My aliases in `.zshrc`
+
+```shell
+alias swns='switcher ns '
+alias swct='switcher set-context '
+alias swlist='switcher list-contexts'
+```
+
+- My Kubeswitch config in `.kube/switch-config.yaml`
+
+```yaml
+kind: SwitchConfig
+version: v1alpha1
+kubeconfigName: null
+showPreview: null
+execShell: null
+refreshIndexAfter: 1h0m0s
+hooks: []
+kubeconfigStores:
+- id: default
+  kind: filesystem
+  kubeconfigName: null
+  paths:
+  - ~/.kube/config
+  refreshIndexAfter: null
+  required: null
+  showPrefix: null
+  config: null
+  cache: null
+```
+
 ### Enter GitOps | Enter Gimlet | Enter Fluxcd
 
 I wanted to find a process for repeatable deployments, and to incorporate drift detection for Kubernetes infrastructure and applications but I was finding it heavy going to use the default values from the providers Helm Chart and then trying to override those with my own values. I couldn't get that to work without some hellish complicated setup until I found Gimlet and Fluxcd which allowed for a single human to have a simple repeatable process.
