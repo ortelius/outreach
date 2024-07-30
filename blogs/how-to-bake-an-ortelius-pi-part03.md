@@ -119,6 +119,8 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 - [Flux Ecosystem](https://fluxcd.io/ecosystem/#flux-uis--guis)
 - [VS Code extension](https://marketplace.visualstudio.com/items?itemName=Weaveworks.vscode-gitops-tools)
 
+The VS Code extension allows you to stuck into the meat of your Fluxcd deployment and configuration inside VS Code.
+
 ![fluxcd vscode extension](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-vscode-extension.png)
 
 - `kubectl get crds | grep flux`
