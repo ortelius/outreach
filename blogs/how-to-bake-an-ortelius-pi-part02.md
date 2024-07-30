@@ -15,7 +15,6 @@
   - [MicroK8s Prep](#microk8s-prep)
     - [Create highly available 3 node cluster with MicroK8s](#create-highly-available-3-node-cluster-with-microk8s)
   - [Conclusion](#conclusion)
-    - [Disclaimer: Any brands I mention in this blog post series are not monetised](#disclaimer-any-brands-i-mention-in-this-blog-post-series-are-not-monetised)
 
 ## How to bake an Ortelius Pi Part 2 | The Preparation
 
@@ -353,4 +352,4 @@ kubectl get pods --all-namespaces
 
 By this stage you should have three Pi's each with MicroK8s in an HA configuration and a Synology ready with NFS. Stay tuned for Part 3 where we will use GitOps to deploy the following NFS [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, [MetalLB Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) and [Ortelius](https://ortelius.io/).
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised
+Disclaimer: Any brands I mention in this blog post series are not monetised
