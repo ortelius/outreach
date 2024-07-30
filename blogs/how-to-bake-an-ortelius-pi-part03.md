@@ -3794,7 +3794,7 @@ If you would like to dig deeper into Traefiks API capabilities please go to the 
 
 ### Ortelius the Ultimate Evidence Store
 
-Well done for making it this far! We have made it to the point where we can deploy Ortelius into our Kubernetes cluster and access Ortelius through the Traefik Proxy inside the Kubernetes Ortelius namespace.
+Well done for making it this far! We have made it to the point where we can deploy Ortelius into our Kubernetes cluster and configure Ortelius to accessed through the Traefik Proxy.
 
 - Kubectl quick reference guide [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
