@@ -235,7 +235,7 @@ kubectl get pods
 
 #### Gimlet Gitops Infra
 
-- Once we have added a Helm repo config and a Helm Release config with our values and then perform a `git push`, Fluxcd will manage the entire deployment process to the Kubernetes cluster and give feedback as to the status of the deployment in the Gimlet UI
+- Once we have added a `helm-repositories` config and a `helm-release` config with our values and then perform a `git push`, Fluxcd will manage the entire deployment process to the Kubernetes cluster and give feedback as to the status of the deployment in the Gimlet UI
 - Currently I am using the `manifest folder` for manual applies
 
 ![gimlet infra repo](images/how-to-bake-an-ortelius-pi/part03/22-gimlet-infra-repo.png)
