@@ -147,7 +147,7 @@ gimlet --version
 
 #### Gimlet on the command line
 
-- `FYI` Please read this [On the command line](https://gimlet.io/docs/managing-infrastructure-components#on-the-command-line)
+- `FYI` please read this [On the command line](https://gimlet.io/docs/managing-infrastructure-components#on-the-command-line)
 - We will be spending all of our time in the `gitops-<your environment>-infra` repo to deploy our Kuberenetes infrastructure with Gimlet
 
 ![gimlet infra](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
