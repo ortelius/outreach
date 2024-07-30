@@ -3707,12 +3707,13 @@ kubectl get crds | grep traefik
 - Edit localhosts on Linux and Mac with sudo rights `sudo vi /etc/hosts` by adding `your private ip and traefik.yourdomain.your tld` e.g. `traefik.pangarabbit.com`
 - Edit Windows localhosts file here as administrator `windows\System32\drivers\etc\hosts` by adding `your private ip and traefik.yourdomain.your tld` e.g. `traefik.pangarabbit.com`
 - [TLD = Top Level Domain](https://en.wikipedia.org/wiki/Top-level_domain)
-- From here on if we want to access our Microservice frontends we will need to create an `IngressRoute` for each one.
+- From here on if we want to access our Microservice frontends we will need to create an `IngressRoute` for each one
 - If its infrastructure create it in the `infrastructure` namespace
 - If its an application create it in the namespace the application lives in
 - Here is an example of an `IngressRoute` for the Traefik Dashboard
 - Remember that the services piece will be different for your applications and should point to the service created in Kubernetes for the application
 - Use the Ortelius `IngressRoute` as an example otherwise hit the Traefik docs
+- `TraefikService` is a service unique to Traefik is never exposed
 
 ```yaml
 apiVersion: traefik.io/v1alpha1
