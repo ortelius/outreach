@@ -2063,7 +2063,7 @@ kubectl config set-context --current --namespace=kube-system
 - Kubectl show me the pods
 
 ```shell
-kubectl get pods -n kube-system
+kubectl get pods -n kube-system | grep cert
 ```
 
 ![cert manager pods](images/how-to-bake-an-ortelius-pi/part03/34-cert-manager-pods.png)
