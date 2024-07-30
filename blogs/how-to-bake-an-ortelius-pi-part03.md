@@ -3867,18 +3867,22 @@ spec:
       interval: 10m
   values:
     ms-general:
-      dbpass: postgres
+      dbpass: postgres # --set ms-general.dbpass=postgres
+                       # Set the PostgreSQL database password
 
     global:
       postgresql:
         enabled: true
       nginxController:
-        enabled: true
-
+        enabled: true # --set global.nginxController.enabled=true
+                      # Sets the ingress controller which could be one of default Nginx, AWS LB or Google LB
+                      # Refer to the Helm Chart in ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
     ms-nginx:
       ingress:
-        type: k3d
-        dnsname: ortelius.pangarabbit.com
+        type: k3d # --set ms-nginx.ingress.type=k3d`
+                  # This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for  # K3d https://k3d.io/v5.6.0/ another very lightweight Kubernetes deployment which uses Traefik as the default
+        dnsname: ortelius.pangarabbit.com # --set ms-nginx.ingress.dnsname=<your domain name goes here>
+                                          # This URL that will go in your browser to access Ortelius
 ```
 
 #### Fluxcd is doing the following under the hood | Ortelius
@@ -3900,14 +3904,6 @@ helm repo update
 ```shell
 helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgres --set global.postgresql.enabled=true --set global.nginxController.enabled=true --set ms-nginx.ingress.type=k3d --set ms-nginx.ingress.dnsname=<your domain name goes here>  --version "${ORTELIUS_VERSION}" --namespace ortelius
 ```
-
-- Lets stop here to discuss some of these settings.
-
-- `--set ms-general.dbpass=postgres` | Set the PostgreSQL database password
-- `--set global.nginxController.enabled=true` | Sets the ingress controller which could be one of `default nginx ingress, AWS Load Balancer or Google Load Balancer` | Refer to the Helm Chart in ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
-- `--set ms-nginx.ingress.type=k3d` | This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius even thou its for [K3d](https://k3d.io/v5.6.0/) another very lightweight Kubernetes deployment which uses Traefik as the default ingress
-- The `k3d` value enables the Traefik ingress class to make Traefik Ortelius aware.
-- `--set ms-nginx.ingress.dnsname=<your domain name goes here>` | This is URL that will go in your browser to access Ortelius
 
 #### Kubernetes check | Ortelius
 
