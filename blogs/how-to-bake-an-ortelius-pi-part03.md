@@ -2077,7 +2077,7 @@ With MetalLB we will setup a unique IP address on our home network to expose the
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - Helm cheat sheet [here](https://helm.sh/docs/intro/cheatsheet/)
 - Helm Chart on ArtifactHub [here](https://artifacthub.io/packages/helm/metallb/metallb)
-- MetalLB concepts [here](https://metallb.universe.tf/concepts/)
+- Metallb concepts [here](https://metallb.universe.tf/concepts/)
 
 #### Helm-Repository | Metallb
 
