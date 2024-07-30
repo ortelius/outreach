@@ -121,7 +121,11 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 The VS Code extension allows you to get into the guts of your Fluxcd deployment and configuration from within VS Code.
 
-![fluxcd vscode extension](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-vscode-extension.png)
+![fluxcd vscode clusters](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-clusters.png)
+
+![fluxcd vscode sources](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-sources.png)
+
+![fluxcd vscode workloads](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-workloads.png)
 
 - `kubectl get crds | grep flux`
 ![fluxcd crds](images/how-to-bake-an-ortelius-pi/part03/25-fluxcd-crds.png)
