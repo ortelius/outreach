@@ -6,7 +6,6 @@
     - [Gimlet Environments](#gimlet-environments)
     - [Gimlet Environment Config](#gimlet-environment-config)
     - [Gimlet Observability](#gimlet-observability)
-    - [Gimlet Manifest folder](#gimlet-manifest-folder)
   - [Fluxcd](#fluxcd)
   - [Gimlet Installation Self-Hosted](#gimlet-installation-self-hosted)
     - [Prerequisites](#prerequisites)
@@ -110,10 +109,6 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 - Click describe to run a `kubectl describe`
 
 ![gimlet obs flux runtime](images/how-to-bake-an-ortelius-pi/part03/31-gimlet-obs-flux-runtime.png)
-
-#### Gimlet Manifest folder
-
-- Currently I am using the manifest folder for manual applies
 
 ### Fluxcd
 
@@ -236,11 +231,13 @@ kubectl get pods
 - I will be including [Doppler](https://www.doppler.com/) later for secrets management
 - Clone this repo to your local machine
 
-- Gimlet Gitops Infra
+`Gimlet Gitops Infra`
+
+- Currently I am using the `manifest folder` for manual applies
 
 ![gimlet infra repo](images/how-to-bake-an-ortelius-pi/part03/22-gimlet-infra-repo.png)
 
-- Gimlet Gitops Apps
+`Gimlet Gitops Apps`
 
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
