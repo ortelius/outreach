@@ -52,7 +52,6 @@
     - [Fluxcd is doing the following under the hood | Ortelius](#fluxcd-is-doing-the-following-under-the-hood--ortelius)
     - [Kubernetes check | Ortelius](#kubernetes-check--ortelius)
   - [Conclusion](#conclusion)
-    - [Disclaimer: Any brands I mention in this blog post series are not monetised](#disclaimer-any-brands-i-mention-in-this-blog-post-series-are-not-monetised)
 
 ## How to bake an Ortelius Pi Part 3 | The GitOps Configuration
 
@@ -3969,4 +3968,4 @@ By this stage you should have three Pi's each with MicroK8s, NFS CSI Driver, Cer
 
 Yes there is more extraterrestrial life in a cloud deployment near you........
 
-#### Disclaimer: Any brands I mention in this blog post series are not monetised
+Disclaimer: Any brands I mention in this blog post series are not monetised
