@@ -3876,7 +3876,7 @@ spec:
       nginxController:
         enabled: true # --set global.nginxController.enabled=true
                       # Sets the ingress controller which could be one of default Nginx, AWS LB or Google LB
-                      # Refer to the Helm Chart in ArtifactHub [here](https://artifacthub.io/packages/helm/ortelius/ortelius)
+                      # Refer to the Helm Chart in ArtifactHub here https://artifacthub.io/packages/helm/ortelius/ortelius
     ms-nginx:
       ingress:
         type: k3d # --set ms-nginx.ingress.type=k3d`
