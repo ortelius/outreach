@@ -3953,7 +3953,7 @@ status:
   loadBalancer: {}
 ```
 
-You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com`
+You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `https://ortelius.pangarabbit.com` and see the login screen as in the graphic.
 
 ![ortelius frontend](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-frontend.png)
 
