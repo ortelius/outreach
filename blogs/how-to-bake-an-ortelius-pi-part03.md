@@ -3619,7 +3619,7 @@ spec:
 ```
 
 - Create the following file `traefik-dynamic-config.yaml` and add the following YAML config if you are using Cloudflare
-- Otherwise refer to these configuration examples for the Traefik Helm Chart for certificates and more [here](https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md)
+- Otherwise refer to these configuration examples for the Traefik Helm Chart [here](https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md)
 
 ```yaml
 ---
