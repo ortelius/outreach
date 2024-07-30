@@ -3719,7 +3719,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.yourdomain.com`) # This where your DNS records come into play
+    - match: Host(`traefik.yourdomain.com`) # This where your DNS records come into play e.g. traefik.pangarabbit.com
       kind: Rule
       services:
         - name: api@internal
@@ -3734,7 +3734,7 @@ kubectl get ingressroutes.traefik.io -n infrastructure
 
 ![traefik pod](images/how-to-bake-an-ortelius-pi/part03/08-traefik-ingressroute-dashboard.png)
 
-- Kubectl show me that the Traefik service has claimed our MetalLB single IP address
+- Kubectl show me that the Traefik service has claimed our Metallb single ip address
 
 ```shell
 kubectl get svc -n infrastructure
@@ -3768,11 +3768,11 @@ netdata                               	ClusterIP      	10.152.183.110	<none>    
 traefik                               	LoadBalancer   	10.152.183.135	192.168.0.151	80:31662/TCP,443:30850/TCP	4d19h
 ```
 
-- Brilliant our Traefik Proxy has claimed the IP
+Brilliant our Traefik Proxy has claimed the ip.
 
 What you see is the `traefik` service with the `TYPE LoadBalancer` and it has claimed the `Metallb IP` that we assigned. A `CLUSTER-IP` is only accessible inside Kubernetes. So now with Metallb and Traefik we have built a bridge between the outside world and our internal Kubernetes world. Traefik comes with some self discovery magic in the form of [providers](https://doc.traefik.io/traefik/providers/overview/) which allows Traefik to query `provider` APIs to find relevant information about routing and then dynamically update the routes.
 
-Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) you set e.g. `traefik.pangarabbit.com`
+Hopefully you should be able to access your dashboard at the FQDN (fully qualified domain name) e.g. `traefik.pangarabbit.com`
 
 #### Further reading | Traefik
 
