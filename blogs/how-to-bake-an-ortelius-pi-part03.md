@@ -3899,13 +3899,13 @@ helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgr
 - Kubectl switch to the Ortelius namespace
 
 ```shell
-kubectl config set-context --current --namespace=ortelius
+kubectl config set-context --current --namespace=infrastructure
 ```
 
 - Kubectl show me the pods for Ortelius
 
 ```shell
-kubectl get pods
+kubectl get pods -n infrastructure
 ```
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
