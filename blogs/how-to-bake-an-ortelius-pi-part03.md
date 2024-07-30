@@ -2039,12 +2039,6 @@ git push
 helm repo add jetstack https://charts.jetstack.io --force-update
 ```
 
-- Helm repo update
-
-```shell
-helm repo update
-```
-
 - Helm repo install
 
 ```shell
@@ -2066,7 +2060,6 @@ kubectl get pods -n kube-system | grep cert
 ```
 
 ![cert manager pods](images/how-to-bake-an-ortelius-pi/part03/34-cert-manager-pods.png)
-
 
 - Great we now have infrastructure for managing certificates!
 
@@ -2507,13 +2500,7 @@ git push
 - Helm repo add
 
 ```shell
-helm repo add metallb https://metallb.github.io/metallb
-```
-
-- Helm repo update
-
-```shell
-helm repo update
+helm repo add metallb https://metallb.github.io/metallb --force-update
 ```
 
 - Helm install MetalLB in the `infrastructure` namespace
@@ -3669,13 +3656,7 @@ git push
 - Helm repo add
 
 ```shell
-helm repo add traefik https://traefik.github.io/charts
-```
-
-- Helm repo update
-
-```shell
-helm repo update
+helm repo add traefik https://traefik.github.io/charts --force-update
 ```
 
 - Helm install Traefik
@@ -3894,13 +3875,7 @@ spec:
 - Helm repo add
 
 ```shell
-helm repo add ortelius https://ortelius.github.io/ortelius-charts/
-```
-
-- Helm repo update
-
-```shell
-helm repo update
+helm repo add ortelius https://ortelius.github.io/ortelius-charts/ --force-update
 ```
 
 - Helm install Ortelius
