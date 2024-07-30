@@ -220,7 +220,7 @@ kubectl get pods
 ![github application](images/how-to-bake-an-ortelius-pi/part03/17-github-application.png)
 
 - You should see the Gimlet application installed
-- `!!!WARNING!!!`Whatever you do don't just delete this app like I did and get yourself into account mess
+- `!!!WARNING!!!`Whatever you do don't just delete this app like I did and get yourself into an account mess
 
 ![github gimlet app](images/how-to-bake-an-ortelius-pi/part03/18-github-gimlet-app.png)
 
