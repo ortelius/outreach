@@ -2,12 +2,12 @@
   - [Introduction](#introduction)
   - [Enter GitOps | Enter Gimlet | Enter Fluxcd](#enter-gitops--enter-gimlet--enter-fluxcd)
   - [Gimlet](#gimlet)
-    - [Gimlet Interface](#gimlet-interface)
-  - [Repostories](#repostories)
-  - [Environments](#environments)
-  - [Environments | Config](#environments--config)
-  - [Observability](#observability)
-  - [Manifest folder](#manifest-folder)
+  - [Gimlet Interface](#gimlet-interface)
+    - [Gimlet Repostories](#gimlet-repostories)
+    - [Gimlet Environments](#gimlet-environments)
+    - [Gimlet Environment Config](#gimlet-environment-config)
+    - [Gimlet Observability](#gimlet-observability)
+    - [Gimlet Manifest folder](#gimlet-manifest-folder)
     - [Fluxcd](#fluxcd)
   - [Gimlet Installation Self-Hosted](#gimlet-installation-self-hosted)
     - [Prerequisites](#prerequisites)
@@ -82,26 +82,26 @@ Gimlet uses the concepts of Kubernetes Infrastructure and Kubernetes Application
 
 Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) and [Cloud hosted](https://accounts.gimlet.io/signup/). I am using Cloud hosted due to the very generous humans at Gimlet.
 
-#### Gimlet Interface
+### Gimlet Interface
 
-### Repostories
+#### Gimlet Repostories
 
 - When the Gimlet dashboard loads you will be met with the repostories section which is where you import your `application` repos to be managed by the GitOps process
 
 ![gimlet repos](images/how-to-bake-an-ortelius-pi/part03/27-gimlet-repos.png)
 
-### Environments
+#### Gimlet Environments
 
 - Environments are the representation of your journey to getting your applications to the end user such as dev, staging, production
 
 ![gimlet environments](images/how-to-bake-an-ortelius-pi/part03/28-gimlet-environments.png)
 
-### Environments | Config
+#### Gimlet Environment Config
 
 - These are pre baked in environment configs which can be turned on and off with a toggle
 ![gimlet environment configs](images/how-to-bake-an-ortelius-pi/part03/29-gimlet-environment-config.png)
 
-### Observability
+#### Gimlet Observability
 
 - This is where you can cycle through different elements of the GitOps process and get feedback on deployments
 - Click on the environment name at the bottom left of the interface
@@ -114,7 +114,7 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 ![gimlet obs flux runtime](images/how-to-bake-an-ortelius-pi/part03/31-gimlet-obs-flux-runtime.png)
 
-### Manifest folder
+#### Gimlet Manifest folder
 
 - Currently I am using the manifest folder for manual applies
 
