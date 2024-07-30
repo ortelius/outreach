@@ -63,7 +63,7 @@ In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to d
 
 ### Enter GitOps | Enter Gimlet | Enter Fluxcd
 
-I wanted to find a process for repeatable deployments, and to incorporate drift detection for Kubernetes infrastructure and applications but I was finding it heavy going to use the default values from the providers Helm Chart and then trying to override those with my own values. I couldn't get ArgoCD to do that without some hellish complicated setup until I found Gimlet and Fluxcd which allowed for a single human to have a simple repeatable process.
+I wanted to find a process for repeatable deployments, and to incorporate drift detection for Kubernetes infrastructure and applications but I was finding it heavy going to use the default values from the providers Helm Chart and then trying to override those with my own values. I couldn't get that to work without some hellish complicated setup until I found Gimlet and Fluxcd which allowed for a single human to have a simple repeatable process.
 
 Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface into the deployments of our infrastructure and applications. Basically like having the [Little Green Mall Wizard](https://youtu.be/dcxZqMIW4OM) in your K8s cluster.
 
