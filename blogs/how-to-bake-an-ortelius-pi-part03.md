@@ -3659,7 +3659,7 @@ spec:
 #### Manifest Folder | Traefik
 
 - The folks at Traefik put this nice piece of logic in the Helm Chart that allows you to create a config file which is dynamically monitored by Traefik
-- I am using file logic to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
+- I am using this to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
 - I have `DISABLED` this logic in the above Helm Chart values config for now until I have done the Cloudflare part of the blog
 
 ```yaml
