@@ -40,7 +40,6 @@
     - [Helm-Release | Metallb](#helm-release--metallb)
     - [Fluxcd is doing the following under the hood | Metallb](#fluxcd-is-doing-the-following-under-the-hood--metallb)
     - [Kubernetes check | Metallb](#kubernetes-check--metallb)
-    - [Manifest Folder | Metallb](#manifest-folder--metallb)
   - [Traefik the Cloud Native Proxy](#traefik-the-cloud-native-proxy)
     - [Helm-Repository | Traefik](#helm-repository--traefik)
     - [Helm-Release | Traefik](#helm-release--traefik)
@@ -2579,9 +2578,6 @@ kubectl get pods -n infrastructure
 
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
 
-#### Manifest Folder | Metallb
-
-- I am currently using the manifests folder for manual Kubernetes manifest deploys
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
 - Copy the YAML below into `metallb.yaml` and run `kubectl apply -f metallb.yaml`
 
