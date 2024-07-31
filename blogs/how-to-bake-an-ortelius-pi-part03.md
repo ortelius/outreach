@@ -311,11 +311,11 @@ kubectl get pods
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
 ```shell
-git clone https://github.com/<your profile>/gitops-<your-environment>-infra.git
+git clone https://github.com/<your-profile>/gitops-<your-environment>-infra.git
 ```
 
 ```shell
-git clone https://github.com/<your profile>/gitops-<your-environment>-apps.git
+git clone https://github.com/<your-profile>/gitops-<your-environment>-apps.git
 ```
 
 - On your local machine open your IDE and navigate to your cloned infrastructure repo
