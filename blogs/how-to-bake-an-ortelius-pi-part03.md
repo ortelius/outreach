@@ -4005,8 +4005,7 @@ status:
   loadBalancer: {}
 ```
 
-You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `http://ortelius.pangarabbit.com` and see the login screen as in the graphic. You will
- get a certificate error but just allow access for now until we sort our the certificate with Cloudflare.
+You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `http://ortelius.pangarabbit.com` and see the login screen as in the graphic. You will get a certificate error but just allow access for now until we sort out the certificate with Cloudflare.
 
 ![ortelius frontend](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-frontend.png)
 
