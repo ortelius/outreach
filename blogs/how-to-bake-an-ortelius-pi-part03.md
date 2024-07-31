@@ -2579,7 +2579,7 @@ kubectl get pods -n infrastructure
 ![metallb pods](images/how-to-bake-an-ortelius-pi/part03/03-metallb-pods.png)
 
 - Now lets enable [L2 Advertisement](https://metallb.universe.tf/troubleshooting/) and setup our IP pool
-- Copy the YAML below into `metallb.yaml` and run `kubectl apply -f metallb.yaml`
+- Create `metallb.yaml` in the `manifest folder` and paste the YAML below into `metallb.yaml` and run `kubectl apply -f metallb.yaml`
 
 ```yaml
 apiVersion: metallb.io/v1beta1
