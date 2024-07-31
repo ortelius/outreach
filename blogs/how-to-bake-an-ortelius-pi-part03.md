@@ -145,7 +145,7 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 
 #### Gimlet Environments
 
-- Environments are the representation of your journey to getting your applications to the end user such as dev, staging, production
+- Environments are the representation of your journey to getting your applications to the end user such as dev, staging and production
 
 ![gimlet environments](images/how-to-bake-an-ortelius-pi/part03/28-gimlet-environments.png)
 
