@@ -3779,7 +3779,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.yourdomain.com`) # This where your DNS records come into play e.g. traefik.pangarabbit.com
+    - match: Host(`traefik.yourdomain.com`) # The FQDN to access the Traefik dashboard e.g. traefik.pangarabbit.com
       kind: Rule
       services:
         - name: api@internal
