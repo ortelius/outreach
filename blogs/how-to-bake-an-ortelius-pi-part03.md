@@ -3802,7 +3802,7 @@ kubectl get svc -n infrastructure
 
 ![traefik service](images/how-to-bake-an-ortelius-pi/part03/09-traefik-service.png)
 
-- Here is a view of the services for all namespaces
+- Here is a view of the services for the `infrastructure` namespace
 
 ```text
 NAME                                  	TYPE           	CLUSTER-IP       	EXTERNAL-IP     	PORT(S)                      AGE
