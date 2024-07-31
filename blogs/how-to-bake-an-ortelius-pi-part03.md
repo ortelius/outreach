@@ -3951,7 +3951,13 @@ helm repo add ortelius https://ortelius.github.io/ortelius-charts/ --force-updat
 - Helm install Ortelius
 
 ```shell
-helm upgrade --install ortelius ortelius/ortelius --set ms-general.dbpass=postgres --set global.postgresql.enabled=true --set global.nginxController.enabled=true --set ms-nginx.ingress.type=k3d --set ms-nginx.ingress.dnsname=<your domain name goes here>  --version "${ORTELIUS_VERSION}" --namespace ortelius
+helm upgrade --install ortelius ortelius/ortelius \
+  --set ms-general.dbpass=postgres \
+  --set global.postgresql.enabled=true \
+  --set global.nginxController.enabled=true \
+  --set ms-nginx.ingress.type=k3d \
+  --set ms-nginx.ingress.dnsname=<your domain name goes here> \
+  --version "${ORTELIUS_VERSION}" --namespace ortelius
 ```
 
 #### Kubernetes check | Ortelius
