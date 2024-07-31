@@ -204,7 +204,7 @@ gimlet --version
 #### Gimlet on the command line
 
 - `FYI` please read this [On the command line](https://gimlet.io/docs/managing-infrastructure-components#on-the-command-line)
-- We will be spending all of our time in the `gitops-<your environment>-infra` repo to deploy our Kuberenetes infrastructure with Gimlet
+- We will be spending all of our time in the `gitops-<your-environment>-infra` repo to deploy our Kuberenetes infrastructure with Gimlet
 
 ![gimlet infra](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
 
@@ -258,7 +258,7 @@ kubectl get namespaces
 kubectl config set-context --current --namespace=infrastructure
 ```
 
-- List pods and you should see `gimlet-agent-<blah blah blah>`
+- List pods and you should see `gimlet-agent-<gooey-string>`
 
 ```shell
 kubectl get pods
@@ -288,7 +288,7 @@ kubectl get pods
 
 ![github gimlet repos](images/how-to-bake-an-ortelius-pi/part03/20-github-gimlet-repos.png)
 
-- You should see `gitops-<your environment>-infra` and `gitops-<your environment>-apps`
+- You should see `gitops-<your-environment>-infra` and `gitops-<your-environment>-apps`
 - You will notice that this repo is private thus no one can see any sensitive information such as secrets
 - I will be including [Doppler](https://www.doppler.com/) later for secrets management
 - Clone this repo to your local machine
@@ -307,11 +307,11 @@ kubectl get pods
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
 ```shell
-git clone https://github.com/<your profile>/gitops-<your environment>-infra.git
+git clone https://github.com/<your profile>/gitops-<your-environment>-infra.git
 ```
 
 ```shell
-git clone https://github.com/<your profile>/gitops-<your environment>-apps.git
+git clone https://github.com/<your profile>/gitops-<your-environment>-apps.git
 ```
 
 - On your local machine open your IDE and navigate to your cloned infrastructure repo
@@ -569,13 +569,7 @@ git push
 - Helm repo add
 
 ```shell
-helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
-```
-
-- Helm repo update
-
-```shell
-helm repo update
+helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts --force-update
 ```
 
 - Helm repo install
