@@ -65,7 +65,7 @@ In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to d
 
 I have tried to put things in a logical order for deployment like this:
 
-`storage --> certificate store --> load balancer --> proxy/api gateway --> evidence store --> cloudflare --> secret store --> everything else`
+`storage --> certificate store --> load balancer --> proxy/api gateway --> evidence store --> cloudflare --> secret store --> ZeroTier --> everything else`
 
 ### Kubernetes
 
@@ -4015,7 +4015,7 @@ Happy alien hunting.......
 
 ### Conclusion
 
-By this stage you should have three Pi's each with MicroK8s, NFS CSI Driver, Cert Manager, Traefik, Ortelius and a NFS server up and running. Stay tuned for Part 4 where we unleash LetsEncrypt with Cloudflare for automatic certificate renewal to provide certificate and TLS services. Lastly we will include secrets management with Doppler.
+By this stage you should have three Pi's each with MicroK8s, NFS CSI Driver, Cert Manager, Traefik, Ortelius and a NFS server up and running. Stay tuned for Part 4 where we unleash LetsEncrypt with Cloudflare for automatic certificate renewal to provide certificate and TLS services.
 
 Yes there is more extraterrestrial life in a cloud deployment near you........
 
