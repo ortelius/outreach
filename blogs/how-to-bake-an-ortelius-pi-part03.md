@@ -80,7 +80,7 @@ All the context and name space switching can get really tedious so I introduce t
 
 - [Kubeswitch on Github](https://github.com/danielfoehrKn/kubeswitch)
 - [The case of Kubeswitch](https://danielfoehrkn.medium.com/the-case-of-kubeswitch-aff4b6a04ae7)
-- Unified searh over multiple providers
+- Unified search over multiple providers
 - Change namespace
 - Change to any context and namespace from the history
 - Terminal window isolation
