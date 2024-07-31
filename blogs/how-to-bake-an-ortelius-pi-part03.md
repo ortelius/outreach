@@ -2638,7 +2638,6 @@ With [Traefik Proxy](https://traefik.io/) we can now direct traffic destined for
 - A Helm repository is a collection of Helm charts that are made available for download and installation
 - Helm repositories serve as centralised locations where Helm charts can be stored, shared, and managed
 - Create a file called `traefik.yaml` in the `helm-repositories` directory and paste the following YAML
-- Choose an IP address on your private home network that does not fall inside your DHCP pool for MetalLB to use
 
 ```yaml
 ---
