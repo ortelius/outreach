@@ -3855,7 +3855,7 @@ If you would like to dig deeper into Traefiks API capabilities please go to the 
 - [Traefik Hub API Gateway](https://traefik.io/traefik-hub-api-gateway/)
 - [Traefik Enterprise](https://traefik.io/traefik-enterprise/)
 - [Traefik Hub](https://traefik.io/traefik-hub/)
-- [Upgrade Traefik Proxy to API Gateway and API Management in Seconds](https://youtu.be/zriUO5YPgFg)
+- Watch [Upgrade Traefik Proxy to API Gateway and API Management in Seconds](https://youtu.be/zriUO5YPgFg) on YouTube
 
 ![traefik dashboard](images/how-to-bake-an-ortelius-pi/part03/10-traefik-dashboard.png)
 
