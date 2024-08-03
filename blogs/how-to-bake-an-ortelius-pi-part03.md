@@ -2584,7 +2584,7 @@ helm install metallb metallb/metallb -n infrastructure
 kubectl config set-context --current --namespace=infrastructure
 ```
 
-- Kubectl show me the MetalLB pods in the `infrastructure` namespace
+- Kubectl show me the Metallb pods in the `infrastructure` namespace
 
 ```shell
 kubectl get pods -n infrastructure
