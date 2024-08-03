@@ -35,7 +35,7 @@
   - [Gimlet | Cert Manager](#gimlet--cert-manager)
     - [Helm-Repository | Cert Manager](#helm-repository--cert-manager)
     - [Helm-Release | Cert Manager](#helm-release--cert-manager)
-    - [FYI | Helm Chart configurations that were amended](#fyi--helm-chart-configurations-that-were-amended)
+    - [FYI | Helm Chart configurations that were amended for Cert Manager](#fyi--helm-chart-configurations-that-were-amended-for-cert-manager)
     - [Fluxcd is doing the following under the hood | Cert Manager](#fluxcd-is-doing-the-following-under-the-hood--cert-manager)
     - [Kubernetes check | Cert Manager](#kubernetes-check--cert-manager)
   - [Metallb load-balancer for bare metal Kubernetes](#metallb-load-balancer-for-bare-metal-kubernetes)
@@ -46,7 +46,7 @@
   - [Traefik the Cloud Native Proxy](#traefik-the-cloud-native-proxy)
     - [Helm-Repository | Traefik](#helm-repository--traefik)
     - [Helm-Release | Traefik](#helm-release--traefik)
-    - [FYI | Helm Chart configuration | Amended Traefik configs](#fyi--helm-chart-configuration--amended-traefik-configs)
+    - [FYI | Helm Chart configurations that were amended for Traefik](#fyi--helm-chart-configurations-that-were-amended-for-traefik)
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
     - [Fluxcd is doing the following under the hood | Traefik](#fluxcd-is-doing-the-following-under-the-hood--traefik)
     - [Further reading | Traefik](#further-reading--traefik)
@@ -679,7 +679,7 @@ spec:
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `certman.yaml` in the `helm-releases` directory and paste the following YAML
 
-#### FYI | Helm Chart configurations that were amended
+#### FYI | Helm Chart configurations that were amended for Cert Manager
 
 - You may want to edit these to suit your environment
 
@@ -2672,7 +2672,7 @@ spec:
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `traefik.yaml` in the `helm-releases` directory and paste the following YAML
 
-#### FYI | Helm Chart configuration | Amended Traefik configs
+#### FYI | Helm Chart configurations that were amended for Traefik
 
 - You may want to edit these to suit your environment
 
