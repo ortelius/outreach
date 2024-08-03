@@ -643,7 +643,7 @@ kubectl -n kube-system patch storageclass nfs-csi -p '{"metadata": {"annotations
 
 #### Kubernetes Cert Manager
 
-With the [Cert Manager](https://cert-manager.io/) we will manage all our certificate needs.
+With [Cert Manager](https://cert-manager.io/) we will manage all our certificate needs.
 
 - [Cert Manager Github repo](https://github.com/cert-manager/cert-manager)
 - Kubectl quick reference [here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
@@ -687,7 +687,7 @@ spec:
     crds:
       # This option decides if the CRDs should be installed
       # as part of the Helm installation.
-      enabled: true # Personally I would leave this enabled
+      enabled: true # Personally I like to leave this enabled
 ```
 
 ```yaml
@@ -739,7 +739,7 @@ spec:
         kind: HelmRepository
         name: external
       interval: 10m
-  # values: your values go here to override the default values
+  # values: Your values go here to override the default values
   values:
     # +docs:section=Global
 
