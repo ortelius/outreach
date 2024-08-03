@@ -687,7 +687,7 @@ spec:
     crds:
       # This option decides if the CRDs should be installed
       # as part of the Helm installation.
-      enabled: true # Personally I like to have this enabled
+      enabled: true
 ```
 
 ```yaml
