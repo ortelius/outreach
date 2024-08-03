@@ -11,6 +11,8 @@
     - [Gimlet Environment Config](#gimlet-environment-config)
     - [Gimlet Observability](#gimlet-observability)
   - [Fluxcd](#fluxcd)
+    - [VS Code Extension](#vs-code-extension)
+    - [Flux CRD's](#flux-crds)
   - [Gimlet Installation Self-Hosted](#gimlet-installation-self-hosted)
     - [Prerequisites](#prerequisites)
     - [Gimlet on the command line](#gimlet-on-the-command-line)
@@ -180,6 +182,8 @@ Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) 
 - [Flux Ecosystem](https://fluxcd.io/ecosystem/#flux-uis--guis)
 - [VS Code extension](https://marketplace.visualstudio.com/items?itemName=Weaveworks.vscode-gitops-tools)
 
+#### VS Code Extension
+
 The VS Code extension allows you to get into the guts of your Fluxcd deployment and configuration from within VS Code.
 
 ![fluxcd vscode clusters](images/how-to-bake-an-ortelius-pi/part03/24-fluxcd-vscode-clusters.png)
@@ -187,6 +191,8 @@ The VS Code extension allows you to get into the guts of your Fluxcd deployment 
 ![fluxcd vscode sources](images/how-to-bake-an-ortelius-pi/part03/32-fluxcd-vscode-sources.png)
 
 ![fluxcd vscode workloads](images/how-to-bake-an-ortelius-pi/part03/33-fluxcd-vscode-workloads.png)
+
+#### Flux CRD's
 
 Lets take a look at the Flux CRD's.
 
