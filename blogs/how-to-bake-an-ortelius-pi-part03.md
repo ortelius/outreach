@@ -188,7 +188,12 @@ The VS Code extension allows you to get into the guts of your Fluxcd deployment 
 
 ![fluxcd vscode workloads](images/how-to-bake-an-ortelius-pi/part03/33-fluxcd-vscode-workloads.png)
 
-- `kubectl get crds | grep flux`
+Lets take a look at the Flux CRD's.
+
+```shell
+`kubectl get crds | grep flux`
+```
+
 ![fluxcd crds](images/how-to-bake-an-ortelius-pi/part03/25-fluxcd-crds.png)
 
 ### Gimlet Installation Self-Hosted
