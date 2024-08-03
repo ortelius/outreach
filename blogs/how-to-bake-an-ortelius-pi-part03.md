@@ -35,7 +35,7 @@
   - [Gimlet | Cert Manager](#gimlet--cert-manager)
     - [Helm-Repository | Cert Manager](#helm-repository--cert-manager)
     - [Helm-Release | Cert Manager](#helm-release--cert-manager)
-    - [FYI | Helm Chart configuration | Amended Cert Manager configs](#fyi--helm-chart-configuration--amended-cert-manager-configs)
+    - [FYI | Helm Chart configurations that were amended](#fyi--helm-chart-configurations-that-were-amended)
     - [Fluxcd is doing the following under the hood | Cert Manager](#fluxcd-is-doing-the-following-under-the-hood--cert-manager)
     - [Kubernetes check | Cert Manager](#kubernetes-check--cert-manager)
   - [Metallb load-balancer for bare metal Kubernetes](#metallb-load-balancer-for-bare-metal-kubernetes)
@@ -679,7 +679,7 @@ spec:
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `certman.yaml` in the `helm-releases` directory and paste the following YAML
 
-#### FYI | Helm Chart configuration | Amended Cert Manager configs
+#### FYI | Helm Chart configurations that were amended
 
 - You may want to edit these to suit your environment
 
