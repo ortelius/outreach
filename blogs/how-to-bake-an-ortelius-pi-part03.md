@@ -572,7 +572,6 @@ spec:
       allowVolumeExpansion: true
       volumeBindingMode: WaitForFirstConsumer # Default value is Delete
       mountOptions: # Volume mount options for the storage class can be set here
-        - hard
         - nfsvers=4
 ```
 
