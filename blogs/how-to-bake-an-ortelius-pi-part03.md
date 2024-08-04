@@ -551,7 +551,8 @@ spec:
     # - name: "image-pull-secret"
 
     # Kubernetes Storage Class creation
-    # Documentation https://kubernetes.io/docs/concepts/storage/storage-classes/
+    # Kubernetes csi-driver-nfs https://github.com/kubernetes-csi/csi-driver-nfs
+    # Kubernetes Storage Class documentation https://kubernetes.io/docs/concepts/storage/storage-classes/
     storageClass:
       create: true
       name: nfs-csi-default
