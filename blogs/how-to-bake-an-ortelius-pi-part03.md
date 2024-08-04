@@ -558,17 +558,18 @@ spec:
         storageclass.kubernetes.io/is-default-class: "true"
       provisioner: nfs.csi.k8s.io
       reclaimPolicy: Delete
-      allowVolumeExpansion: true
       parameters:
-        server: 192.168.0.152 # Replace with your nfs server ip
+        server: 192.168.0.152 # Replace with your nfs server ip or FQDN
         share: /volume4/pi8s/ # Replace with your nfs volume share
         #subDir:
         mountPermissions: "0"
         # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
         # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
         # csi.storage.k8s.io/provisioner-secret-namespace: "kube-system"
-      volumeBindingMode: Immediate
-      mountOptions:
+        csi.storage.k8s.io/fstype: "nfs4" # Optional parameter for file system type
+      allowVolumeExpansion: true
+      volumeBindingMode: WaitForFirstConsumer # Default value is Delete
+      mountOptions: # Volume mount options for the storage class can be set here
         - hard
         - nfsvers=4
 ```
