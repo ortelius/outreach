@@ -559,7 +559,8 @@ spec:
       annotations:
         storageclass.kubernetes.io/is-default-class: "true"
       provisioner: nfs.csi.k8s.io
-      reclaimPolicy: Delete
+      reclaimPolicy: Delete # PersistentVolumes can have various reclaim policies, including "Retain", "Recycle", and "Delete"
+                            # Kubernetes docs https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/
       parameters:
         server: 192.168.0.152 # Replace with your nfs server ip or FQDN
         share: /volume4/pi8s/ # Replace with your nfs volume share
