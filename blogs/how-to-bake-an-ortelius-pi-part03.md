@@ -64,7 +64,7 @@
 
 In [part 2](https://ortelius.io/blog/2024/04/09/how-to-bake-an-ortelius-pi-part-2-the-configuration/), of this series we deployed DHCP, DNS, NFS with a [Synology NAS](https://www.synology.com/) and deployed [MicroK8s](https://microk8s.io/) in HA mode.
 
-In part 3 we will use the [GitOps Methodology](https://gitops.weave.works/) to deploy [Cert Manager](https://cert-manager.io/), [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised dynamic volume storage, [Metallb Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store using [Gimlet](https://gimlet.io/) as the UI to our GitOps controller [Fluxcd](https://fluxcd.io/).
+In part 3 we will use the [GitOps Methodology](https://opengitops.dev/) to deploy [Cert Manager](https://cert-manager.io/), [NFS CSI Driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes to connect to the Synology NAS for centralised dynamic volume storage, [Metallb Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) as the entrypoint for our Microservices and [Ortelius](https://ortelius.io/) the ultimate evidence store using [Gimlet](https://gimlet.io/) as the UI to our GitOps controller [Fluxcd](https://fluxcd.io/).
 
 ### Roadmap
 
@@ -134,16 +134,16 @@ Gimlet gives us a clean UI for Fluxcd and allows us to have a neat interface int
 ### Gimlet
 
 - [Documentation](https://gimlet.io/docs)
-- [Managing infrastructure components](https://gimlet.io/docs/managing-infrastructure-components)
-- [On the command line](https://gimlet.io/docs/managing-infrastructure-components#on-the-command-line)
-- [Gimlet manifest reference](https://gimlet.io/docs/gimlet-manifest-reference)
-- [Gimlet OneChart reference](https://gimlet.io/docs/onechart-reference)
-- [Gimlet configuration reference](https://gimlet.io/docs/gimlet-configuration-reference)
-- [Upgrading Flux](https://gimlet.io/docs/gitops-bootstrapping-reference)
+- [Managing infrastructure components](https://gimlet.io/docs/environment-settings/introduction)
+- [On the command line](https://gimlet.io/docs/environment-settings/component-updates#manual-updating)
+- [Gimlet manifest reference](https://gimlet.io/docs/reference/gimlet-manifest-reference)
+- [Gimlet OneChart reference](https://gimlet.io/docs/reference/onechart-reference)
+- [Gimlet configuration reference](https://gimlet.io/docs/reference/gimlet-configuration-reference)
+- [Upgrading Flux](https://gimlet.io/docs/cli/cli-use-cases#upgrade)
 
 Gimlet uses the concepts of Kubernetes infrastructure and Kubernetes applications. The infrastructure concept is the bedrock to deploy applications in an environment containing security, observability, storage, load balancer, proxy API services, Ortelius and anything else your applications depend on. Applications would be the services you provide to end users and customers. This concept is fundamental to understanding the ways of Gimlet and Fluxcd.
 
-Gimlet comes in two flavours [Self-Hosted](https://gimlet.io/docs/installation) and [Cloud hosted](https://accounts.gimlet.io/signup/). I am using Cloud hosted due to the very generous humans at Gimlet.
+Gimlet comes in two flavours [Self-Hosted](https://github.com/gimlet-io/gimlet) and [Cloud hosted](https://app.gimlet.io). I am using Cloud hosted due to the very generous humans at Gimlet.
 
 #### Gimlet Repostories
 
@@ -208,7 +208,7 @@ Lets take a look at the Flux CRD's.
 
 - You will need to have an account with a provider such as [Github](https://github.com/) which is the provider I use
 - Gimlet is going to use this provider for all things GitOps
-- [Install Gimlet CLI](https://gimlet.io/docs/installing-gimlet-cli)
+- [Install Gimlet CLI](https://github.com/gimlet-io/gimlet?tab=readme-ov-file#install-the-cli)
 
 ```shell
 # Check the current version before you install
@@ -220,7 +220,7 @@ gimlet --version
 
 #### Gimlet on the command line
 
-- `FYI` please read this [On the command line](https://gimlet.io/docs/managing-infrastructure-components#on-the-command-line)
+- `FYI` please read this [On the command line](https://gimlet.io/docs/environment-settings/component-updates)
 - We will be spending all of our time in the `gitops-<your-environment>-infra` repo to deploy our Kubernetes infrastructure with Gimlet
 
 ![gimlet infra](images/how-to-bake-an-ortelius-pi/part03/21-gimlet-infra.png)
@@ -319,7 +319,7 @@ kubectl get pods
 
 #### Gimlet Gitops Apps
 
-- Use the Gimlet walkthrough [here](https://gimlet.io/docs/deploy-your-first-app) to deploy your `firstapp`
+- Use the Gimlet walkthrough [here](https://gimlet.io/docs/overview/quick-start) to deploy your `firstapp`
 
 ![gimlet apps repo](images/how-to-bake-an-ortelius-pi/part03/23-gimlet-apps-repo.png)
 
