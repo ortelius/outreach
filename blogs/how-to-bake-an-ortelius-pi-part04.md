@@ -42,7 +42,7 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 ![03 cf add site](images/how-to-bake-an-ortelius-pi/part04/03-cf-register-new-domain.png)
 
 - Click in the `Search for a domain name` box and find a domain
-![04 cf add site](images/how-to-bake-an-ortelius-pi/part04/03-cf-search-domain.png)
+![04 cf add site](images/how-to-bake-an-ortelius-pi/part04/04-cf-search-domain.png)
 
 - Cloudflare will tell you if your domain is available. Unfortunately my cats name was not available. She will not be impressed.
 ![05 cf add site](images/how-to-bake-an-ortelius-pi/part04/05-cf-mottles-domain.png)
