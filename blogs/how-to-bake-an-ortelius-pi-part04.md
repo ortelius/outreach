@@ -4,6 +4,8 @@
   - [Cloudflare | Connectivity Cloud](#cloudflare--connectivity-cloud)
     - [Buying a domain name](#buying-a-domain-name)
     - [SSL/TLS](#ssltls)
+    - [Helm-Release | Traefik](#helm-release--traefik)
+    - [Manifest Folder | Traefik](#manifest-folder--traefik)
 
 ## How to bake an Ortelius Pi Part 4 | Cloudflare, Certificates and Traefik
 
@@ -111,3 +113,27 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 - I turned on `Automatic HTTPS Rewrites`
 
 ![18 cf edge certificates https rewrites ](images/how-to-bake-an-ortelius-pi/part04/18-cf-edge-certificates-https-rewrites.png)
+
+#### Helm-Release | Traefik
+
+- Lets go back to our Traefik Helm Release and make some amendments
+- Edit `traefik.yaml` in the `helm-releases` directory with the following changes
+
+#### Manifest Folder | Traefik
+
+- The folks at Traefik put this nice piece of logic in the Helm Chart that allows you to create a config file which is dynamically monitored by Traefik
+- I am using this to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
+- Its time to `ENABLE` the certificate logic in `/manifests/traefik-dynamic-config.yaml` and `git push`
+
+```yaml
+      file:
+        # -- Create a file provider
+        enabled: true
+        # -- Allows Traefik to automatically watch for file changes
+        watch: true
+        # -- File content (YAML format, go template supported) (see https://doc.traefik.io/traefik/providers/file/)
+        # content:
+        providers:
+          file:
+            directory: /manifests/traefik-dynamic-config.yaml
+```
