@@ -87,4 +87,5 @@ Cloudflare strongly recommends using Full or Full (strict) modes to prevent mali
 - Clicking on `Edge Certificates` you will seen that the kind folks at Cloudflare have provided you with a certificate already
 
 ![12 cf edge certificates button](images/how-to-bake-an-ortelius-pi/part04/12-cf-edge-certificates-button.png)
-![13 cf edge certificates note](images/how-to-bake-an-ortelius-pi/part04/13-cf-edge-certificates-note.png)
+![13 cf edge certificates button](images/how-to-bake-an-ortelius-pi/part04/13-cf-edge-certificates.png)
+![14 cf edge certificates note](images/how-to-bake-an-ortelius-pi/part04/14-cf-edge-certificates-note.png)
