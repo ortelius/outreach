@@ -2670,7 +2670,7 @@ spec:
 
 #### Helm-Release | Traefik
 
-- Lets create a Helm release for Metallb
+- Lets create a Helm release for Traefik
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `traefik.yaml` in the `helm-releases` directory and paste the following YAML
