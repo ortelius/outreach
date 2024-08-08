@@ -54,6 +54,6 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 
 ![06 cf new domain](images/how-to-bake-an-ortelius-pi/part04/06-cf-new-domain.png)
 
-- You should have 2 DNS A records like below
+- You should have 2 DNS A records like below | `* is for wildcard` and the domain apex `pangarabbit.com`
 
 ![07 cf a records](images/how-to-bake-an-ortelius-pi/part04/08-cf-a-records.png)
