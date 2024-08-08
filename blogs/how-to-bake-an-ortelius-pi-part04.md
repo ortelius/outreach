@@ -228,6 +228,7 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
 ```
 
 - For Argocd I had to edit the `ingressClassName` to make it Traefik aware
+- Also enable `TLS`
 
 ```yaml
       # Argo CD server ingress configuration
@@ -252,4 +253,15 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
         # -- Argo CD server hostname
         # @default -- `""` (defaults to global.domain)
         hostname: "argocd.pangarabbit.com"
+
+        # -- The path to Argo CD server
+        path: /
+
+        # -- Ingress path type. One of `Exact`, `Prefix` or `ImplementationSpecific`
+        pathType: Prefix
+
+        # -- Enable TLS configuration for the hostname defined at `server.ingress.hostname`
+        ## TLS certificate will be retrieved from a TLS secret `argocd-server-tls`
+        ## You can create this secret via `certificate` or `certificateSecret` option
+        tls: true
 ```
