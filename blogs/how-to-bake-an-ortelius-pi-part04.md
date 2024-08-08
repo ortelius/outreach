@@ -140,8 +140,7 @@ Great we should have a functional certificate which will be auto renewed and we 
 
 - The folks at Traefik put this nice piece of logic in the Helm Chart that allows you to create a config file which is dynamically monitored by Traefik
 - I am using this to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
-- Its time to `ENABLE` the certificate logic in `/manifests/traefik-dynamic-config.yaml` and `git push`
-- Allow Flux to do its thing
+- Its time to `ENABLE` the certificate logic in `/manifests/traefik-dynamic-config.yaml` and `git push` and allow Flux to handle the deployment
 
 ```yaml
       file:
