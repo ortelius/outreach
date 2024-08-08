@@ -179,6 +179,7 @@ Gimlet comes in two flavours [Self-Hosted](https://github.com/gimlet-io/gimlet) 
 
 - [Documentation](https://fluxcd.io/flux/)
 - [Flux CLI](https://fluxcd.io/flux/cmd/)
+- [Flux Troubleshooting Cheatsheet](https://fluxcd.io/flux/cheatsheets/troubleshooting/)
 - [Flux Ecosystem](https://fluxcd.io/ecosystem/#flux-uis--guis)
 - [VS Code extension](https://marketplace.visualstudio.com/items?itemName=Weaveworks.vscode-gitops-tools)
 
@@ -2670,7 +2671,7 @@ spec:
 
 #### Helm-Release | Traefik
 
-- Lets create a Helm release for Metallb
+- Lets create a Helm release for Traefik
 - A Helm release is an instance of a Helm chart running in a Kubernetes cluster
 - Each release is a deployment of a particular version of a chart with a specific configuration
 - Create a file called `traefik.yaml` in the `helm-releases` directory and paste the following YAML
@@ -3992,35 +3993,6 @@ kubectl get pods -n infrastructure
 ```
 
 ![ortelius microservices](images/how-to-bake-an-ortelius-pi/part03/11-ortelius-microservices.png)
-
-- Now we will deploy a Traefik ingress route for Ortelius by applying the following YAML
-- Create a YAML file in the `manifests directory` called `ortelius.yaml`, and paste the following YAML in `ortelius.yaml` then run `kubectl apply -f ortelius.yaml`
-
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
-  labels:
-    app: ms-nginx
-  name: ms-nginx-traefik
-  namespace: infrastructure
-spec:
-  ingressClassName: k3d
-  rules:
-  - http:
-      paths:
-      - backend:
-          service:
-            name: ms-nginx
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
-status:
-  loadBalancer: {}
-```
 
 You should now be able to reach the Ortelius frontend in your browser using the domain name you chose for example mine was `http://ortelius.pangarabbit.com` and see the login screen as in the graphic. You will get a certificate error but just allow access for now until we sort out the certificate with Cloudflare.
 

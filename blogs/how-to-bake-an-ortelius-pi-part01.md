@@ -20,7 +20,7 @@ Why Raspberry Pis you ask, well first of all I live in Cape Town South Africa wh
 
 ### Roadmap
 
-`hardware --> networking --> orchestrator --> storage --> certificate store --> load balancer --> proxy/api gateway --> evidence store --> cloudflare --> secret store --> ZeroTier --> everything else`
+`hardware --> networking --> orchestrator --> storage --> certificate store --> load balancer --> proxy/api gateway --> evidence store --> cloudflare --> secret store --> zerotier --> everything else`
 
 ### My Home Setup
 

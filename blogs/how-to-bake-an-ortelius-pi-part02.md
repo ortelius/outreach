@@ -25,7 +25,7 @@ In [Part 1](https://ortelius.io/blog/2024/03/27/how-to-bake-an-ortelius-pi-part-
 
 ### Roadmap
 
-`networking --> orchestrator --> storage --> certificate store --> load balancer --> proxy/api gateway --> evidence store --> cloudflare --> secret store --> ZeroTier --> everything else`
+`networking --> orchestrator --> storage --> certificate store --> load balancer --> proxy/api gateway --> evidence store --> cloudflare --> secret store --> zerotier --> everything else`
 
 ### IP Addresses and DHCP
 
