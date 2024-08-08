@@ -80,7 +80,7 @@ What encryption mode should I use?
 
 Cloudflare strongly recommends using Full or Full (strict) modes to prevent malicious connections to your origin. For details on each available mode, refer to the [encryption modes documentation](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/).
 
-- I turned this on because I can't remember everything
+- I turned this on
 
 ![11 cf ssl tls recommender](images/how-to-bake-an-ortelius-pi/part04/11-cf-ssl-tls-recommender.png)
 
