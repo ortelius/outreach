@@ -3,6 +3,7 @@
   - [Roadmap](#roadmap)
   - [Cloudflare | Connectivity Cloud](#cloudflare--connectivity-cloud)
     - [Buying a domain name](#buying-a-domain-name)
+    - [SSL/TLS](#ssltls)
 
 ## How to bake an Ortelius Pi Part 4 | Cloudflare, Certificates and Traefik
 
@@ -55,5 +56,12 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 ![06 cf new domain](images/how-to-bake-an-ortelius-pi/part04/06-cf-new-domain.png)
 
 - You should have 2 DNS A records like below | `* is for wildcard` and the domain apex `pangarabbit.com`
+- The domain apex record should be there but you might have to add the wildcard if memory serves me correctly
 
 ![07 cf a records](images/how-to-bake-an-ortelius-pi/part04/08-cf-a-records.png)
+
+#### SSL/TLS
+
+- Lets head over to `SSL/TLS` now
+
+![08 cf ssl tls](images/how-to-bake-an-ortelius-pi/part04/09-cf-ssl-tls.png)
