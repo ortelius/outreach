@@ -34,10 +34,10 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 - Now we need a dns domain so if you don't have one you will need to buy one which you can do through Cloudflare.
 
 - Click on `Websites`
-![01 cf websites](images/how-to-bake-an-ortelius-pi/part04/01-cf-websites.png)
+![01 cf websites button](images/how-to-bake-an-ortelius-pi/part04/01-cf-websites-button.png)
 
 - Click on `Add a site`
-![02 cf add site](images/how-to-bake-an-ortelius-pi/part04/02-cf-add-site.png)
+![02 cf add site button](images/how-to-bake-an-ortelius-pi/part04/02-cf-add-site-button.png)
 
 - Click on `register a new domain`
 ![03 cf register new domain](images/how-to-bake-an-ortelius-pi/part04/03-cf-register-new-domain.png)
@@ -54,14 +54,30 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 - Click on our new domain and head over to `DNS`
 
 ![06 cf new domain](images/how-to-bake-an-ortelius-pi/part04/06-cf-new-domain.png)
+![07 cf dns button](images/how-to-bake-an-ortelius-pi/part04/07-cf-dns-button.png)
 
 - You should have 2 DNS A records like below | `* is for wildcard` and the domain apex `pangarabbit.com`
 - The domain apex record should be there but you might have to add the wildcard if memory serves me correctly
 
-![07 cf a records](images/how-to-bake-an-ortelius-pi/part04/08-cf-a-records.png)
+![08 cf a records](images/how-to-bake-an-ortelius-pi/part04/08-cf-a-records.png)
 
 #### SSL/TLS
 
 - Lets head over to `SSL/TLS` now
 
-![08 cf ssl tls](images/how-to-bake-an-ortelius-pi/part04/09-cf-ssl-tls.png)
+![09 cf ssl tls button](images/how-to-bake-an-ortelius-pi/part04/09-cf-ssl-tls-button.png)
+
+- You will be faced with the following screen and you want to have `Full (strict)` enabled
+
+![10 cf ssl tls](images/how-to-bake-an-ortelius-pi/part04/10-cf-ssl-tls.png)
+
+- Below are some caveats to take note of
+
+Why isn’t my site working over HTTPS?
+
+Certificate provisioning typically takes around 15 minutes for paid plans and up to 24 hours for Free plans. Contact support if you do not have a certificate after that time. If the certificate is already “active” under the Edge Certificates tab, but you still cannot access your site over HTTPS, refer to the [troubleshooting documentation](https://developers.cloudflare.com/ssl/troubleshooting/).
+What encryption mode should I use?
+
+Cloudflare strongly recommends using Full or Full (strict) modes to prevent malicious connections to your origin. For details on each available mode, refer to the [encryption modes documentation](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/).
+
+-
