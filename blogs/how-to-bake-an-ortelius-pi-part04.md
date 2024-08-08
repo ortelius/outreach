@@ -220,6 +220,11 @@ kubectl get certificates -owide -n infrastructure
           secretName: wildcard-pangarabbit-com-tls
 ```
 
+- In the following image we can see that our services have green shields to indicate that they are configured with `TLS`
+- To access the Traefik dashboard the URL is `traefik.pangarabbit.com`
+
+![21 traefik services tls](images/how-to-bake-an-ortelius-pi/part04/21-traefik-services-tls.png)
+
 All we have done now is secure the Traefik dashboard but how would we do it for other workloads. Lets look at a few examples.
 
 #### Ortelius
@@ -281,4 +286,8 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
 
 In Part 4 we configured a certificate for our domain using Cloudflare, LetsEncrypt and Traefik. From my experience the crucial configuration change for any workloads to access the frontend securely was to enable the ingress and to change the `ingressClassName` to `traefik` in the Helm Release values.
 
-Happy HTTPS.....
+Happy alien hunting.......
+
+<img src="images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg" alt="ortelius-logo" width="600">
+
+Disclaimer: Any brands I mention in this blog post series are not monetised

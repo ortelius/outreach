@@ -215,4 +215,8 @@ Host pi03.yourdomain.com
 
 By this stage you should have three Pi 4 B's running with Ubuntu 22.04.4 LTS each configured for SSH with a password or preferably a SSH private key and public key. Stay tuned for part 2 where we will dive into DHCP, NextDNS, NFS and install MicroK8s.
 
+Happy alien hunting.......
+
+<img src="images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg" alt="ortelius-logo" width="600">
+
 Disclaimer: Any brands I mention in this blog post series are not monetised

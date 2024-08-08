@@ -357,4 +357,8 @@ kubectl get pods --all-namespaces
 
 By this stage you should have three Pi's each with MicroK8s in an HA configuration and a Synology ready with NFS. Stay tuned for Part 3 where we will use GitOps to deploy the following NFS [csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs) for Kubernetes, [MetalLB Load Balancer](https://metallb.universe.tf/), [Traefik Proxy](https://traefik.io/) and [Ortelius](https://ortelius.io/).
 
+Happy alien hunting.......
+
+<img src="images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg" alt="ortelius-logo" width="600">
+
 Disclaimer: Any brands I mention in this blog post series are not monetised
