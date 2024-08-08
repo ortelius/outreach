@@ -128,6 +128,9 @@ Great we should have a functional certificate which will be auto renewed and we 
 
 ### Traefik
 
+- [Traefik Helm Chart Examples](https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md)
+- [Traefik and LetsEncrypt](https://doc.traefik.io/traefik/https/acme/)
+
 #### Helm-Release | Traefik
 
 - Lets go back to our Traefik Helm Release and make some amendments
