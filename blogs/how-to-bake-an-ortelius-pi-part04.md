@@ -239,8 +239,7 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
 
 #### Argocd
 
-- For Argocd I had to edit the `ingressClassName` to make it Traefik aware
-- Also enable `TLS`
+- For Argocd I had to edit the `ingressClassName` to make it Traefik aware also enable `TLS`
 
 ```yaml
       # Argo CD server ingress configuration
