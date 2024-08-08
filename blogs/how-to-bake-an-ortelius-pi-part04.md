@@ -23,7 +23,7 @@ In part 4 we will setup [Cloudflare](https://www.cloudflare.com/en-gb/), [LetsEn
 
 I have tried to put things in a logical order for deployment like this:
 
-`cloudflare --> secret store --> ZeroTier --> everything else`
+`cloudflare --> secret store --> zerotier --> everything else`
 
 ### Cloudflare | Connectivity Cloud
 
