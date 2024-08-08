@@ -92,3 +92,5 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 ![12 cf edge certificates button](images/how-to-bake-an-ortelius-pi/part04/12-cf-edge-certificates-button.png)
 ![13 cf edge certificates button](images/how-to-bake-an-ortelius-pi/part04/13-cf-edge-certificates.png)
 ![14 cf edge certificates note](images/how-to-bake-an-ortelius-pi/part04/14-cf-edge-certificates-note.png)
+
+- Enable `Always Use HTTPS`
