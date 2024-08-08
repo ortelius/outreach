@@ -9,6 +9,7 @@
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
     - [Ortelius](#ortelius)
     - [Argocd](#argocd)
+  - [Conclusion](#conclusion)
 
 ## How to bake an Ortelius Pi Part 4 | Cloudflare, Certificates and Traefik
 
@@ -268,3 +269,9 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
         ## You can create this secret via `certificate` or `certificateSecret` option
         tls: true
 ```
+
+### Conclusion
+
+In Part 4 we configured a certificate for our domain using Cloudflare, LetsEncrypt and Traefik. From my experience the crucial configuration change for any workloads to access the frontend securely was to enable the ingress and to change the `ingressClassName` to `traefik` in the Helm Release values.
+
+Happy HTTPS.....
