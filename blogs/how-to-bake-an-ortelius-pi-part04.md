@@ -29,6 +29,7 @@ I have tried to put things in a logical order for deployment like this:
 
 You might know Cloudflare as a CDN but its so much more than that. Cloudflare is packed with amazing features and security offerings which are just to many to cover in this blog.
 
+- [Cloudflare](https://www.cloudflare.com)
 - [Documentation](https://developers.cloudflare.com/)
 - [Learning Centre](https://www.cloudflare.com/en-gb/learning/)
 - [Free Plan](https://www.cloudflare.com/plans/free/)
