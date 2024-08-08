@@ -134,7 +134,7 @@ Great we should have a functional certificate which will be auto renewed and we 
 #### Helm-Release | Traefik
 
 - Lets go back to our Traefik Helm Release and make some amendments
-- Edit `traefik.yaml` in the `helm-releases` directory with the following changes
+- Edit `traefik.yaml` in the `helm-releases` directory `gitops-<your name>-infra` with the following changes
 
 #### Manifest Folder | Traefik
 
