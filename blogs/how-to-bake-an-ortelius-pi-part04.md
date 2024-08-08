@@ -144,6 +144,7 @@ Great we should have a functional certificate which will be auto renewed and we 
           file:
             directory: /manifests/traefik-dynamic-config.yaml
 ```
+
 - The logic in the `traefik-dynamic-config.yaml` would have created a `secret` with your Cloudflare API token and a `Issuer` for your certificate using `Certificate Manager`
 
 - Run the following to see your created certificate
@@ -226,7 +227,7 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
                                           # The URL that will go in your browser to access the Ortelius frontend
 ```
 
-- For Argocd i had to edit the `ingressClass` to make it Traefik aware
+- For Argocd I had to edit the `ingressClassName` to make it Traefik aware
 
 ```yaml
       # Argo CD server ingress configuration
