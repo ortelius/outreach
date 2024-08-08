@@ -50,4 +50,6 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 
 - At the end of the process you should be able to go back to Websites and see your domain that you registered.
 - Here you can see my domain `pangarabbit.com` and what we will do now is click on our new domain and head over to DNS.
-![06 cf new domain](images/how-to-bake-an-ortelius-pi/part04/07-cf-dns.png)
+![06 cf new domain](images/how-to-bake-an-ortelius-pi/part04/06-cf-new-domain.png)
+
+![07 cf dns](images/how-to-bake-an-ortelius-pi/part04/07-cf-dns.png)
