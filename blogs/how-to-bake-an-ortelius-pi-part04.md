@@ -127,6 +127,7 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 - The folks at Traefik put this nice piece of logic in the Helm Chart that allows you to create a config file which is dynamically monitored by Traefik
 - I am using this to manage the Lets Encrypt certicate renewal in conjunction with Cloudflare
 - Its time to `ENABLE` the certificate logic in `/manifests/traefik-dynamic-config.yaml` and `git push`
+- Allow Flux to do its thing
 
 ```yaml
       file:
@@ -139,4 +140,67 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
         providers:
           file:
             directory: /manifests/traefik-dynamic-config.yaml
+```
+- The logic in the `traefik-dynamic-config.yaml` would have created a `secret` with your Cloudflare API token and a `Issuer` for your certificate using `Certificate Manager`
+
+- Run the following to see your created certificate
+
+```shell
+kubectl get certificates -owide -n infrastructure
+```
+
+- Mine is called `wildcard-pangarabbit-com-tls`
+
+![20 k8s certificate](images/how-to-bake-an-ortelius-pi/part04/20-k8s-certificate.png)
+
+- Below I am showing the `ingressRoute` for the dashboard and you can see I only have `websecure` and I have added the `tls` configuration which matches `SECRET` as in the about image
+
+```yaml
+    ingressRoute:
+      dashboard:
+        # -- Create an IngressRoute for the dashboard
+        enabled: true
+        # -- Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
+        annotations: {}
+        # -- Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
+        labels: {}
+        # -- The router match rule used for the dashboard ingressRoute
+        matchRule: Host(`traefik.pangarabbit.com`) #PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+        # -- Specify the allowed entrypoints to use for the dashboard ingress route, (e.g. traefik, web, websecure).
+        # By default, it's using traefik entrypoint, which is not exposed.
+        # /!\ Do not expose your dashboard without any protection over the internet /!\
+        entryPoints: ["websecure"]
+        # -- Additional ingressRoute middlewares (e.g. for authentication)
+        middlewares: []
+        # -- TLS options (e.g. secret containing certificate)
+        tls:
+          default:
+            defaultCertificate:
+              secretName: wildcard-pangarabbit-com-tls
+      healthcheck:
+        # -- Create an IngressRoute for the healthcheck probe
+        enabled: false
+        # -- Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
+        annotations: {}
+        # -- Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
+        labels: {}
+        # -- The router match rule used for the healthcheck ingressRoute
+        matchRule: PathPrefix(`/ping`)
+        # -- Specify the allowed entrypoints to use for the healthcheck ingress route, (e.g. traefik, web, websecure).
+        # By default, it's using traefik entrypoint, which is not exposed.
+        entryPoints: ["traefik"]
+        # -- Additional ingressRoute middlewares (e.g. for authentication)
+        middlewares: []
+        # -- TLS options (e.g. secret containing certificate)
+        tls: {}
+```
+
+- To enable the certificate for all the workloads behind Traefik you need to change the following in your `Helm Release` and make your certifcate the default
+
+```yaml
+    # -- TLS Store are created as [TLSStore CRDs](https://doc.traefik.io/traefik/https/tls/#default-certificate). This is useful if you want to set a default certificate. See EXAMPLE.md for details.
+    tlsStore:
+      default:
+        defaultCertificate:
+          secretName: wildcard-pangarabbit-com-tls
 ```
