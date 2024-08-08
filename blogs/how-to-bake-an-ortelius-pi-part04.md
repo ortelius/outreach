@@ -39,10 +39,15 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 ![02 cf add site](images/how-to-bake-an-ortelius-pi/part04/02-cf-add-site.png)
 
 - Click on `register a new domain`
-![03 cf add site](images/how-to-bake-an-ortelius-pi/part04/03-cf-register-new-domain.png)
+![03 cf register new domain](images/how-to-bake-an-ortelius-pi/part04/03-cf-register-new-domain.png)
 
 - Click in the `Search for a domain name` box and find a domain
-![04 cf add site](images/how-to-bake-an-ortelius-pi/part04/04-cf-search-domain.png)
+![04 cf search domain](images/how-to-bake-an-ortelius-pi/part04/04-cf-search-domain.png)
 
-- Cloudflare will tell you if your domain is available. Unfortunately my cats name was not available. She will not be impressed.
-![05 cf add site](images/how-to-bake-an-ortelius-pi/part04/05-cf-mottles-domain.png)
+- Cloudflare will tell you if your domain is available. Unfortunately my cats name `mottles.com` was not available. She will not be impressed.
+- Pick your domain and brandish your credit card
+![05 cf mottles domain](images/how-to-bake-an-ortelius-pi/part04/05-cf-mottles-domain.png)
+
+- At the end of the process you should be able to go back to Websites and see your domain that you registered.
+- Here you can see my domain `pangarabbit.com` and what we will do now is click on our new domain and head over to DNS.
+![06 cf new domain](images/how-to-bake-an-ortelius-pi/part04/06-cf-dns.png)
