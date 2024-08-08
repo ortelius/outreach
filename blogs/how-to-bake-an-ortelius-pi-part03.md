@@ -3782,9 +3782,8 @@ kubectl get crds | grep traefik
 - From here on if we want to access our Microservice frontends we will need to create an `IngressRoute` for each one
 - If its infrastructure create it in the `infrastructure` namespace
 - If its an application create it in the namespace the application lives in
-- Here is an example of an `IngressRoute` for the Traefik Dashboard
+- Here is an `example` of an `IngressRoute` for the Traefik Dashboard
 - Remember that the services piece will be different for your applications and should point to the service created in Kubernetes for the application
-- Use the Ortelius `IngressRoute` as an example otherwise hit the Traefik docs
 - `TraefikService` is a service unique to Traefik and is never exposed
 
 ```yaml
