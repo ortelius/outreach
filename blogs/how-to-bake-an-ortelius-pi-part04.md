@@ -106,7 +106,7 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 
 - I turned on `TLS 1.3` for the best security
 
-![17 cf edge certificates tls 1.3 ](images/how-to-bake-an-ortelius-pi/part04/17-cf-edge-certificates-tls1-3.png)
+![17 cf edge certificates tls 1.3 ](images/how-to-bake-an-ortelius-pi/part04/17-cf-edge-certificates-tls-1-3.png)
 
 - I turned on `Automatic HTTPS Rewrites`
 
