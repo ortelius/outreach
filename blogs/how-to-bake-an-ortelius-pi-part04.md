@@ -153,7 +153,8 @@ kubectl get certificates -owide -n infrastructure
 
 ![20 k8s certificate](images/how-to-bake-an-ortelius-pi/part04/20-k8s-certificate.png)
 
-- Below I am showing the `ingressRoute` for the dashboard and you can see I only have `websecure` and I have added the `tls` configuration which matches `SECRET` as in the above image
+- Below I am showing the `ingressRoute` for the dashboard and you can see I only have `websecure` enabled now
+- I have added the `tls` configuration which matches `SECRET` as in the above image
 
 ```yaml
     ingressRoute:
