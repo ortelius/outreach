@@ -179,6 +179,7 @@ Gimlet comes in two flavours [Self-Hosted](https://github.com/gimlet-io/gimlet) 
 
 - [Documentation](https://fluxcd.io/flux/)
 - [Flux CLI](https://fluxcd.io/flux/cmd/)
+- [Flux Troubleshooting Cheatsheet](https://fluxcd.io/flux/cheatsheets/troubleshooting/)
 - [Flux Ecosystem](https://fluxcd.io/ecosystem/#flux-uis--guis)
 - [VS Code extension](https://marketplace.visualstudio.com/items?itemName=Weaveworks.vscode-gitops-tools)
 
