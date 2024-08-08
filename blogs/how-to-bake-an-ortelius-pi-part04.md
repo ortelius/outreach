@@ -7,6 +7,7 @@
   - [Traefik](#traefik)
     - [Helm-Release | Traefik](#helm-release--traefik)
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
+    - [Ortelius](#ortelius)
 
 ## How to bake an Ortelius Pi Part 4 | Cloudflare, Certificates and Traefik
 
@@ -206,4 +207,19 @@ kubectl get certificates -owide -n infrastructure
           secretName: wildcard-pangarabbit-com-tls
 ```
 
-- All we have done now is secure the Traefik dashboard but how would we do it for other workloads
+All we have done now is secure the Traefik dashboard but how would we do it for other workloads. Lets look at a few examples.
+
+#### Ortelius
+
+- For Ortelius we had to use the `k3d` type to make it Traefik aware
+- Now when requests arrive at Traefiks front door Traefik is aware of Ortelius and can send requests to `ms-nginx` microservice and gain access to the Ortelius backend
+
+```yaml
+    ms-nginx:
+      ingress:
+        type: k3d # --set ms-nginx.ingress.type=k3d`
+                  # This setting is for enabling the Traefik Class so that Traefik is made aware of Ortelius
+                  # K3d https://k3d.io/v5.6.0/ is a lightweight Kubernetes deployment which uses Traefik as the default
+        dnsname: ortelius.pangarabbit.com # --set ms-nginx.ingress.dnsname=<your domain name goes here>
+                                          # The URL that will go in your browser to access the Ortelius frontend
+```
