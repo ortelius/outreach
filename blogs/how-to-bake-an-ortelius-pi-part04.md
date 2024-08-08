@@ -98,13 +98,16 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 
 - I set `Minimum TLS Version` to `TLS 1.3` for the best security
 
-
+![16 cf edge certificates tls version ](images/how-to-bake-an-ortelius-pi/part04/15-cf-edge-certificates-tls-version.png)
 
 - I enabled `Opportunistic Encryption`
 
-
+![17 cf edge certificates encryption ](images/how-to-bake-an-ortelius-pi/part04/15-cf-edge-certificates-encryption.png)
 
 - I turned on `TLS 1.3` for the best security
 
+![18 cf edge certificates tls 1.3 ](images/how-to-bake-an-ortelius-pi/part04/15-cf-edge-certificates-tls1-3.png)
 
 - I turned on `Automatic HTTPS Rewrites`
+
+![19 cf edge certificates https rewrites ](images/how-to-bake-an-ortelius-pi/part04/15-cf-edge-certificates-https-rewrites.png)
