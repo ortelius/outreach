@@ -71,7 +71,7 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 
 ![10 cf ssl tls](images/how-to-bake-an-ortelius-pi/part04/10-cf-ssl-tls.png)
 
-- Below are some caveats to take note of
+- Below are some caveats to take note of which are taken from that little `Help` button
 
 Why isn’t my site working over HTTPS?
 
