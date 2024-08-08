@@ -8,6 +8,7 @@
     - [Helm-Release | Traefik](#helm-release--traefik)
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
     - [Ortelius](#ortelius)
+    - [Argocd](#argocd)
 
 ## How to bake an Ortelius Pi Part 4 | Cloudflare, Certificates and Traefik
 
@@ -226,6 +227,8 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
         dnsname: ortelius.pangarabbit.com # --set ms-nginx.ingress.dnsname=<your domain name goes here>
                                           # The URL that will go in your browser to access the Ortelius frontend
 ```
+
+#### Argocd
 
 - For Argocd I had to edit the `ingressClassName` to make it Traefik aware
 - Also enable `TLS`
