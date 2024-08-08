@@ -85,7 +85,7 @@ Cloudflare strongly recommends using Full or Full (strict) modes to prevent mali
 ![11 cf ssl tls recommender](images/how-to-bake-an-ortelius-pi/part04/11-cf-ssl-tls-recommender.png)
 
 - Clicking on `Edge Certificates` you will see that the kind folks at Cloudflare have provided you with a certificate for free
-
+- Take note of `Attention: Let's Encrypt's chain of trust will be changing on September 2024. Universal SSL certificates will be automatically switched to a more compatible certificate authority. Review our [documentation](https://developers.cloudflare.com/ssl/reference/migration-guides/lets-encrypt-chain/#lets-encrypt-chain-update) for details and to understand the impacts on other certificate types.`
 ![12 cf edge certificates button](images/how-to-bake-an-ortelius-pi/part04/12-cf-edge-certificates-button.png)
 ![13 cf edge certificates button](images/how-to-bake-an-ortelius-pi/part04/13-cf-edge-certificates.png)
 ![14 cf edge certificates note](images/how-to-bake-an-ortelius-pi/part04/14-cf-edge-certificates-note.png)
