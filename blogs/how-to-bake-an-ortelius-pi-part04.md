@@ -4,6 +4,7 @@
   - [Cloudflare | Connectivity Cloud](#cloudflare--connectivity-cloud)
     - [Buying a domain name](#buying-a-domain-name)
     - [SSL/TLS](#ssltls)
+  - [Traefik](#traefik)
     - [Helm-Release | Traefik](#helm-release--traefik)
     - [Manifest Folder | Traefik](#manifest-folder--traefik)
 
@@ -113,6 +114,8 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 - I turned on `Automatic HTTPS Rewrites`
 
 ![18 cf edge certificates https rewrites ](images/how-to-bake-an-ortelius-pi/part04/18-cf-edge-certificates-https-rewrites.png)
+
+### Traefik
 
 #### Helm-Release | Traefik
 
