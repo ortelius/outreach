@@ -220,6 +220,10 @@ kubectl get certificates -owide -n infrastructure
           secretName: wildcard-pangarabbit-com-tls
 ```
 
+- In the following image we can see that our services have green shields to indicate that they are configured with `TLS`
+
+![21 traefik services tls](images/how-to-bake-an-ortelius-pi/part04/21-traefik-services-tls.png)
+
 All we have done now is secure the Traefik dashboard but how would we do it for other workloads. Lets look at a few examples.
 
 #### Ortelius
