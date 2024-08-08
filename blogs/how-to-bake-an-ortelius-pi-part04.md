@@ -205,3 +205,5 @@ kubectl get certificates -owide -n infrastructure
         defaultCertificate:
           secretName: wildcard-pangarabbit-com-tls
 ```
+
+- All we have done now is secure the Traefik dashboard but how would we do it for other workloads
