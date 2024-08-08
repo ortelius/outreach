@@ -149,11 +149,11 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 kubectl get certificates -owide -n infrastructure
 ```
 
-- Mine is called `wildcard-pangarabbit-com-tls`
+- Mine is called `wildcard-pangarabbit-com` but we are are interested in the `SECRET`
 
 ![20 k8s certificate](images/how-to-bake-an-ortelius-pi/part04/20-k8s-certificate.png)
 
-- Below I am showing the `ingressRoute` for the dashboard and you can see I only have `websecure` and I have added the `tls` configuration which matches `SECRET` as in the about image
+- Below I am showing the `ingressRoute` for the dashboard and you can see I only have `websecure` and I have added the `tls` configuration which matches `SECRET` as in the above image
 
 ```yaml
     ingressRoute:
