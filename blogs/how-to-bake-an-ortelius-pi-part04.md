@@ -221,6 +221,7 @@ kubectl get certificates -owide -n infrastructure
 ```
 
 - In the following image we can see that our services have green shields to indicate that they are configured with `TLS`
+- To access the Traefik dashboard the URL is `traefik.pangarabbit.com`
 
 ![21 traefik services tls](images/how-to-bake-an-ortelius-pi/part04/21-traefik-services-tls.png)
 
