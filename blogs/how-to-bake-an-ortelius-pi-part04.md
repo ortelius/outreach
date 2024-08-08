@@ -84,8 +84,7 @@ Cloudflare strongly recommends using Full or Full (strict) modes to prevent mali
 
 ![11 cf ssl tls recommender](images/how-to-bake-an-ortelius-pi/part04/11-cf-ssl-tls-recommender.png)
 
-- Clicking on `Edge Certificates` you will see that the kind folks at Cloudflare have provided you with a certificate for free
-- Take note of
+- Clicking on `Edge Certificates` you will see that the kind folks at Cloudflare have provided you with a certificate for free also known as `Universal SSL`
 
 Attention: Let's Encrypt's chain of trust will be changing on September 2024. Universal SSL certificates will be automatically switched to a more compatible certificate authority. Review our [documentation](https://developers.cloudflare.com/ssl/reference/migration-guides/lets-encrypt-chain/#lets-encrypt-chain-update) for details and to understand the impacts on other certificate types.
 
@@ -94,3 +93,18 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 ![14 cf edge certificates note](images/how-to-bake-an-ortelius-pi/part04/14-cf-edge-certificates-note.png)
 
 - Enable `Always Use HTTPS`
+
+![15 cf edge certificates https](images/how-to-bake-an-ortelius-pi/part04/15-cf-edge-certificates-https.png)
+
+- I set `Minimum TLS Version` to `TLS 1.3` for the best security
+
+
+
+- I enabled `Opportunistic Encryption`
+
+
+
+- I turned on `TLS 1.3` for the best security
+
+
+- I turned on `Automatic HTTPS Rewrites`
