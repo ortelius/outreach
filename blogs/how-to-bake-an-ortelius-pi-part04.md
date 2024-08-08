@@ -49,7 +49,7 @@ Cloudflare have kindly provided a free plan which we will use so the first thing
 - Pick your domain and brandish your credit card
 ![05 cf mottles domain](images/how-to-bake-an-ortelius-pi/part04/05-cf-mottles-domain.png)
 
-- At the end of the process you should be able to go back to Websites and see your domain that you registered
+- At the end of the process when get back to `Websites` you should see your new domain registered
 - Here you can see my domain `pangarabbit.com`
 - Click on our new domain and head over to `DNS`
 
