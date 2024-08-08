@@ -3998,10 +3998,6 @@ You should now be able to reach the Ortelius frontend in your browser using the 
 
 ![ortelius frontend](images/how-to-bake-an-ortelius-pi/part03/12-ortelius-frontend.png)
 
-Happy alien hunting.......
-
-<img src="images/how-to-bake-an-ortelius-pi/part03/13-ortelius-logo.svg" alt="ortelius-logo" width="600">
-
 ### Conclusion
 
 By this stage you should have three Pi's each with MicroK8s, NFS CSI Driver, Cert Manager, Traefik, Ortelius and a NFS server up and running. Stay tuned for Part 4 where we unleash LetsEncrypt with Cloudflare for automatic certificate renewal to provide certificate and TLS services.
