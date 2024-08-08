@@ -116,6 +116,8 @@ Attention: Let's Encrypt's chain of trust will be changing on September 2024. Un
 
 ![18 cf edge certificates https rewrites ](images/how-to-bake-an-ortelius-pi/part04/18-cf-edge-certificates-https-rewrites.png)
 
+Great we should have a functional certificate which will be auto renewed and we can use Traefik as the single point for secure connections.
+
 ### Traefik
 
 #### Helm-Release | Traefik
@@ -222,4 +224,31 @@ All we have done now is secure the Traefik dashboard but how would we do it for 
                   # K3d https://k3d.io/v5.6.0/ is a lightweight Kubernetes deployment which uses Traefik as the default
         dnsname: ortelius.pangarabbit.com # --set ms-nginx.ingress.dnsname=<your domain name goes here>
                                           # The URL that will go in your browser to access the Ortelius frontend
+```
+
+- For Argocd i had to edit the `ingressClass` to make it Traefik aware
+
+```yaml
+      # Argo CD server ingress configuration
+      ingress:
+        # -- Enable an ingress resource for the Argo CD server
+        enabled: true
+        # -- Specific implementation for ingress controller. One of `generic`, `aws` or `gke`
+        ## Additional configuration might be required in related configuration sections
+        controller: generic
+        # -- Additional ingress labels
+        labels: {}
+        # -- Additional ingress annotations
+        ## Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/ingress/#option-1-ssl-passthrough
+        annotations:
+          {}
+          # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+
+        # -- Defines which ingress controller will implement the resource
+        ingressClassName: "traefik"
+
+        # -- Argo CD server hostname
+        # @default -- `""` (defaults to global.domain)
+        hostname: "argocd.pangarabbit.com"
 ```
